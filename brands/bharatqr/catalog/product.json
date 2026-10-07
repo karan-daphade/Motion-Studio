@@ -2,9 +2,9 @@
   "name": "BharatQR",
   "domain": "bharatqr.in",
   "palette": {
-    "background": "#0B0F19",
-    "surface": "#161F30",
-    "primary": "#3B82F6",
+    "background": "#0F172A",
+    "surface": "#1E293B",
+    "primary": "#E8590C",
     "accent": "#10B981"
   },
   "cta": {
@@ -13,7 +13,7 @@
     "mr": "आजच सुरू करा"
   },
   "logo": {
-    "svg": "assets/logo.svg.PLACEHOLDER",
+    "svg": "assets/logo.svg",
     "sting": "assets/sonic-logo.wav.PLACEHOLDER"
   }
 }

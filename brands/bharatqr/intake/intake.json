@@ -1,0 +1,384 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "brandId": "bharatqr",
+  "source": "C:\\Users\\karan\\Desktop\\MyPOS",
+  "capturedAt": "2026-10-07T14:35:00+05:30",
+  "status": "extracted",
+  "answers": {
+    "S0-01": "BharatQR",
+    "S0-02": "BharatQR Technologies",
+    "S0-03": "Launch brand film and per-feature video reels for restaurant and cafe owners",
+    "S0-04": [
+      "60s hero film",
+      "15-30s feature Reels",
+      "6s bumper ads"
+    ],
+    "S0-05": [
+      "Hook hold rate",
+      "Demo requests per video"
+    ],
+    "S0-06": "2026-12-15",
+    "S0-07": "Karan Datta Daphade, Founder & Lead Architect",
+    "S0-08": "karan@bharatqr.internal, +91-98765-43210",
+    "S0-09": true,
+    "S1-01": "Restaurant and hotel software (SaaS)",
+    "S1-02": "Enterprise-grade, responsive multi-tenant POS and live operations platform with QR-based table & room ordering, KDS, waitlist management, and automated GST compliance",
+    "S1-03": [
+      "App-less QR table ordering with multi-device companion sync",
+      "Gated 7-step branch onboarding wizard",
+      "Real-time kitchen order routing (KDS) across stations",
+      "Section queue tokens with daily sequence reset ({SectionLabel}-{DailySeq})",
+      "Section 9(5) CGST Act compliant tax engine"
+    ],
+    "S1-04": [
+      "India"
+    ],
+    "S1-05": "Active development: 7-step owner onboarding and live floor operations engines fully built",
+    "S1-06": "Affordable SaaS subscription designed for independent Indian restaurants, cafes, and bars",
+    "S1-07": [
+      "Petpooja",
+      "Posist",
+      "UrbanPiper",
+      "DotPe"
+    ],
+    "S1-08": "Focus on high-speed operations, zero customer app friction, and clean multi-station KDS routing",
+    "S1-09": "Built with Next.js 16 App Router, Tailwind CSS, and Supabase PostgreSQL with RLS and Realtime",
+    "S2-01": "Independent restaurant and cafe owner / operator",
+    "S2-02": "Runs 1 to 3 food service outlets, manages shifts and live floor operations personally",
+    "S2-03": "28-55",
+    "S2-04": [
+      "English",
+      "Hindi",
+      "Marathi"
+    ],
+    "S2-05": "medium",
+    "S2-06": [
+      "WhatsApp",
+      "Instagram",
+      "YouTube",
+      "Industry forums"
+    ],
+    "S2-07": [
+      "Aggregator commission squeeze (up to 30%+ on orders)",
+      "Miscommunication between waitstaff and kitchen during rush hours",
+      "Clunky legacy desktop POS systems requiring lengthy staff training",
+      "Complicated GST calculation and bill splitting errors"
+    ],
+    "S2-08": [
+      "Direct customer QR ordering that bypasses third-party commissions",
+      "Instant 7-step branch setup without needing IT specialists",
+      "Reliable real-time KDS updates on phone or tablet",
+      "Automated GST-compliant billing with CGST/SGST/IGST breakdown"
+    ],
+    "S2-09": [
+      "Will my staff find it confusing to operate?",
+      "What if internet connection is spotty?",
+      "Is setting up menu items and taxes complicated?"
+    ],
+    "S2-10": {
+      "name": "Food service customer / diner",
+      "description": "Scans QR at table or room to view live digital menu and order without downloading apps"
+    },
+    "S3-01": "Empower every Indian food business with modern, broadcast-grade live operations technology",
+    "S3-02": [
+      "Operational speed and clarity",
+      "Zero customer friction (no app downloads)",
+      "Uncompromising data isolation and reliability",
+      "Dual-storage resilience against network failures"
+    ],
+    "S3-03": "The intelligent live operations platform built for high-velocity Indian dining",
+    "S3-04": [
+      "energetic",
+      "reliable",
+      "approachable",
+      "efficient"
+    ],
+    "S3-05": [
+      "cluttered",
+      "corporate-stiff",
+      "overly academic",
+      "gimmicky"
+    ],
+    "S3-06": [
+      "Intelligent Restaurant & Hotel Live Operations Platform",
+      "Hospitality at the Speed of QR",
+      "Scan. Order. Savor."
+    ],
+    "S3-07": "Created to free restaurant owners from bulky legacy hardware and high aggregator commissions.",
+    "S4-01": [
+      {
+        "name": "primary",
+        "file": "assets/logo.svg"
+      },
+      {
+        "name": "raster",
+        "file": "assets/logo.png"
+      }
+    ],
+    "S4-02": [
+      "#0F172A",
+      "#FFFFFF",
+      "#F8FAFC"
+    ],
+    "S4-03": 120,
+    "S4-04": 16,
+    "S4-05": [
+      "Do not stretch or alter aspect ratio",
+      "Do not recolor the saffron (#E8590C) mark",
+      "Do not place on low-contrast backgrounds"
+    ],
+    "S5-01": "#E8590C",
+    "S5-02": "#0F172A",
+    "S5-03": "#10B981",
+    "S5-04": [
+      {
+        "name": "background",
+        "hex": "#F8FAFC"
+      },
+      {
+        "name": "surface",
+        "hex": "#FFFFFF"
+      },
+      {
+        "name": "surfaceMuted",
+        "hex": "#F1F5F9"
+      },
+      {
+        "name": "border",
+        "hex": "#E2E8F0"
+      },
+      {
+        "name": "textPrimary",
+        "hex": "#0F172A"
+      },
+      {
+        "name": "textSecondary",
+        "hex": "#475569"
+      },
+      {
+        "name": "textMuted",
+        "hex": "#94A3B8"
+      }
+    ],
+    "S5-05": "#0F172A",
+    "S5-06": {
+      "pending": "#F59E0B",
+      "preparing": "#3B82F6",
+      "ready": "#10B981",
+      "served": "#8B5CF6",
+      "billed": "#64748B",
+      "cancelled": "#EF4444"
+    },
+    "S5-07": "60% Deep Slate Navy, 30% Light Surface/Muted, 10% Saffron & Emerald accents",
+    "S5-08": true,
+    "S5-09": [
+      {
+        "name": "saffronGradient",
+        "from": "#E8590C",
+        "to": "#FF7A29"
+      }
+    ],
+    "S5-10": [
+      "#FF00FF",
+      "#00FFFF",
+      "#FFFF00"
+    ],
+    "S5-11": 4.5,
+    "S6-01": "Inter",
+    "S6-02": "Inter",
+    "S6-03": "Inter",
+    "S6-05": "Noto Sans Devanagari",
+    "S6-08": "sentence-case",
+    "S6-09": "-0.02em for headings",
+    "S6-10": 1.4,
+    "S7-01": "12-column responsive layout, 8px grid",
+    "S7-02": {
+      "sm": "0.375rem",
+      "md": "0.625rem",
+      "lg": "0.875rem",
+      "xl": "1.25rem",
+      "full": "9999px"
+    },
+    "S7-03": {
+      "card": "0 4px 20px -2px rgba(15, 23, 42, 0.06)",
+      "hover": "0 10px 25px -3px rgba(15, 23, 42, 0.10)"
+    },
+    "S7-06": "Lucide React outline icons with 2px stroke",
+    "S8-01": "Clean, bright, candid food photography and modern hospitality interiors",
+    "S8-02": "Clean UI mockups and technical wireframe isometric projections",
+    "S8-03": "Natural warm lighting with balanced highlights",
+    "S8-04": [
+      "Table QR code cards",
+      "Chef / Kitchen staff using KDS displays",
+      "Restaurant owners reviewing dashboard metrics"
+    ],
+    "S8-05": [
+      "Overly stylized artificial food",
+      "Cluttered messy counters",
+      "Foreign currencies or non-Indian table setups"
+    ],
+    "S8-06": false,
+    "S9-01": true,
+    "S9-02": [
+      "web",
+      "mobile-web"
+    ],
+    "S9-03": "light",
+    "S9-04": "Tailwind CSS + Custom CSS Variables + Framer Motion (@/config/branding)",
+    "S9-05": [
+      "Inter"
+    ],
+    "S9-06": [
+      {
+        "key": "onboarding_wizard",
+        "name": "7-Step Branch Onboarding"
+      },
+      {
+        "key": "table_management",
+        "name": "Operations Table Grid & Merges"
+      },
+      {
+        "key": "kitchen_display",
+        "name": "Kitchen Display System (KDS)"
+      },
+      {
+        "key": "waiting_list",
+        "name": "Walk-in Queue & Daily Tokens"
+      },
+      {
+        "key": "customer_session",
+        "name": "Unified Dining Session & Multi-Device Join"
+      }
+    ],
+    "S9-07": "live",
+    "S9-10": "Realistic Indian restaurant menus (INR ₹, 5% GST, Paneer Tikka, Masala Dosa, Biryani)",
+    "S11-01": "energetic-technical",
+    "S11-02": "dynamic",
+    "S11-03": "spring-snappy",
+    "S11-04": "isometric-orbit",
+    "S11-07": false,
+    "S11-08": false,
+    "S11-09": "word-by-word fade and spring slide",
+    "S12-01": [
+      "modern electronic",
+      "rhythmic acoustic beats"
+    ],
+    "S12-04": [
+      "distorted bass",
+      "overdramatic cinematic horns"
+    ],
+    "S12-08": "Warm, confident Indian tech professional",
+    "S12-09": "female or male",
+    "S12-11": "Indian English, Shuddh Hindi, Certified Marathi",
+    "S12-12": "brisk and natural",
+    "S12-13": true,
+    "S12-14": [
+      "Aggressive siren sounds",
+      "Loud error buzzers"
+    ],
+    "S13-01": [
+      "en",
+      "hi",
+      "mr"
+    ],
+    "S13-02": "en",
+    "S13-03": "professional-conversational",
+    "S13-04": true,
+    "S13-05": "Retain common tech & culinary terms in Latin or phonetically (QR, POS, KDS, Paneer)",
+    "S13-06": "en-IN",
+    "S13-07": "INR",
+    "S13-08": "DD/MM/YYYY",
+    "S13-10": {
+      "BharatQR": "Bhaa-rat Q-R",
+      "KDS": "K-D-S"
+    },
+    "S13-11": {
+      "en": "BharatQR",
+      "hi": "भारत क्यूआर",
+      "mr": "भारत क्यूआर"
+    },
+    "S14-01": [
+      "Zero Friction Table Ordering",
+      "High-Velocity Kitchen Routing",
+      "7-Step Instant Setup"
+    ],
+    "S14-04": [
+      "No customer app download required",
+      "Real-time kitchen order routing across stations",
+      "Complete 7-step onboarding in under 15 minutes",
+      "Full CGST/SGST and Section 9(5) compliance"
+    ],
+    "S14-05": [
+      "Zero hardware required forever",
+      "Eliminates 100% of staff costs"
+    ],
+    "S14-06": [
+      "Hardware and printer compatibility depends on local network configuration."
+    ],
+    "S14-07": [
+      {
+        "text": "Start Free Branch Setup",
+        "destination": "https://bharatqr.in/admin/signup"
+      }
+    ],
+    "S14-08": "https://bharatqr.in",
+    "S16-01": [
+      "16:9",
+      "9:16",
+      "1:1"
+    ],
+    "S16-02": [
+      6,
+      15,
+      30,
+      60
+    ],
+    "S16-03": 6,
+    "S16-04": [
+      "YouTube",
+      "Instagram",
+      "LinkedIn"
+    ],
+    "S16-05": true,
+    "S16-06": [
+      "en",
+      "hi",
+      "mr"
+    ],
+    "S17-01": [
+      {
+        "type": "raster_logo",
+        "path": "assets/logo.png"
+      },
+      {
+        "type": "vector_logo",
+        "path": "assets/logo.svg"
+      }
+    ],
+    "S17-02": "BharatQR Technologies",
+    "S17-04": [
+      "assets/sonic-logo.wav.PLACEHOLDER"
+    ],
+    "S18-01": [
+      "CGST Act 2017 Section 9(5)",
+      "FSSAI food menu display rules",
+      "ASC guidelines for advertising claims"
+    ],
+    "S18-02": true,
+    "S18-04": "AI-assisted programmatic motion rendering disclosure included",
+    "S18-05": "Worldwide",
+    "S18-06": 36,
+    "S18-07": true,
+    "S18-08": [
+      "Unverified tax avoidance claims",
+      "Defamatory comparisons with named competitors"
+    ],
+    "S18-09": false,
+    "S19-01": [
+      "Karan Datta Daphade"
+    ],
+    "S19-02": 2,
+    "S19-04": "Written confirmation via GitHub / Motion Studio review portal",
+    "S19-05": "confidential"
+  }
+}

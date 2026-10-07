@@ -2,9 +2,23 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "brandId": "bharatqr",
   "version": "1.0.0",
-  "assets": [],
+  "assets": [
+    {
+      "path": "assets/logo.svg",
+      "type": "vector_logo",
+      "bytes": 998,
+      "format": "svg",
+      "provenance": "derived"
+    },
+    {
+      "path": "assets/logo.png",
+      "type": "raster_logo",
+      "bytes": 253954,
+      "format": "png",
+      "provenance": "provided"
+    }
+  ],
   "missing": [
-    "assets/logo.svg.PLACEHOLDER",
     "assets/sonic-logo.wav.PLACEHOLDER"
   ]
 }

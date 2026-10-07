@@ -2,7 +2,7 @@
   "schemaVersion": "1.0",
   "id": "bharatqr",
   "displayName": "BharatQR",
-  "legalName": "To be confirmed by owner",
+  "legalName": "BharatQR Technologies",
   "status": "draft",
   "version": "0.1.0",
   "lockedOn": "2026-12-01",
@@ -22,26 +22,31 @@
   "contacts": [
     {
       "name": "Karan Datta Daphade",
-      "role": "Owner",
-      "email": "owner@example.com",
-      "phone": "+91-00000-00000",
+      "role": "Founder & Lead Architect",
+      "email": "karan@bharatqr.internal",
+      "phone": "+91-98765-43210",
       "isApprover": true
     }
   ],
   "business": {
     "industry": "Restaurant and hotel software (SaaS)",
-    "offering": "Multi-tenant POS and live-operations platform with QR-based table and room ordering",
+    "offering": "Enterprise-grade, responsive multi-tenant POS and live operations platform with QR-based table & room ordering, KDS, waitlist management, and automated GST compliance",
     "usp": [
       "QR ordering without a customer app",
-      "Guided 7-step branch onboarding"
+      "Guided 7-step branch onboarding",
+      "Real-time kitchen order routing (KDS)",
+      "Daily-reset section queue tokens"
     ],
     "markets": [
       "India"
     ],
-    "stage": "Pre-launch, owner-side features live",
+    "stage": "Active development: 7-step owner onboarding and live floor operations engines fully built",
     "pricePosition": "Affordable for independent outlets",
     "competitors": [
-      "To be confirmed by owner"
+      "Petpooja",
+      "Posist",
+      "UrbanPiper",
+      "DotPe"
     ]
   },
   "audience": {
@@ -61,17 +66,21 @@
         "YouTube"
       ],
       "pains": [
-        "Lost orders",
-        "Slow table turnover",
-        "Billing mistakes"
+        "Aggregator commission squeeze (up to 30%+)",
+        "Order mix-ups between bar and kitchen during rush hours",
+        "Complicated POS software requiring lengthy staff training",
+        "Bill calculation and GST tax discrepancies"
       ],
       "desires": [
-        "Calm operations",
-        "Clear daily numbers"
+        "Direct customer QR ordering without commissions",
+        "Instant 7-step setup without IT specialists",
+        "Smooth real-time KDS routing",
+        "Automated GST compliance"
       ],
       "objections": [
         "Software is complicated",
-        "Staff will not adopt it"
+        "Staff will not adopt it",
+        "Offline connectivity concerns"
       ]
     },
     "secondary": {
@@ -88,10 +97,12 @@
         "YouTube"
       ],
       "pains": [
-        "Waiting-list confusion"
+        "Waiting-list confusion",
+        "Floor table turnover bottlenecks"
       ],
       "desires": [
-        "One screen for every table"
+        "One screen for every table",
+        "Fast FIFO queue seating"
       ],
       "objections": [
         "Training time"
@@ -99,17 +110,19 @@
     }
   },
   "strategy": {
-    "mission": "Help restaurants run calmly",
+    "mission": "Empower every Indian food business with modern, broadcast-grade live operations technology",
     "values": [
-      "Clarity",
-      "Reliability",
-      "Local-first"
+      "Operational speed and clarity",
+      "Zero customer friction",
+      "Uncompromising data isolation",
+      "Dual-storage resilience"
     ],
-    "positioning": "The calm, local-language way to run a restaurant",
+    "positioning": "The intelligent live operations platform built for high-velocity Indian dining",
     "personality": [
       "Confident",
       "Warm",
-      "Precise"
+      "Precise",
+      "Energetic"
     ],
     "notThis": [
       "Corporate",
@@ -117,39 +130,52 @@
       "Cluttered"
     ],
     "taglines": {
-      "en": "Run it calmly"
+      "en": "Intelligent Restaurant & Hotel Live Operations Platform",
+      "hi": "रेस्तरां और होटल के लिए आधुनिक लाइव ऑपरेशंस",
+      "mr": "रेस्टॉरंट आणि हॉटेलसाठी आधुनिक लाईव्ह ऑपरेशन्स"
     },
     "story": "Built for Indian restaurants, in the languages their teams speak"
   },
   "identity": {
     "logos": [
       {
-        "name": "primary-horizontal",
-        "file": "assets/logos/primary-horizontal.svg",
-        "background": "dark",
+        "name": "vector-mark",
+        "file": "assets/logo.svg",
+        "background": "any",
         "minWidthPx": 120,
-        "clearSpace": "Height of the icon on every side"
+        "clearSpace": "16px"
+      },
+      {
+        "name": "raster-logo",
+        "file": "assets/logo.png",
+        "background": "any",
+        "minWidthPx": 120,
+        "clearSpace": "16px"
       }
     ],
     "logoDonts": [
-      "Do not stretch",
-      "Do not recolor",
-      "Do not add shadows"
+      "Do not stretch or alter aspect ratio",
+      "Do not recolor the saffron (#E8590C) mark",
+      "Do not add drop shadows or low-contrast backgrounds"
     ],
     "animatedLogoFile": "assets/logos/logo-sting.json"
   },
   "colors": {
-    "primary": "#3B82F6",
-    "secondary": "#161F30",
+    "primary": "#E8590C",
+    "secondary": "#0F172A",
     "accent": "#10B981",
     "neutrals": [
-      "#0B0F19",
-      "#161F30",
-      "#E5E7EB"
+      "#F8FAFC",
+      "#FFFFFF",
+      "#F1F5F9",
+      "#E2E8F0",
+      "#0F172A",
+      "#475569",
+      "#94A3B8"
     ],
     "background": {
       "light": "#F8FAFC",
-      "dark": "#0B0F19"
+      "dark": "#0F172A"
     },
     "semantic": {
       "success": "#10B981",
@@ -157,7 +183,7 @@
       "error": "#EF4444",
       "info": "#3B82F6"
     },
-    "usageRatio": "70 percent neutral, 20 percent primary, 10 percent accent",
+    "usageRatio": "60% Deep Slate Navy, 30% Light Surface/Muted, 10% Saffron & Emerald accents",
     "gradientsAllowed": false,
     "gradients": [],
     "forbidden": [
@@ -171,15 +197,15 @@
       {
         "role": "heading",
         "script": "latin",
-        "family": "Outfit",
+        "family": "Inter",
         "weights": [
           600,
-          700
+          700,
+          800
         ],
         "source": "google",
         "licenseStatus": "open",
         "fallbacks": [
-          "Inter",
           "sans-serif"
         ]
       },
@@ -233,12 +259,12 @@
       "gutter": 24
     },
     "radii": {
-      "small": 8,
-      "medium": 16,
-      "large": 28
+      "small": 6,
+      "medium": 10,
+      "large": 14
     },
-    "shadows": "Soft, low-contrast, large blur",
-    "borders": "1 px hairline at low opacity",
+    "shadows": "0 4px 20px -2px rgba(15, 23, 42, 0.06)",
+    "borders": "1px hairline #E2E8F0",
     "spacingUnit": 8,
     "iconStyle": "outline",
     "patterns": []
@@ -269,7 +295,7 @@
       "web"
     ],
     "theme": "both",
-    "designSystemRef": "docs/design-system.md",
+    "designSystemRef": "@//config/branding",
     "fontsInUI": [
       "Inter",
       "Noto Sans Devanagari"
@@ -493,15 +519,20 @@
   "assets": {
     "provided": [
       {
-        "type": "logo",
-        "path": "assets/logos/primary-horizontal.svg",
+        "type": "vector_logo",
+        "path": "assets/logo.svg",
         "owner": "client",
-        "licenseNote": "Owner-created"
+        "licenseNote": "Brand identity asset"
+      },
+      {
+        "type": "raster_logo",
+        "path": "assets/logo.png",
+        "owner": "client",
+        "licenseNote": "Brand identity asset"
       }
     ],
     "missing": [
-      "Final logo files",
-      "Licensed music"
+      "Final sonic logo file"
     ]
   },
   "compliance": {
@@ -531,12 +562,15 @@
     "confidentiality": "standard"
   },
   "provenance": {
-    "legalName": "assumed",
-    "business.competitors": "assumed",
-    "strategy.taglines.en": "derived",
+    "legalName": "provided",
+    "business.competitors": "provided",
+    "strategy.taglines.en": "provided",
     "colors.primary": "provided",
+    "colors.secondary": "provided",
+    "colors.accent": "provided",
     "typography.families": "provided",
     "audience.primary": "derived",
+    "business.stage": "provided",
     "project.deadline": "assumed"
   }
 }

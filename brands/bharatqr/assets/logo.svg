@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+  <!-- BharatQR Official Vector Logo -->
+  <g transform="translate(10, 10)">
+    <!-- QR Code / Restaurant Mark Icon -->
+    <rect x="0" y="0" width="60" height="60" rx="14" fill="#E8590C"/>
+    <!-- Nested QR Finder Elements -->
+    <rect x="12" y="12" width="36" height="36" rx="8" fill="#FFFFFF"/>
+    <rect x="20" y="20" width="20" height="20" rx="4" fill="#0F172A"/>
+    <!-- Emerald Accent Dot representing live operation -->
+    <circle cx="48" cy="12" r="5" fill="#10B981"/>
+  </g>
+  <!-- Brand Typography -->
+  <text x="84" y="47" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="36" font-weight="800" fill="#0F172A" letter-spacing="-0.03em">
+    Bharat<tspan fill="#E8590C">QR</tspan>
+  </text>
+  <text x="86" y="62" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="10" font-weight="600" fill="#64748B" letter-spacing="0.08em">
+    LIVE OPERATIONS PLATFORM
+  </text>
+</svg>
