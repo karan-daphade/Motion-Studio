@@ -84,3 +84,41 @@ Output: `docs/PRD.full.md` — 2342 lines, 129,733 bytes.
 | docs/quality-rubric.md | 10 | 35 |
 | docs/roadmap.md | 13 | 17 |
 | docs/licensing.md | 15 | 50 |
+
+## Step 6: Phase 0 Foundations Setup
+
+### Pinned Versions & Native Binding Fix
+- Resolved npm optional dependency bug on Windows by pinning `@rspack/binding-win32-x64-msvc: 1.7.11`.
+- Pinned all `remotion` and `@remotion/*` packages to exact `4.0.533`.
+- Added `scripts/check-versions.mjs` (`npm run check:versions`).
+
+### Tooling
+- TypeScript compiler in strict mode (`tsconfig.json`).
+- ESLint configured with `@remotion/eslint-config-flat` (`eslint.config.mjs`).
+- Prettier (`.prettierrc`).
+- Vitest 3.2.7 and Vite 6.2.0 installed and configured (`vitest.config.ts`).
+- npm scripts: `typecheck`, `lint`, `test`, `check:versions`, `check:licenses`, `determinism`.
+
+### Tokens Skeleton
+- Created `src/tokens/`:
+  - `springs.ts` (`SPRING_LIGHT`, `SPRING_MEDIUM`, `SPRING_HEAVY`, `SPRING_HERO`)
+  - `easing.ts` (`HOUSE_EASE`, `EXIT_EASE`, `SNAP_EASE`)
+  - `timing.ts` (`DURATION_*`, `STAGGER_*`, `TEXT_HOLD_MIN`, `textHoldFrames`, `PERSPECTIVE`, `GRAIN`)
+  - `colors.ts` (`COLORS`)
+  - `safeZones.ts` (`SAFE_ZONE_9_16`, `SAFE_ZONE_16_9`, `SAFE_ZONE_1_1`, `SAFE_ZONES`)
+- Added comprehensive unit tests in `src/tokens/__tests__/tokens.test.ts` (13 tests passing).
+
+### Schemas
+- Created `src/schema/catalog.ts` and `src/schema/brand.ts` verbatim from `docs/schema.md`.
+- Added unit tests in `src/schema/__tests__/schema.test.ts` covering valid and invalid samples (4 tests passing).
+
+### Determinism Verification
+- Created `HelloDeterminism` composition in `src/compositions/HelloDeterminism.tsx` and registered in `src/Root.tsx`.
+- Created `scripts/check-determinism.mjs` (`npm run determinism`).
+- Stills rendered across two runs at frames 0, 15, 30, and 45. All frame SHA-256 hashes matched byte-for-byte.
+- Verified `npx remotion still HelloDeterminism out/hello_still.png --frame=30` generated valid still image (56,434 bytes).
+
+### Licensing Register & Audit
+- Created `LICENSES.md` recording all dependencies and permissible licenses.
+- Created `assets-manifest.json` skeleton for media asset provenance tracking.
+- Created `scripts/check-licenses.mjs` (`npm run check:licenses`) auditing package licenses and blocking forbidden packages.
