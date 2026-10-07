@@ -7,6 +7,8 @@ export const Lang = z.enum(['en', 'hi', 'mr']);
 export const LocaleCopy = z.object({
   title: z.string().max(48),
   sub: z.string().max(90),
+  reviewedBy: z.string().optional(),
+  reviewedOn: z.string().optional(),
 });
 
 export const Feature = z.object({
@@ -27,8 +29,8 @@ export const Feature = z.object({
       label: Lang.optional(),
     })
     .optional(),
-  locales: z.object({ en: LocaleCopy, hi: LocaleCopy, mr: LocaleCopy }),
-  voiceover: z.record(Lang, z.string()).optional(), // script lines per language
+  locales: z.record(LocaleCopy), // locales keyed by Lang: en, hi, mr, ...
+  voiceover: z.record(z.string()).optional(), // script lines per language
   sfxCues: z
     .array(
       z.object({

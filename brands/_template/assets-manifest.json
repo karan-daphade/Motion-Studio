@@ -1,0 +1,6 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "brandId": "__TEMPLATE_ID__",
+  "version": "1.0.0",
+  "assets": []
+}

@@ -6,8 +6,8 @@
 <tr>
 <td><p><strong>PRODUCT REQUIREMENTS DOCUMENT</strong></p>
 <p><strong>Motion Studio</strong></p>
-<p>A programmatic, agency-grade motion-video engine for a SaaS product,
-built with Remotion and AI coding agents</p>
+<p>A programmatic, agency-grade motion-video engine for BharatQR and
+other brands, built with Remotion and AI coding agents</p>
 <p>Remotion | React + TypeScript | Three.js + Blender | Whisper | Claude
 Code + Antigravity</p></td>
 </tr>
@@ -16,15 +16,16 @@ Code + Antigravity</p></td>
 
 |  |  |
 |----|----|
-| **Product promoted** | BharatQR (working name), a multi-tenant restaurant and hotel POS platform |
-| **Document version** | 1.0 (initial full PRD) |
-| **Date** | 5 October 2026 |
+| **Product promoted** | BharatQR (working name, brand \#1), a multi-tenant restaurant and hotel POS platform; other brands through Multi-Brand Mode |
+| **Document version** | 1.1 (adds Multi-Brand Mode and the Brand Intake pipeline) |
+| **Date** | 6 October 2026 |
 | **Owner** | Karan Datta Daphade |
 | **Status** | Draft for owner approval |
 | **Languages in scope** | English, Hindi, Marathi |
 | **Quality target** | Agency-grade output equivalent to a \$10,000 to \$20,000 (10 to 20 lakh rupees) production, and not generic AI-looking video |
 | **Software cost today** | Zero. Part A uses only free and open-source tools |
 | **Paid roadmap** | Part B (final section) lists every paid upgrade to consider when a budget becomes available |
+| **Companion file** | Brand_Intake_Template.docx: the questionnaire sent to each brand or client (section 16.8) |
 
 **Document Control**
 
@@ -33,12 +34,13 @@ Code + Antigravity</p></td>
 | **Version** | **Date** | **Change** | **Author** |
 |----|----|----|----|
 | 1.0 | 5 October 2026 | Initial full PRD: vision, creative strategy, architecture, complete free tech stack, requirements, hero film spec, roadmap, risks, licensing, Part B paid upgrades | Karan Datta Daphade with Claude |
+| 1.1 | 6 October 2026 | Added Multi-Brand (Client) Mode: Brand Profile schema, Brand Intake Document and pipeline, brand-compliance checks, client workflow, confidentiality tiers and LLM routing, client-work licensing. Fixed schemas (zod 4 compatible and tested), made languages brand-defined, corrected feature availability and roles, refreshed Remotion terms, extended Part B | Karan Datta Daphade with Claude |
 
 **How to read this document**
 
 | **Part** | **Contents** | **Audience** |
 |----|----|----|
-| Part A: Product Requirements (Sections 1-16, Appendices A-F) | Everything needed to build the studio with a free stack: vision, goals, creative direction, catalog, architecture, library inventory, skills, functional requirements, quality rubric, hero film, agent prompts, roadmap, risks, licensing | Owner and every coding agent |
+| Part A: Product Requirements (Sections 1-17, Appendices A-I) | Everything needed to build the studio with a free stack: vision, goals, creative direction, catalog, architecture, library inventory, skills, functional requirements, quality rubric, hero film, agent prompts, roadmap, risks, licensing, Multi-Brand Mode (Section 16), appendices | Owner and every coding agent |
 | Part B: Future Paid Upgrades | Prioritized shopping list for when budget arrives, with the free tool each upgrade replaces and triggers for buying | Owner (budget planning) |
 
 **Conventions**
@@ -110,13 +112,13 @@ governance and a paid-upgrade roadmap.*
 
 > [5.1 Principles](#sec_25)
 >
-> [5.2 Schema (Zod)](#sec_26)
+> [5.2 Schemas (Zod)](#sec_26)
 >
 > [5.3 Seed feature list (from the product roadmap)](#sec_27)
 >
 > [5.4 Localization workflow](#sec_28)
 >
-> [5.5 Personalization schema (tenant videos)](#sec_29)
+> [5.5 Personalization and cue-sheet schemas](#sec_29)
 
 [**6. System Architecture**](#sec_30)
 
@@ -193,82 +195,128 @@ governance and a paid-upgrade roadmap.*
 > [8.14 Live action and finishing (LIV)](#sec_66)
 >
 > [8.15 Automation (AUT)](#sec_67)
-
-[**9. Non-Functional Requirements**](#sec_68)
-
-[**10. Quality Standard: The Agency-Grade Rubric**](#sec_69)
-
-> [10.1 Scorecard](#sec_70)
 >
-> [10.2 Hard-fail conditions](#sec_71)
+> [8.16 Multi-brand requirements (BRD)](#sec_68)
+
+[**9. Non-Functional Requirements**](#sec_69)
+
+[**10. Quality Standard: The Agency-Grade Rubric**](#sec_70)
+
+> [10.1 Scorecard](#sec_71)
 >
-> [10.3 Review gates](#sec_72)
-
-[**11. Hero Film Specification: 'The Soundbox' (Draft)**](#sec_73)
-
-> [11.1 Beat sheet](#sec_74)
+> [10.2 Hard-fail conditions](#sec_72)
 >
-> [11.2 Hero film production checklist](#sec_75)
-
-[**12. AI Agent Operating Model**](#sec_76)
-
-> [12.1 Roles](#sec_77)
+> [10.3 Review gates](#sec_73)
 >
-> [12.2 Staged prompting framework](#sec_78)
+> [10.4 Scoring in Multi-Brand Mode](#sec_74)
+
+[**11. Hero Film Specification: 'The Soundbox' (Draft)**](#sec_75)
+
+> [11.1 Beat sheet](#sec_76)
 >
-> [12.3 Governance](#sec_79)
+> [11.2 Hero film production checklist](#sec_77)
 
-[**13. Build Roadmap (Dependency Order)**](#sec_80)
+[**12. AI Agent Operating Model**](#sec_78)
 
-[**14. Risks and Mitigations**](#sec_81)
-
-[**15. Licensing and Compliance Register**](#sec_82)
-
-> [15.1 Remotion](#sec_83)
+> [12.1 Roles](#sec_79)
 >
-> [15.2 License families in this project](#sec_84)
+> [12.2 Staged prompting framework](#sec_80)
 >
-> [15.3 Compliance practices](#sec_85)
+> [12.3 Governance](#sec_81)
 
-[**16. Open Decisions**](#sec_86)
+[**13. Build Roadmap (Dependency Order)**](#sec_82)
 
-[**Appendix A: \`remotion-guidelines.md\` (Draft Contents)**](#sec_87)
+[**14. Risks and Mitigations**](#sec_83)
 
-[**Appendix B: Cue-Sheet Example and Batch Commands**](#sec_88)
+[**15. Licensing and Compliance Register**](#sec_84)
 
-> [B.1 Cue-sheet JSON (excerpt)](#sec_89)
+> [15.1 Remotion](#sec_85)
 >
-> [B.2 Duration from audio](#sec_90)
+> [15.2 License families in this project](#sec_86)
 >
-> [B.3 Batch rendering (example)](#sec_91)
+> [15.3 Compliance practices](#sec_87)
+>
+> [15.4 Licensing when producing videos for clients](#sec_88)
 
-[**Appendix C: Pre-Release QA Checklist**](#sec_92)
+[**16. Multi-Brand (Client) Mode**](#sec_89)
 
-[**Appendix D: Devanagari Stress Strings**](#sec_93)
+> [16.1 Purpose and scope](#sec_90)
+>
+> [16.2 Principles](#sec_91)
+>
+> [16.3 Folder structure and isolation](#sec_92)
+>
+> [16.4 The Brand Profile (brand.json)](#sec_93)
+>
+> [16.5 Intake pipeline](#sec_94)
+>
+> [16.6 From brand profile to engine tokens](#sec_95)
+>
+> [16.7 Brand-compliance checks](#sec_96)
+>
+> [16.8 The Brand Intake Document](#sec_97)
+>
+> [16.9 Multi-brand requirements (BRD)](#sec_98)
+>
+> [16.10 Client workflow](#sec_99)
+>
+> [16.11 LLM usage plan and confidentiality tiers](#sec_100)
+>
+> [16.12 Contracts, licensing and IP for client work](#sec_101)
+>
+> [16.13 Changes this mode makes to the rest of the PRD](#sec_102)
 
-[**Appendix E: Learning and Reference Resources**](#sec_94)
+[**17. Open Decisions**](#sec_103)
 
-[**Appendix F: Glossary**](#sec_95)
+[**Appendix A: remotion-guidelines.md (Draft Contents)**](#sec_104)
 
-[**Part B: Future Paid Upgrades (Budget Roadmap)**](#sec_96)
+[**Appendix B: Cue-Sheet Example and Batch Commands**](#sec_105)
 
-> [B1. How to use this section](#sec_97)
+> [B.1 Cue-sheet JSON (validated example)](#sec_106)
 >
-> [B2. Where the free stack falls short](#sec_98)
+> [B.2 Duration from audio](#sec_107)
 >
-> [B3. Tier A: Human craft (highest impact per rupee)](#sec_99)
+> [B.3 Batch rendering (example)](#sec_108)
+
+[**Appendix C: Pre-Release QA Checklist**](#sec_109)
+
+[**Appendix D: Devanagari Stress Strings**](#sec_110)
+
+[**Appendix E: Learning and Reference Resources**](#sec_111)
+
+[**Appendix F: Intake Question Map**](#sec_112)
+
+[**Appendix G: Example brand.json (Illustrative)**](#sec_113)
+
+[**Appendix H: Extraction and Check Prompts**](#sec_114)
+
+> [H.1 Intake extraction prompt](#sec_115)
 >
-> [B4. Tier B: Tools and services that raise craft](#sec_100)
+> [H.2 Semantic claims and tone check (BC-06, BC-09)](#sec_116)
 >
-> [B5. Tier C: Scale and infrastructure](#sec_101)
+> [H.3 BRAND.md outline (generated by template)](#sec_117)
+
+[**Appendix I: Glossary**](#sec_118)
+
+[**Part B: Future Paid Upgrades (Budget Roadmap)**](#sec_119)
+
+> [B1. How to use this section](#sec_120)
 >
-> [B6. Tier D: Growth, legal and distribution](#sec_102)
+> [B2. Where the free stack falls short](#sec_121)
 >
-> [B7. Suggested purchase sequence](#sec_103)
+> [B3. Tier A: Human craft (highest impact per rupee)](#sec_122)
 >
-> [B8. Trigger checklist: when to start spending](#sec_104)
+> [B4. Tier B: Tools and services that raise craft](#sec_123)
 >
-> [B9. Budget log (fill in as you buy)](#sec_105)
+> [B5. Tier C: Scale and infrastructure](#sec_124)
+>
+> [B6. Tier D: Growth, legal and distribution](#sec_125)
+>
+> [B7. Suggested purchase sequence](#sec_126)
+>
+> [B8. Trigger checklist: when to start spending](#sec_127)
+>
+> [B9. Budget log (fill in as you buy)](#sec_128)
 
 <span id="sec_1" class="anchor"></span>1. Executive Summary
 
@@ -295,8 +343,15 @@ drafts used the placeholder CloudPOS): a multi-tenant, web-based
 restaurant and hotel POS and live-operations platform with QR-based
 table and room ordering, a 7-step branch onboarding wizard, table and
 session management, kitchen display, billing, GST-aware tax rules, and
-multi-outlet analytics. The audience is restaurant and cafe owners in
-India, communicating in **English, Hindi and Marathi**.
+multi-outlet analytics. Several of these modules are still in
+development (see the availability column in section 5.3). The audience
+is restaurant and cafe owners in India, communicating in **English,
+Hindi and Marathi**.
+
+BharatQR is **brand number one** in the studio. The same engine can also
+produce videos for other brands and clients through **Multi-Brand Mode**
+(section 16), which adds a Brand Kit folder per brand, a detailed Brand
+Intake Document, brand-compliance checks and a client approval workflow.
 
 <span id="sec_4" class="anchor"></span>1.3 Problem statement
 
@@ -319,9 +374,10 @@ India, communicating in **English, Hindi and Marathi**.
 
 A **data-driven, token-driven, agent-operated** pipeline:
 
-1.  **Catalog (the Brain):** product.json and features.json describe the
-    brand, every feature, mock data and localized copy in three
-    languages. No text is hardcoded in scenes.
+1.  **Catalog (the Brain):** per-brand product.json and features.json
+    describe the brand, every feature, mock data and localized copy in
+    every language the brand uses (English, Hindi and Marathi for
+    BharatQR). No text is hardcoded in scenes.
 
 2.  **Creative layer:** a written big idea, motion identity, style
     frames, storyboards and cue sheets produced before any code.
@@ -387,6 +443,7 @@ Metrics
 | G7 | Automate QA so defects are caught before a human looks. | Frees attention for creative judgment. |
 | G8 | Use only free and open-source components, with a license register proving compliance. | Zero budget today; no legal surprises later. |
 | G9 | Extend the engine into product features: personalized sales videos, owner recap videos, in-app tours. | Turns a marketing tool into a product advantage. |
+| G10 | Serve multiple brands and clients from one engine through isolated Brand Kits and a detailed Brand Intake Document, with brand-compliance checks. | Makes the studio reusable and potentially a service, without per-client rebuilds. |
 
 <span id="sec_9" class="anchor"></span>2.2 Non-goals
 
@@ -428,6 +485,7 @@ Cases
 | Owner / Producer | Founder and sole operator. Approves creative direction and final cuts. | Fast iteration, clear review gates, one command to render everything. |
 | Coding agents | Claude Code, Google Antigravity. Execute assembly, tests, renders. | Unambiguous written rules, typed props, deterministic APIs, a QA loop that tells them what is wrong. |
 | Reviewer agents | Vision-model critics, localization reviewers, sound checkers. | Rubrics, reference frames, structured JSON output. |
+| Client brand owner (Multi-Brand Mode) | Founder or marketing lead of another brand who supplies the Brand Intake Document and approves videos. | A clear intake form, a brand-lock step, approval packs and predictable revision rounds (section 16). |
 
 <span id="sec_13" class="anchor"></span>3.2 Audiences who watch the
 videos
@@ -466,6 +524,9 @@ videos
 | UC-10 | A/B hook testing | 3-5 variants of the first 3 seconds per video |
 | UC-11 | In-app guided tours | Remotion Player compositions inside the product |
 | UC-12 | Investor and partner reel | Studio-quality summary of product and engineering depth |
+| UC-13 | Brand onboarding for a new client | Completed intake, validated brand profile, approved style frames |
+| UC-14 | Client brand film | Hero film in the client's language set, brand-compliance checked |
+| UC-15 | Client campaign pack | Batch of feature, offer or festival videos from one locked brand profile |
 
 <span id="sec_16" class="anchor"></span>4. Creative Strategy and Art
 Direction
@@ -532,6 +593,12 @@ fps.
 | TEXT_HOLD | Minimum 36 frames, plus 8 frames per word beyond four | Readability floor for any on-screen text |
 | PERSPECTIVE | 1200 px; rotateX 10 deg, rotateY -8 deg resting tilt | 2.5D device and card presentation |
 | GRAIN | Seeded noise at 3-4 percent opacity | Anti-banding and film texture |
+
+**House tokens and brand tokens.** The values above are the studio's
+house defaults. In Multi-Brand Mode a brand may adjust motion tokens
+only inside the bounded ranges in section 16.6; safe zones, text-hold,
+contrast and Devanagari rules can be made stricter by a brand but never
+relaxed.
 
 **Principle:** heavier objects move slower and settle later. A phone
 moves differently from a small badge. Secondary motion (follow-through,
@@ -611,39 +678,70 @@ Model (the Brain)
 - **Mock data is realistic and Indian:** rupee amounts, plausible menu
   items, Indian names and table numbers.
 
-<span id="sec_26" class="anchor"></span>5.2 Schema (Zod)
+- **Brand-scoped:** catalog data lives under brands/\<id\>/catalog/
+  (section 16.3). BharatQR is the first brand; schemas live in
+  src/schema/.
 
-> // src/catalog/schema.ts
+<span id="sec_26" class="anchor"></span>5.2 Schemas (Zod)
+
+These schemas were written for this PRD, type-checked with strict
+TypeScript and exercised with valid and invalid sample data on zod 4.x.
+Languages and feature categories are **brand-defined** so other brands
+can use other languages (completeness against the brand's language list
+is enforced by the build script, CAT-04). Use two-argument z.record(key,
+value) and avoid enum-keyed records for optional per-language fields,
+because zod 4 treats enum-keyed records as exhaustive.
+
+> // src/schema/catalog.ts (Product, Feature, Tenant props, Cue sheet)
 >
 > import { z } from 'zod';
 >
-> export const Lang = z.enum(\['en', 'hi', 'mr'\]);
+> // Languages are brand-defined BCP-47 style codes ('en', 'hi', 'mr',
+> 'gu', ...).
+>
+> // Completeness against brand.localization.languages is checked by the
+> build script (CAT-04).
+>
+> export const Lang =
+> z.string().regex(/^\[a-z\]{2,3}(-\[A-Za-z0-9\]{2,8})\*\$/);
+>
+> const PerLang = z.record(Lang, z.string());
+>
+> const atLeastOne = (o: Record\<string, unknown\>) =\>
+> Object.keys(o).length \> 0;
 >
 > const LocaleCopy = z.object({ title: z.string().max(48), sub:
 > z.string().max(90) });
 >
+> const Frame = z.number().int().nonnegative();
+>
+> const Vec3 = z.tuple(\[z.number(), z.number(), z.number()\]);
+>
 > export const Feature = z.object({
 >
-> key: z.string(), // e.g. 'qr_ordering'
+> key: z.string(), // e.g. 'qr_table_ordering'
 >
-> category: z.enum(\['Customer
-> Experience','Operations','Billing','Setup','Insights'\]),
+> category: z.string(), // taxonomy is defined per brand
 >
 > availability: z.enum(\['live', 'beta', 'roadmap'\]),
 >
 > uiComponent: z.string(), // component registered in components/
 >
-> mockData: z.record(z.any()), // props passed to the UI component
+> mockData: z.record(z.string(), z.any()), // props passed to the UI
+> component
 >
-> heroMetric: z.object({ value: z.string(), label: Lang.optional()
+> heroMetric: z.object({ value: z.string(), label: PerLang.optional()
 > }).optional(),
 >
-> locales: z.object({ en: LocaleCopy, hi: LocaleCopy, mr: LocaleCopy }),
+> locales: z.record(Lang, LocaleCopy).refine(atLeastOne, 'at least one
+> language'),
 >
-> voiceover: z.record(Lang, z.string()).optional(), // script lines per
-> language
+> reviewed: z.record(Lang, z.string()).optional(), // language -\>
+> reviewer + date
 >
-> sfxCues: z.array(z.object({ frame: z.number(), sfx: z.string()
+> voiceover: PerLang.optional(), // script lines per language
+>
+> sfxCues: z.array(z.object({ frame: Frame, sfx: z.string()
 > })).optional(),
 >
 > hooks: z.array(z.string()).optional(), // A/B hook variants
@@ -654,57 +752,15 @@ Model (the Brain)
 >
 > name: z.string(), domain: z.string(),
 >
-> palette: z.record(z.string()), // background, surface, primary, accent
+> palette: z.record(z.string(), z.string()), // background, surface,
+> primary, accent
 >
-> cta: z.record(Lang, z.string()),
+> cta: PerLang.refine(atLeastOne, 'at least one language'),
 >
 > logo: z.object({ svg: z.string(), sting: z.string() }),
 >
 > });
-
-<span id="sec_27" class="anchor"></span>5.3 Seed feature list (from the
-product roadmap)
-
-The catalog is seeded from the real product. availability below reflects
-the current build status and must be kept in sync.
-
-| **Feature key** | **Category** | **Hero visual** | **Availability** |
-|----|----|----|----|
-| qr_table_ordering | Customer Experience | QR code match-cut to table and menu on a phone | Roadmap (customer flow is the last build phase) |
-| qr_generation_download | Setup | Per-table QR cards fanning out into a ZIP download | Live |
-| onboarding_wizard | Setup | Seven steps progressing: Branch, Kitchen, Shift, Sections, Employees, Menu, Tax | Live |
-| table_management | Operations | Floor grid with live table states, merging and reservations | Live (in development) |
-| waiting_list_tokens | Operations | Walk-in queue token (e.g. A-12) assigned to a table | Live (in development) |
-| menu_management | Setup | Spreadsheet-style menu with variations and add-ons | Live |
-| tax_promo_rules | Billing | GST rules and promo codes table with channel scoping | Live |
-| multi_outlet_dashboard | Insights | Sales, orders, tables and employees widgets across outlets | Live (shell) |
-| orders_live | Operations | Orders with Waiting, Accepted and Completed states | Roadmap |
-| kitchen_display | Operations | KDS tickets moving across the kitchen board | Roadmap |
-| billing_split | Billing | Bill creation, split bill, payment settled with a ding | Roadmap |
-| roles_permissions | Setup | Granular role matrix (Owner, Manager, Waiter, Biller) | Roadmap |
-| kot_printing | Operations | Thermal printer ticket printing in the kitchen | Roadmap |
-| offline_mode | Operations | Orders keep flowing when the internet drops | Roadmap |
-| delivery_platform_sync | Operations | Zomato and other platform orders in one screen | Roadmap |
-
-<span id="sec_28" class="anchor"></span>5.4 Localization workflow
-
-1.  Agent drafts copy in English, then Hindi and Marathi
-    **transcreated** (re-written naturally, not literally translated).
-    Hindi may use natural Hinglish for terms like QR, bill and order.
-
-2.  A native speaker reviews and approves; approved strings are locked
-    in the catalog with a reviewedBy and date field.
-
-3.  Automated checks verify length limits per language (Devanagari often
-    runs longer), glyph coverage, and absence of untranslated
-    placeholders.
-
-4.  Voiceover script is generated from the locked copy and rechecked for
-    pronunciation of English loanwords and rupee amounts.
-
-<span id="sec_29" class="anchor"></span>5.5 Personalization schema
-(tenant videos)
-
+>
 > export const TenantVideoProps = z.object({
 >
 > restaurantName: z.string(), logoUrl: z.string().optional(),
@@ -722,7 +778,123 @@ the current build status and must be kept in sync.
 > stats: z.object({ orders: z.number(), revenue: z.string(), topDish:
 > z.string() }).optional(),
 >
+> consentToUseData: z.literal(true), // recap and pitch videos need
+> owner consent
+>
 > });
+>
+> export const CueSheet = z.object({
+>
+> composition: z.string(), lang: Lang, fps: z.number().int().positive(),
+>
+> feature: z.string(), durationInFrames: z.number().int().positive(),
+>
+> scenes: z.array(z.object({
+>
+> id: z.string(),
+>
+> scene: z.enum(\[
+>
+> 'Hook', 'Problem', 'Reveal', 'FeatureDemo', 'Proof', 'Montage', 'CTA',
+> 'LogoSting',
+>
+> \]),
+>
+> from: Frame, to: Frame,
+>
+> })).min(1),
+>
+> voiceover: z.array(z.object({ line: z.string(), startFrame: Frame })),
+>
+> sfx: z.array(z.object({
+>
+> frame: Frame, file: z.string(),
+>
+> pan: z.number().min(-1).max(1), gain: z.number().min(0).max(1),
+>
+> })),
+>
+> music: z.object({
+>
+> file: z.string(), duckTo: z.number().min(0).max(1), restoreTo:
+> z.number().min(0).max(1),
+>
+> }),
+>
+> cursor: z.array(z.object({
+>
+> frame: Frame, x: z.number(), y: z.number(), click:
+> z.boolean().optional(),
+>
+> })),
+>
+> camera: z.array(z.object({ frame: Frame, pos: Vec3, look: Vec3, fov:
+> z.number() })),
+>
+> }).refine(
+>
+> \(c\) =\> c.scenes.every((s) =\> s.from \< s.to && s.to \<=
+> c.durationInFrames),
+>
+> { message: 'every scene needs from \< to and to \<= durationInFrames'
+> },
+>
+> );
+
+<span id="sec_27" class="anchor"></span>5.3 Seed feature list (from the
+product roadmap)
+
+The catalog is seeded from the real product. availability below reflects
+the current build status and must be kept in sync.
+
+| **Feature key** | **Category** | **Hero visual** | **Availability** |
+|----|----|----|----|
+| qr_table_ordering | Customer Experience | QR code match-cut to table and menu on a phone | Roadmap (customer flow is the last build phase) |
+| qr_generation_download | Setup | Per-table QR cards fanning out into a ZIP download | Live |
+| onboarding_wizard | Setup | Seven steps progressing: Branch, Kitchen, Shift, Sections, Employees, Menu, Tax | Live |
+| table_management | Operations | Floor grid with live table states, merging and reservations | Live (in development) |
+| waiting_list_tokens | Operations | Walk-in queue token (e.g. A-12) assigned to a table | Live (in development) |
+| menu_management | Setup | Spreadsheet-style menu with variations and add-ons | Live |
+| tax_promo_rules | Billing | GST rules and promo codes table with channel scoping | Live |
+| multi_outlet_dashboard | Insights | Sales, orders, tables and employees widgets across outlets | In development (dashboard shell) |
+| orders_live | Operations | Orders with Waiting, Accepted and Completed states | Roadmap (placeholder shell exists) |
+| kitchen_display | Operations | KDS tickets moving across the kitchen board | Roadmap (placeholder shell exists) |
+| billing_split | Billing | Bill creation, split bill, payment settled with a ding | Roadmap (placeholder shell exists) |
+| roles_permissions | Setup | Granular role matrix (Owner, Branch Manager, Section Manager, Biller, Waiter, Kitchen Staff) | Partial (table permissions enforced; full matrix planned) |
+| kot_printing | Operations | Thermal printer ticket printing in the kitchen | Roadmap |
+| offline_mode | Operations | Orders keep flowing when the internet drops | Roadmap |
+| delivery_platform_sync | Operations | Zomato and other platform orders in one screen | Roadmap |
+
+*Status reflects the owner's project notes as of 6 October 2026. Confirm
+it before each release; the QA gate blocks any roadmap feature shown
+without a 'coming soon' label.*
+
+<span id="sec_28" class="anchor"></span>5.4 Localization workflow
+
+1.  Agent drafts copy in English, then Hindi and Marathi
+    **transcreated** (re-written naturally, not literally translated).
+    Hindi may use natural Hinglish for terms like QR, bill and order.
+
+2.  A native speaker reviews and approves; approved strings are locked
+    in the catalog with a reviewedBy and date field.
+
+3.  Automated checks verify length limits per language (Devanagari often
+    runs longer), glyph coverage, and absence of untranslated
+    placeholders.
+
+4.  Voiceover script is generated from the locked copy and rechecked for
+    pronunciation of English loanwords and rupee amounts.
+
+<span id="sec_29" class="anchor"></span>5.5 Personalization and
+cue-sheet schemas
+
+TenantVideoProps (personalized and recap videos) and CueSheet (the
+frame-accurate plan produced at Stage 1) are defined in the same schema
+file shown in 5.2. TenantVideoProps requires consentToUseData: true, so
+a recap or pitch video cannot be built from a restaurant's data without
+recorded consent. CueSheet rejects any scene that ends after the
+composition does. An example cue sheet that validates against it is in
+Appendix B.
 
 <span id="sec_30" class="anchor"></span>6. System Architecture
 
@@ -777,41 +949,47 @@ the current build status and must be kept in sync.
 > │ ├── remotion-guidelines.md \# non-negotiable quality rules (Appendix
 > A)
 >
-> │ ├── motion-identity.md \# tokens, camera, sound palette
+> │ ├── motion-identity.md \# house tokens, camera, sound palette
 >
-> │ ├── references/ \# reference-study briefs
->
-> │ ├── style-frames/ \# approved stills
+> │ ├── references/ style-frames/ \# study briefs, approved stills
 >
 > │ └── decisions/ \# decision log (ADR-style)
 >
 > ├── skills/ \# custom agent skills (see 7.13)
 >
-> ├── frontend/ \# the SaaS app (separate; components cloned from here)
+> ├── brands/ \# one isolated folder per brand (section 16.3)
+>
+> │ ├── \_template/ \# copied to start a new brand
+>
+> │ └── bharatqr/ \# brand \#1: intake/, brand.json, catalog/, assets/,
+> ui/
+>
+> ├── frontend/ \# the BharatQR app (separate; components cloned from
+> here)
 >
 > └── remotion-video/
 >
 > ├── public/
 >
-> │ ├── voiceovers/{en,hi,mr}/ \# narration audio
+> │ ├── brand/ \# generated copy of the ACTIVE brand's assets
+> (gitignored)
 >
-> │ ├── music/ sfx/ \# licensed or free-licensed audio
+> │ ├── models/ hdri/ \# shared GLB models and HDR maps (CC0 or logged)
 >
-> │ ├── models/ hdri/ \# GLB models, HDR environment maps
+> │ ├── luts/ textures/ \# shared .cube LUTs, grain, light-leak plates
 >
-> │ ├── luts/ textures/ \# .cube LUTs, grain, light-leak plates
->
-> │ ├── footage/ lottie/ \# live-action plates, Lottie/Rive files
->
-> │ └── brand/ \# logo SVG, sonic logo, fonts (if local)
+> │ └── sfx/ \# shared generic SFX (logged licenses)
 >
 > ├── src/
 >
-> │ ├── catalog/ \# schema.ts, product.json, features.json, tenants/
+> │ ├── schema/ \# catalog.ts, brand.ts (Zod; see 5.2 and 16.4)
 >
-> │ ├── tokens/ \# springs, easing, timing, colors, type, safe zones
+> │ ├── tokens/ \# house springs, easing, timing, colors, type, safe
+> zones
 >
 > │ ├── engine/ \# primitives, camera rig, 3D, shaders, audio, captions
+>
+> │ ├── theme/ \# brand theme provider (reads brand.json)
 >
 > │ ├── components/ \# ui-clones/, devices/, charts/, shared/
 >
@@ -826,18 +1004,19 @@ the current build status and must be kept in sync.
 >
 > │ ├── index.ts
 >
-> │ └── render-all.ts \# batch renderer (languages x formats x variants)
+> │ └── render-all.ts \# batch renderer (brands x languages x formats x
+> variants)
 >
-> ├── scripts/ \# whisper, audio-master, qa, capture, manifest, grade
+> ├── scripts/ \# whisper, audio-master, qa, capture, sync-brand,
+> manifest
 >
 > ├── blender/ \# .blend sources, bpy scripts, exports
 >
 > ├── qa/ \# reports, golden frames, rubric results
 >
-> ├── out/ \# renders (gitignored)
+> ├── out/\<brand\>/\<lang\>/\<fmt\>/ \# renders (gitignored)
 >
 > ├── remotion.config.ts package.json tsconfig.json LICENSES.md
-> assets-manifest.json
 
 <span id="sec_34" class="anchor"></span>6.4 Production pipeline
 
@@ -882,12 +1061,16 @@ provenance
 - Git with tagged releases per video; each tag stores the composition
   ID, props hash and tool versions.
 
-- assets-manifest.json records source, author, license, URL, date and
-  attribution text for every asset; LICENSES.md records every
-  dependency.
+- assets-manifest.json (one per brand, plus one for shared engine
+  assets) records source, author, license, URL, date and attribution
+  text for every asset; LICENSES.md records every dependency.
 
 - Render cache for precomputed physics, Whisper output, depth maps and
   cutouts, keyed by input hash.
+
+- Each brand carries its own assets-manifest.json and license notes
+  inside brands/\<id\>/ (section 16.3); the engine repository holds only
+  shared assets and LICENSES.md for engine dependencies.
 
 - A render manifest (JSON) is emitted per batch: composition, language,
   format, props, durations, loudness, checksums.
@@ -1054,7 +1237,7 @@ strings; verify every glyph renders in the final font before approval.
 | React 19, TypeScript | Application and composition language (matches product stack) | MIT / Apache-2.0 |
 | Tailwind CSS, Radix UI, shadcn/ui source | Styling and primitives for cloned product components | MIT |
 | clsx, class-variance-authority | Variant handling in components | MIT / Apache-2.0 |
-| zod | Catalog, props and cue-sheet validation; structured LLM output schemas | MIT |
+| zod | Catalog, brand, props and cue-sheet validation; structured LLM output schemas. Pin the version: the schemas in this PRD were tested on zod 4.x | MIT |
 | zod-to-json-schema | Export schemas for LLM structured output | ISC |
 | d3 (d3-scale, d3-shape, d3-array) | Custom frame-driven charts for analytics scenes | ISC |
 | date-fns, Intl.NumberFormat('en-IN') | Dates; Indian number grouping (lakh, crore) and rupee formatting | MIT / built in |
@@ -1110,7 +1293,9 @@ tools (local, free)
 | pixelmatch, imagehash, Pillow, NumPy | Frame diff, visual regression, determinism hashes, safe-zone and contrast checks | ISC / BSD / HPND |
 | ComfyUI with FLUX.1 \[schnell\] or SDXL (verify model licenses) | Local image generation for textures and backgrounds; never the main visual | GPL-3.0 (ComfyUI); model licenses vary |
 | Claude Code, Google Antigravity | Coding agents and vision critique (existing plans) | Existing subscriptions; API usage billed separately (see Part B) |
-| Ollama with an open-weight vision model (verify license) | Free local alternative for visual critique | Varies by model |
+| Ollama with an open-weight vision model (verify license) | Free local alternative for visual critique and for confidential client material that must not leave the machine | Varies by model |
+| Gemini API free tier | Free cloud LLM for non-sensitive tasks. Google states that on the free tier your prompts and responses may be used to improve its products (human reviewers may read them); the paid tier is not used that way. Never send confidential client data here | Free tier with rate limits (verify current limits and terms) |
+| Groq or OpenRouter free models (verify) | Optional free cloud inference for drafts and structured extraction of non-sensitive content. Check each provider's data-use terms, limits and model licenses | Free tiers (verify) |
 
 <span id="sec_47" class="anchor"></span>7.10 Media production and
 finishing tools
@@ -1178,7 +1363,7 @@ Existing or external skills
 | skill-creator | Create, test and improve the custom skills below | Anthropic example skill |
 | docx, pdf, pptx, xlsx | Produce supporting documents: PRD exports, pitch decks, budget sheets, release PDFs | Anthropic public skills |
 
-Custom skills to author (16)
+Custom skills to author (19)
 
 | **Skill folder** | **What it teaches the agent** |
 |----|----|
@@ -1198,6 +1383,9 @@ Custom skills to author (16)
 | playwright-capture | Deterministic app capture with seeded data, cursor path recording, 60 fps output |
 | release-notes-video | Turn a changelog and fresh captures into a release clip |
 | tenant-personalization | Validate tenant props, snapshot assets, safe fallbacks, per-tenant rendering |
+| brand-intake | Read a filled Brand Intake Document, run the completeness check, extract brand.json using intake IDs, never invent values, apply studio defaults, list missing items |
+| brand-compliance | Run checks BC-01 to BC-15 against a locked brand profile and report hard fails and warnings |
+| client-workflow | Gates, approval records, revision rounds, change requests, delivery package, confidentiality tiers and the LLM routing policy |
 
 <span id="sec_51" class="anchor"></span>7.14 Verification protocol and
 forbidden list
@@ -1248,10 +1436,10 @@ Requirements are grouped by capability. There is no MVP cut-line;
 
 | **ID** | **Requirement** | **Acceptance criteria** | **Tier** |
 |----|----|----|----|
-| CAT-01 | Zod schemas for Product, Feature, Tenant props and Cue Sheet. | Invalid catalog fails the build with a readable error; schemas exported as JSON Schema. | T0 |
-| CAT-02 | product.json holds brand name, domain, palette, CTA per language, logo and sonic logo reference. | Changing the primary color updates every composition with no code edit. | T0 |
-| CAT-03 | features.json holds every feature with category, availability, UI component, mock data, localized copy, voiceover and hooks. | A new feature is addable with data only; at least 15 seed features present. | T0 |
-| CAT-04 | Locale completeness gate: a feature is renderable only when en, hi, mr exist and are marked reviewed. | Rendering an unreviewed language is blocked with a clear message. | T1 |
+| CAT-01 | Zod schemas for Product, Feature, Tenant props, Cue Sheet (src/schema/catalog.ts) and Brand Profile (src/schema/brand.ts). | Invalid catalog or brand file fails the build with a readable error; schemas exported as JSON Schema. | T0 |
+| CAT-02 | Each brand has brands/\<id\>/catalog/product.json with name, domain, palette, CTA per language, logo and sonic logo reference. | Changing the primary color in the brand files updates every composition with no code edit. | T0 |
+| CAT-03 | Each brand has brands/\<id\>/catalog/features.json with every feature: category, availability, UI component, mock data, localized copy, voiceover and hooks. | A new feature is addable with data only; BharatQR has at least 15 seed features. | T0 |
+| CAT-04 | Locale completeness gate: a feature is renderable only when every language in the brand's localization.languages has copy and a recorded reviewer (for BharatQR: en, hi, mr). | Rendering an incomplete or unreviewed language is blocked with a clear message listing what is missing. | T1 |
 | CAT-05 | Availability enforcement: roadmap features show a 'coming soon' treatment. | QA fails if a roadmap feature appears without the label. | T1 |
 | CAT-06 | Length limits per field and language (title 48, sub 90 characters, adjustable). | Overlong strings fail validation before render. | T1 |
 | CAT-07 | Realistic mock-data library (Indian names, menu items, rupee amounts, table numbers). | No lorem ipsum or Western placeholder data anywhere. | T1 |
@@ -1267,6 +1455,7 @@ Requirements are grouped by capability. There is no MVP cut-line;
 | DS-03 | Theme object derived from product.json palette, with perceptual color helpers. | Swapping brand color keeps contrast above 4.5:1 for text. | T1 |
 | DS-04 | Safe-zone constants for each format (9:16, 4:5, 1:1, 16:9). | Overlay helper renders the zones in Studio for review. | T1 |
 | DS-05 | Motion identity doc generated from tokens. | docs/motion-identity.md stays in sync with code via a script. | T2 |
+| DS-06 | Brand token overrides: colors, typography, layout and motion personality from brand.json feed the theme; motion overrides must stay inside the bounded ranges in section 16.6. | An override outside its range fails validation; safe-zone, text-hold, contrast and Devanagari rules cannot be relaxed by a brand. | T2 |
 
 <span id="sec_55" class="anchor"></span>8.3 Component library (UI)
 
@@ -1455,7 +1644,14 @@ integration (PER)
 | AUT-03 | A/B hook variants rendered from a list in the catalog. | Three or more variants per video in the batch manifest. | T3 |
 | AUT-04 | Cue-sheet generator: given feature keys, a language model returns validated cue-sheet JSON. | Output passes the Cue Sheet schema or is rejected and retried. | T1 |
 
-<span id="sec_68" class="anchor"></span>9. Non-Functional Requirements
+<span id="sec_68" class="anchor"></span>8.16 Multi-brand requirements
+(BRD)
+
+Requirements for serving multiple brands and clients (BRD-01 to BRD-26)
+are specified in section 16.9 so that the brand model, intake process,
+compliance checks and client workflow can be read in one place.
+
+<span id="sec_69" class="anchor"></span>9. Non-Functional Requirements
 
 | **Area** | **Requirement** | **Measure** |
 |----|----|----|
@@ -1471,8 +1667,10 @@ integration (PER)
 | Licensing | Only free or open-source components; every dependency and asset logged. | Pre-release audit produces a clean register. |
 | Observability | Each render logs inputs, versions, durations and warnings. | Render manifest per batch. |
 | Honesty in marketing | No unshipped feature presented as live. | QA-08 and CAT-05 enforced. |
+| Confidentiality (client brands) | Client materials are processed only as allowed by the brand's confidentiality tier; cloud AI services are restricted for NDA and restricted projects (section 16.11). | LLM router policy test; no client files in shared repositories. |
+| Brand isolation | Assets, catalogs, prompts and outputs of one brand are never available to another brand's render. | Path check in the asset loader; separate repositories or submodules per client (section 16.3). |
 
-<span id="sec_69" class="anchor"></span>10. Quality Standard: The
+<span id="sec_70" class="anchor"></span>10. Quality Standard: The
 Agency-Grade Rubric
 
 Every release is scored out of 100 by (1) a vision-model critique
@@ -1480,7 +1678,7 @@ against style frames and (2) the owner. The target is **85 or more for
 hero films and 80 or more for feature videos**. Any hard-fail condition
 rejects the video regardless of score.
 
-<span id="sec_70" class="anchor"></span>10.1 Scorecard
+<span id="sec_71" class="anchor"></span>10.1 Scorecard
 
 | **Category** | **Points** | **What a 90 percent score looks like** |
 |----|----|----|
@@ -1494,7 +1692,7 @@ rejects the video regardless of score.
 | UI accuracy and honesty | 5 | Screens match the real product; roadmap items are labeled. |
 | Technical delivery | 5 | Correct formats, safe zones, loudness, captions, file sizes. |
 
-<span id="sec_71" class="anchor"></span>10.2 Hard-fail conditions
+<span id="sec_72" class="anchor"></span>10.2 Hard-fail conditions
 
 - Broken or clipped Devanagari glyphs in any frame.
 
@@ -1509,19 +1707,28 @@ rejects the video regardless of score.
 
 - Visible flicker, banding or dropped frames.
 
-- Unreviewed Hindi or Marathi copy or audio.
+- Unreviewed copy or audio in any delivered language (for BharatQR:
+  Hindi and Marathi).
 
-<span id="sec_72" class="anchor"></span>10.3 Review gates
+<span id="sec_73" class="anchor"></span>10.3 Review gates
 
 | **Gate** | **Artifact reviewed** | **Reviewer** |
 |----|----|----|
 | G1 Style frames | 5-8 stills | Owner |
 | G2 Animatic | Rough timing with scratch voice, boxes for visuals | Owner and critique agent |
 | G3 Picture lock | Full visuals, temporary sound | Owner and critique agent (rubric) |
-| G4 Sound lock | Final mix and captions | Owner, native speaker for HI and MR |
+| G4 Sound lock | Final mix and captions | Owner, plus a native speaker for each delivered language |
 | G5 Release QA | Final deliverables and manifest | Automated QA, then owner |
 
-<span id="sec_73" class="anchor"></span>11. Hero Film Specification:
+<span id="sec_74" class="anchor"></span>10.4 Scoring in Multi-Brand Mode
+
+For client brands the final score is **0.9 x base score + brand fidelity
+(0 to 10)**, so the maximum stays 100. Brand fidelity awards: identity
+and logo rules 3, color and typography 3, motion and sound personality
+match 2, messaging and tone 2. Brand-compliance hard fails (section
+16.7) reject a video regardless of score.
+
+<span id="sec_75" class="anchor"></span>11. Hero Film Specification:
 'The Soundbox' (Draft)
 
 A concrete first target that exercises every layer of the studio. This
@@ -1537,7 +1744,7 @@ script.
 | **Look** | Dark, warm-lit cafe counter and kitchen; steel, glass and paper textures; restrained bloom and grain; saffron or marigold accent decided at style-frame stage. |
 | **Availability caveat** | Several beats show features that are on the roadmap (customer QR ordering, KDS, billing). Either release the film after those ship, or label it as a vision film with 'coming soon' treatment. |
 
-<span id="sec_74" class="anchor"></span>11.1 Beat sheet
+<span id="sec_76" class="anchor"></span>11.1 Beat sheet
 
 <table>
 <colgroup>
@@ -1657,7 +1864,7 @@ type.</p></td>
 speech. Hindi and Marathi often run longer; durations are re-measured
 from the actual audio and scenes stretch through calculateMetadata.
 
-<span id="sec_75" class="anchor"></span>11.2 Hero film production
+<span id="sec_77" class="anchor"></span>11.2 Hero film production
 checklist
 
 - Approve concept and style frames (G1); write catalog entries and
@@ -1675,9 +1882,9 @@ checklist
 
 - Supersampled render, grade, encodes, captions, manifest, QA (G5).
 
-<span id="sec_76" class="anchor"></span>12. AI Agent Operating Model
+<span id="sec_78" class="anchor"></span>12. AI Agent Operating Model
 
-<span id="sec_77" class="anchor"></span>12.1 Roles
+<span id="sec_79" class="anchor"></span>12.1 Roles
 
 | **Role** | **Responsibility** | **Inputs** | **Outputs** |
 |----|----|----|----|
@@ -1685,7 +1892,8 @@ checklist
 | Art-director critic | Judges stills against style frames and rubric | Rendered stills, style frames, rubric | Scores and fix list (JSON) |
 | Motion engineer | Writes components, scenes and compositions to spec | Cue sheet, tokens, guidelines | Typed code, previews |
 | 3D artist | R3F scenes and Blender scripts | Beat sheet, camera plan | GLB, image sequences, scene code |
-| Localization editor | Transcreation, glyph and length checks | English copy, tone guide | Locked HI and MR copy |
+| Brand analyst (Multi-Brand Mode) | Reads the intake, runs the completeness check, builds and validates brand.json, flags gaps and conflicts | Filled Brand Intake Document, attachments | Validated brand profile, missing-items list |
+| Localization editor | Transcreation, glyph and length checks | English copy, tone guide | Locked copy in every brand language |
 | Sound editor | Palette, SFX placement, mix, ducking | Locked picture, cue sheet | Final audio, loudness report |
 | QA engineer | Runs automated checks and regression | Renders, manifest | QA report, pass or fail |
 | Render operator | Batch rendering, finishing, packaging | Locked compositions | Deliverables, manifest |
@@ -1694,7 +1902,7 @@ One underlying agent (Claude Code or Antigravity) can play each role in
 turn, loading the matching skill. The roles exist so each task has a
 clear contract, not to imply separate systems.
 
-<span id="sec_78" class="anchor"></span>12.2 Staged prompting framework
+<span id="sec_80" class="anchor"></span>12.2 Staged prompting framework
 
 Prompts are templates stored in the repo. Every stage prompt begins with
 the standard footer.
@@ -1732,7 +1940,7 @@ Stage 1: Cue-sheet prompt
 > Role: Director. Input: feature keys \<keys\>, language \<lang\>,
 > approved style frames.
 >
-> Output: a Cue Sheet JSON that validates against src/catalog/schema.ts
+> Output: a Cue Sheet JSON that validates against src/schema/catalog.ts
 > (CueSheet).
 >
 > Include scene boundaries in frames at 30 fps, voiceover lines with
@@ -1789,7 +1997,7 @@ Stage 5: Release prompt
 > run all QA checks, generate the render manifest and license audit.
 > Stop on any hard fail.
 
-<span id="sec_79" class="anchor"></span>12.3 Governance
+<span id="sec_81" class="anchor"></span>12.3 Governance
 
 - Agents never change tokens, rubric or guidelines without an approved
   decision-log entry.
@@ -1802,7 +2010,7 @@ Stage 5: Release prompt
 - If an agent is unsure about a package, license or API, it must verify
   rather than guess.
 
-<span id="sec_80" class="anchor"></span>13. Build Roadmap (Dependency
+<span id="sec_82" class="anchor"></span>13. Build Roadmap (Dependency
 Order)
 
 Phases are ordered by dependency. With agent-driven development, several
@@ -1811,7 +2019,7 @@ phases can proceed in parallel once their prerequisites are met.
 | **Phase** | **Scope** | **Deliverables** | **Exit criteria** |
 |----|----|----|----|
 | 0 Foundations | Repo, Remotion setup, pinned versions, tokens skeleton, guidelines, CLAUDE.md, license register, package verification | Running Studio, lint rules, LICENSES.md, assets-manifest.json, first 8 skills | Hello-world composition renders deterministically |
-| 1 The Brain | Schemas, product.json, features.json (15 seed features), locale workflow | Validated catalog, native-reviewed EN, HI, MR copy for first features | Catalog gate blocks incomplete features |
+| 1 The Brain | Schemas in src/schema/, the brands/ folder with \_template/ and bharatqr/, product.json, features.json (15 seed features), locale workflow | Validated catalog, native-reviewed EN, HI, MR copy for first features | Catalog gate blocks incomplete features |
 | 2 Components | UI clones, device frames, cursor, charts, Storybook | Story for every clone; mock-data fixtures | Brand-color swap test passes |
 | 3 Scene engine | Scene templates, transitions, composition registry, first feature reel (EN) | One complete 20 s reel | Rubric 70+ on first pass |
 | 4 Audio | VO pipeline, Whisper sync, captions, SFX palette, ducking, mastering | Fully mixed reel in 3 languages | Loudness and sync checks pass |
@@ -1821,8 +2029,9 @@ phases can proceed in parallel once their prerequisites are met.
 | 8 Hero film | Soundbox film with footage plates, Blender shots, designed sound, grade | 60 s and 30 s hero cuts in all formats | Rubric 85+ |
 | 9 Product features | Tenant personalization, owner recap, Player embed, festival templates, signage | Working personalized renders and in-app Player | Tenant video renders from live data snapshot |
 | 10 Automation | Playwright capture, release-note videos, A/B variants | One-command release clip | Zero manual steps for a release video |
+| 11 Multi-Brand Mode | Brand Intake pipeline, completeness check, extraction, studio defaults, brand lock, theme provider, brand-compliance QA, approval records, LLM router, second-brand pilot | Working brand:new, brand:validate, intake ingestion, compliance report, one pilot client brand | A new brand goes from filled intake to approved style frames with no engine code changes |
 
-<span id="sec_81" class="anchor"></span>14. Risks and Mitigations
+<span id="sec_83" class="anchor"></span>14. Risks and Mitigations
 
 | **Risk** | **Impact** | **Mitigation** |
 |----|----|----|
@@ -1840,38 +2049,56 @@ phases can proceed in parallel once their prerequisites are met.
 | Scope creep from the long feature list | Diluted quality | Rubric governs; one hero per scene; remove before adding. |
 | Agent drift from guidelines over long sessions | Inconsistent output | Standard footer, short focused tasks, regression checks. |
 | Synthetic voice or likeness misuse | Ethical and platform-policy issues | Voice releases; disclose synthetic media where platforms require; no cloning without consent. |
+| Client data or assets leak between brands | Confidentiality breach, loss of trust | One repository or submodule per client, separate .env, asset-loader path check, no shared prompts containing client data (BRD-22). |
+| Client confidential material sent to a free cloud AI tier | Data used to improve a vendor's products; breach of NDA | Confidentiality tiers in brand.json and an LLM router that blocks free cloud tiers for NDA and restricted brands (BRD-20). |
+| Intake is incomplete or wrong, so the video misrepresents the brand | Rework, client dissatisfaction | Completeness gate, provenance tags, human review, brand lock and approval pack before production. |
+| Client brand misinterpreted by agents | Off-brand output | BRAND.md plus tokens as the only brand source; brand-compliance checks BC-01 to BC-15; style-frame approval. |
+| Client supplies assets they do not own or have not licensed | Legal exposure for both parties | Asset ownership and licence fields in the intake; warranty clause in the contract; unlogged assets blocked. |
+| Unlimited revisions and scope creep | Unpaid work, delays | Revision rounds stored in brand.json; change requests after brand lock (section 16.10). |
+| Remotion license obligation for client work is misjudged | Compliance gap or unexpected cost | Re-read the license FAQ for agencies, count combined headcount, and confirm in writing with Remotion if unclear (section 15.4). |
 
-<span id="sec_82" class="anchor"></span>15. Licensing and Compliance
+<span id="sec_84" class="anchor"></span>15. Licensing and Compliance
 Register
 
 This section summarizes licensing posture. It is guidance, not legal
 advice; verify each license at the source before first use and again
 before commercial release.
 
-<span id="sec_83" class="anchor"></span>15.1 Remotion
+<span id="sec_85" class="anchor"></span>15.1 Remotion
 
-- Remotion is free for individuals and for companies of up to **three
-  people**, including commercial use, unlimited videos and self-hosted
-  cloud rendering. There is no functional difference between free and
-  paid versions.
+- Remotion is free for individuals, for-profit organizations of up to
+  **three people**, and non-profits, including commercial use, unlimited
+  videos and self-hosted cloud rendering. There is no functional
+  difference between free and paid versions. Any commercial use is
+  allowed as long as Remotion itself is not sold as a product or used to
+  let others avoid a license they would need.
 
-- A Company License is required once the entity has **four or more
-  people** involved. At the time of research it was priced at about
-  **\$25 per developer seat per month with a \$100 per month minimum**,
-  with an Enterprise tier starting around \$500 per month. Some pricing
-  pages also list a per-render option; confirm current terms.
+- A Company License is required for entities that are not eligible for
+  the free license (four or more people). When last checked
+  (October 2026) the Company License had two options: **Remotion for
+  Creators at about \$25 per developer seat per month**, and **Remotion
+  for Automators at \$0.01 per render with a \$100 per month minimum**;
+  an Enterprise tier started at a \$500 per month minimum. One source
+  also described a \$100 per month minimum for seats, so confirm exactly
+  which minimum applies to your option on the official pricing page.
 
-- The threshold depends on headcount, not revenue. For collaborations,
-  combined headcount counts. The obligation falls on the entity that
-  owns the project's IP.
+- The threshold depends on headcount, not revenue. For collaborations
+  between teams or companies, the combined headcount counts. Remotion's
+  FAQ says the responsibility for the license falls on the entity that
+  ultimately owns the output or the IP of the Remotion project (the
+  wording varies between pages), so ownership terms in client contracts
+  matter.
 
-- The Remotion repository notes that license terms will change slightly
-  in **Remotion 5.0**. Re-read the license when upgrading.
+- Free License users may build automations without buying renders; the
+  Automators minimum applies only to Company License users.
 
-- The free license forbids copying or modifying Remotion to sell or
-  sublicense a derivative of Remotion itself.
+- The repository notes that license terms will change slightly in
+  **Remotion 5.0**. Re-read the license when upgrading.
 
-<span id="sec_84" class="anchor"></span>15.2 License families in this
+- The free license forbids selling Remotion itself or a derivative of
+  it.
+
+<span id="sec_86" class="anchor"></span>15.2 License families in this
 project
 
 | **Family** | **Examples** | **Obligation / posture** |
@@ -1886,7 +2113,7 @@ project
 | Non-commercial licenses (forbidden) | Depth Anything V2 Base/Large/Giant, Coqui XTTS-v2, Meta MMS-TTS, certain beat-tracking models | Do not use. |
 | AI model licenses | FLUX.1 \[schnell\], SDXL, open-weight VLMs | Verify per model before use. |
 
-<span id="sec_85" class="anchor"></span>15.3 Compliance practices
+<span id="sec_87" class="anchor"></span>15.3 Compliance practices
 
 - LICENSES.md (dependencies) and assets-manifest.json (assets) updated
   in the same commit as any addition.
@@ -1909,7 +2136,878 @@ project
 - Free-tier terms (ElevenLabs free, cloud TTS quotas, Uppbeat) are
   re-read before any commercial publishing.
 
-<span id="sec_86" class="anchor"></span>16. Open Decisions
+<span id="sec_88" class="anchor"></span>15.4 Licensing when producing
+videos for clients
+
+Client work adds obligations beyond personal use. The checklist is in
+section 16.12. In short: (1) decide **who owns the Remotion project code
+and who owns the delivered videos**, because Remotion's license
+responsibility follows ownership; (2) count the combined headcount of
+everyone collaborating on the work, including the client's people if
+they own the project; (3) if there is any doubt, ask Remotion in writing
+before charging a client; (4) never pass on music, stock, font or voice
+licenses that are not transferable; (5) obtain a signed asset-ownership
+warranty from the client.
+
+<span id="sec_89" class="anchor"></span>16. Multi-Brand (Client) Mode
+
+<span id="sec_90" class="anchor"></span>16.1 Purpose and scope
+
+The studio is built first for BharatQR, but nothing in the engine has to
+be specific to one brand. Multi-Brand Mode makes that explicit: a brand
+becomes **data** (a validated Brand Profile plus a Brand Kit folder),
+and the same engine, tokens, scenes, audio pipeline and QA produce
+videos for any number of brands.
+
+| **Mode** | **What it means** | **Example** |
+|----|----|----|
+| Product mode (default) | One brand, owned by the studio operator. | BharatQR feature Reels and hero film |
+| Studio mode (Multi-Brand) | Several brands or clients, each in an isolated Brand Kit with its own profile, assets, approvals and confidentiality tier. | A cafe chain, a clothing label, a coaching institute |
+
+| **In scope** | **Out of scope** |
+|----|----|
+| Brands that can supply the Brand Intake Document (section 16.8) and the required assets | Brands that cannot supply a minimal intake or whose assets have no clear rights |
+| Software products (UI cloning), physical products and services (photos, 3D, footage), service businesses (testimonials) | Regulated claims (health, finance, legal) without the client's written sign-off on every claim |
+| Videos in any language set the brand defines, with native review | Languages with no native reviewer available |
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><p><strong>What the existing PRD already covers</strong></p>
+<p>Sections 1 to 15 already describe the engine, tokens, scenes, audio,
+QA, hero film process and licensing. Multi-Brand Mode adds: the Brand
+Profile schema, the Brand Intake Document and its pipeline, bounded
+brand token overrides, brand-compliance QA, a client workflow with
+approvals, confidentiality tiers with an LLM routing policy, and
+client-work licensing and contract guidance.</p></td>
+</tr>
+</tbody>
+</table>
+
+<span id="sec_91" class="anchor"></span>16.2 Principles
+
+- **Brand as data.** The engine contains no brand literals. Colors,
+  fonts, names, copy and rules come from brand.json and the brand's
+  catalog.
+
+- **Isolation.** One brand's assets, prompts, catalog and outputs are
+  never available to another brand's render.
+
+- **Provenance.** Every value is tagged provided, derived or assumed.
+  Assumed values are shown to the client for confirmation at style-frame
+  approval.
+
+- **Lock before production.** A brand moves from draft to review to
+  locked. Production uses a locked version, and every render records the
+  brand version and hash.
+
+- **Compliance as a gate.** Brand-compliance checks (section 16.7) run
+  with the standard QA and can block a release.
+
+- **Humans approve.** Agents extract, build and check; a person confirms
+  the brand lock, style frames, language review and final release.
+
+- **Confidentiality tiers.** The brand's tier decides which AI services
+  may touch its material (section 16.11).
+
+- **Stricter, never looser.** A brand may tighten house rules (safe
+  zones, contrast, text-hold). It may not relax them.
+
+<span id="sec_92" class="anchor"></span>16.3 Folder structure and
+isolation
+
+> brands/
+>
+> ├── \_template/ \# copied by \`npm run brand:new \<id\>\`
+>
+> └── \<brand-id\>/
+>
+> ├── intake/ \# filled Brand Intake Document and raw client files
+>
+> ├── brand.json \# validated Brand Profile (section 16.4)
+>
+> ├── BRAND.md \# agent-readable brief generated from brand.json
+>
+> ├── catalog/ \# product.json, features.json, tenants/
+>
+> ├── ui/ \# screenshots, component specs, cloned components
+>
+> ├── assets/ \# logos, fonts, images, footage, music, sfx, voiceovers
+>
+> ├── voice/ \# pronunciation.json, scripts, voice releases
+>
+> ├── compliance/ \# claims register, disclaimers, legal notes
+>
+> ├── assets-manifest.json \# source, owner and license of every asset
+>
+> ├── approvals/ \# style-frame, picture, sound and release sign-offs
+>
+> └── CHANGELOG.md \# brand profile versions and change requests
+
+- **Separate repository per client** (private), or a git submodule under
+  brands/, so client files never enter the shared engine repository or
+  another client's history.
+
+- **Assets reach Remotion through a sync script.** scripts/sync-brand.ts
+  copies the active brand's assets/ into remotion-video/public/brand/
+  (gitignored) before Studio or a render, because staticFile() reads
+  from the public directory. Remotion also offers a public-directory
+  option on the CLI; verify it for the pinned version before relying on
+  it.
+
+- **Loader path check.** The asset loader rejects any path that resolves
+  outside the active brand's folder or the shared engine assets.
+
+- **Separate .env per brand** for any keys; nothing secret in
+  brand.json.
+
+- **Outputs** are written to out/\<brand\>/\<language\>/\<format\>/ and
+  never mixed.
+
+<span id="sec_93" class="anchor"></span>16.4 The Brand Profile
+(brand.json)
+
+brand.json is the single machine-readable description of a brand. The
+schema below was written for this PRD, type-checked with strict
+TypeScript and validated against the example in Appendix G on zod 4.x.
+Languages use BCP-47 style codes (en, hi, mr); the extraction step
+converts names such as 'Marathi' to codes.
+
+> // src/schema/brand.ts (Brand Profile, schema version 1.0)
+>
+> import { z } from 'zod';
+>
+> const Hex = z.string().regex(/^#\[0-9a-fA-F\]{6}\$/);
+>
+> const Str = z.string().min(1);
+>
+> const Lang =
+> z.string().regex(/^\[a-z\]{2,3}(-\[A-Za-z0-9\]{2,8})\*\$/); // 'en',
+> 'hi', 'mr', ...
+>
+> const PerLang = z.record(Lang, z.string());
+>
+> const Availability = z.enum(\['live', 'beta', 'roadmap'\]);
+>
+> const Source = z.enum(\['provided', 'derived', 'assumed'\]);
+>
+> const Contact = z.object({
+>
+> name: Str, role: Str, email: z.string().optional(), phone:
+> z.string().optional(),
+>
+> isApprover: z.boolean(),
+>
+> });
+>
+> const Persona = z.object({
+>
+> name: Str, description: Str, ageRange: z.string().optional(),
+>
+> languages: z.array(Str).min(1), techComfort: z.enum(\['low', 'medium',
+> 'high'\]),
+>
+> channels: z.array(Str), pains: z.array(Str), desires: z.array(Str),
+>
+> objections: z.array(Str),
+>
+> });
+>
+> const Logo = z.object({
+>
+> name: Str, file: Str, background: z.enum(\['light', 'dark', 'any',
+> 'brand'\]),
+>
+> minWidthPx: z.number().int().positive(), clearSpace: Str,
+>
+> });
+>
+> const FontRole = z.object({
+>
+> role: z.enum(\['display', 'heading', 'body', 'ui', 'numerals',
+> 'accent'\]),
+>
+> script: z.enum(\['latin', 'devanagari', 'other'\]),
+>
+> family: Str, weights: z.array(z.number().int()).min(1),
+>
+> source: z.enum(\['google', 'client-licensed', 'system', 'custom'\]),
+>
+> licenseStatus: z.enum(\['open', 'client-licensed', 'unknown'\]),
+>
+> fallbacks: z.array(Str),
+>
+> });
+>
+> export const Brand = z.object({
+>
+> schemaVersion: z.literal('1.0'),
+>
+> id: z.string().regex(/^\[a-z0-9-\]+\$/),
+>
+> displayName: Str, legalName: z.string().optional(),
+>
+> status: z.enum(\['draft', 'review', 'locked'\]),
+>
+> version: Str, lockedOn: z.string().optional(),
+>
+> project: z.object({
+>
+> goal: Str, deadline: z.string().optional(), deliverables:
+> z.array(Str).min(1),
+>
+> successMeasures: z.array(Str),
+>
+> }),
+>
+> contacts: z.array(Contact).min(1),
+>
+> business: z.object({
+>
+> industry: Str, offering: Str, usp: z.array(Str).min(1), markets:
+> z.array(Str),
+>
+> stage: z.string().optional(), pricePosition: z.string().optional(),
+>
+> competitors: z.array(Str),
+>
+> }),
+>
+> audience: z.object({ primary: Persona, secondary: Persona.optional()
+> }),
+>
+> strategy: z.object({
+>
+> mission: z.string().optional(), values: z.array(Str),
+>
+> positioning: Str, personality: z.array(Str).min(3).max(5), notThis:
+> z.array(Str),
+>
+> taglines: PerLang, story: z.string().optional(),
+>
+> }),
+>
+> identity: z.object({
+>
+> logos: z.array(Logo).min(1), logoDonts: z.array(Str),
+>
+> animatedLogoFile: z.string().optional(),
+>
+> }),
+>
+> colors: z.object({
+>
+> primary: Hex, secondary: Hex.optional(), accent: Hex.optional(),
+>
+> neutrals: z.array(Hex), background: z.object({ light: Hex, dark: Hex
+> }),
+>
+> semantic: z.object({ success: Hex, warning: Hex, error: Hex, info: Hex
+> }).partial(),
+>
+> usageRatio: z.string().optional(), gradientsAllowed: z.boolean(),
+>
+> gradients: z.array(z.object({
+>
+> name: Str, stops: z.array(Hex).min(2), angle: z.number(),
+>
+> })),
+>
+> forbidden: z.array(Str), contrastMin: z.number().min(4.5),
+>
+> }),
+>
+> typography: z.object({
+>
+> families: z.array(FontRole).min(1), scale: z.record(z.string(),
+> z.number()),
+>
+> caseRules: z.string(), letterSpacingLatin: z.number(),
+>
+> devanagariLineHeightMin: z.number().min(1.4),
+>
+> }),
+>
+> layout: z.object({
+>
+> grid: z.object({ columns: z.number().int(), margin: z.number(),
+> gutter: z.number() }),
+>
+> radii: z.object({ small: z.number(), medium: z.number(), large:
+> z.number() }),
+>
+> shadows: z.string(), borders: z.string(), spacingUnit: z.number(),
+>
+> iconStyle: z.enum(\['outline', 'solid', 'duotone', 'custom'\]),
+>
+> patterns: z.array(Str),
+>
+> }),
+>
+> imagery: z.object({
+>
+> photoStyle: z.string(), illustrationStyle: z.string(), colorGrade:
+> z.string(),
+>
+> subjects: z.array(Str), avoid: z.array(Str),
+>
+> mascot: z.object({
+>
+> exists: z.boolean(), file: z.string().optional(), rules:
+> z.string().optional(),
+>
+> }),
+>
+> }),
+>
+> productUI: z.object({
+>
+> hasSoftwareProduct: z.boolean(),
+>
+> platforms: z.array(z.enum(\['web', 'ios', 'android', 'desktop'\])),
+>
+> theme: z.enum(\['light', 'dark', 'both'\]), designSystemRef:
+> z.string().optional(),
+>
+> fontsInUI: z.array(Str),
+>
+> screens: z.array(z.object({
+>
+> key: Str, name: Str, availability: Availability,
+>
+> screenshot: z.string().optional(), blurRules: z.string().optional(),
+>
+> })),
+>
+> sampleDataRules: z.string(),
+>
+> }),
+>
+> offering: z.object({
+>
+> items: z.array(z.object({
+>
+> name: Str, price: z.string().optional(), photo: z.string().optional(),
+>
+> })),
+>
+> locations: z.array(Str), packaging: z.string().optional(),
+>
+> }),
+>
+> motion: z.object({
+>
+> personality: z.enum(\['calm', 'confident', 'playful', 'energetic',
+> 'premium-minimal'\]),
+>
+> pace: z.enum(\['slow', 'medium', 'fast'\]),
+>
+> easingFeel: z.enum(\['soft', 'snappy', 'bouncy', 'mechanical'\]),
+>
+> cameraStyle: z.enum(\['static', 'gentle-drift', 'dynamic'\]),
+>
+> allowedTransitions: z.array(Str), forbiddenTransitions: z.array(Str),
+>
+> use3D: z.boolean(), useCharacters: z.boolean(),
+>
+> textAnimation: z.enum(\['word', 'line', 'fade'\]),
+> maxSimultaneousText: z.number().int(),
+>
+> }),
+>
+> sound: z.object({
+>
+> music: z.object({
+>
+> moods: z.array(Str), bpmRange: z.tuple(\[z.number(), z.number()\]),
+>
+> instruments: z.array(Str), avoid: z.array(Str), licensedTracks:
+> z.array(Str),
+>
+> }),
+>
+> sfxStyle: z.string(), sonicLogoFile: z.string().optional(),
+>
+> voice: z.object({
+>
+> persona: Str, gender: z.enum(\['female', 'male', 'neutral', 'any'\]),
+>
+> ageFeel: z.string(), accent: z.string(), pace: z.enum(\['slow',
+> 'medium', 'fast'\]),
+>
+> cloningConsentOnFile: z.boolean(),
+>
+> }),
+>
+> forbiddenSounds: z.array(Str),
+>
+> }),
+>
+> localization: z.object({
+>
+> languages: z.array(Lang).min(1), primaryLanguage: Lang,
+>
+> formality: z.enum(\['formal', 'neutral', 'casual'\]),
+>
+> transcreate: z.boolean(), loanwordPolicy: z.string(),
+>
+> numberLocale: Str, currency: Str, dateFormat: z.string(),
+>
+> glossary: z.array(z.object({
+>
+> term: Str, translations: PerLang, doNotTranslate: z.boolean(),
+>
+> })),
+>
+> pronunciations: z.array(z.object({ term: Str, lang: Lang, say: Str
+> })),
+>
+> brandNameByLanguage: PerLang, reviewers: z.array(Str),
+>
+> }),
+>
+> messaging: z.object({
+>
+> pillars: z.array(Str).max(4),
+>
+> proofPoints: z.array(z.object({
+>
+> claim: Str, evidence: Str, sourceRef: z.string().optional(), approved:
+> z.boolean(),
+>
+> })),
+>
+> allowedClaims: z.array(Str), prohibitedClaims: z.array(Str),
+>
+> disclaimers: z.array(z.object({ text: Str, whenRequired: Str })),
+>
+> ctas: z.array(z.object({ text: PerLang, destination: Str })),
+>
+> handles: z.array(Str), hashtags: z.array(Str),
+>
+> }),
+>
+> references: z.object({
+>
+> likes: z.array(z.object({ ref: Str, why: Str })),
+>
+> dislikes: z.array(z.object({ ref: Str, why: Str })),
+>
+> }),
+>
+> deliverables: z.object({
+>
+> formats: z.array(z.enum(\['9:16', '4:5', '1:1', '16:9'\])),
+>
+> durationsSeconds: z.array(z.number()), quantity: z.number().int(),
+>
+> platforms: z.array(Str), burnedCaptions: z.boolean(), languages:
+> z.array(Lang),
+>
+> }),
+>
+> assets: z.object({
+>
+> provided: z.array(z.object({
+>
+> type: Str, path: Str, owner: z.enum(\['client', 'third-party',
+> 'studio'\]),
+>
+> licenseNote: z.string().optional(),
+>
+> })),
+>
+> missing: z.array(Str),
+>
+> }),
+>
+> compliance: z.object({
+>
+> regulations: z.array(Str), testimonialConsentOnFile: z.boolean(),
+>
+> trademarkNotes: z.string().optional(),
+>
+> aiDisclosure: z.enum(\['none', 'label-synthetic-voice',
+> 'label-all-ai'\]),
+>
+> usageRights: z.object({
+>
+> territory: Str, durationMonths: z.number().int().optional(),
+> paidMedia: z.boolean(),
+>
+> }),
+>
+> forbiddenTopics: z.array(Str), competitorMentionAllowed: z.boolean(),
+>
+> }),
+>
+> workflow: z.object({
+>
+> approvers: z.array(Str).min(1), revisionRounds: z.number().int(),
+>
+> reviewTool: z.string().optional(), signoffFormat: z.enum(\['email',
+> 'signed-form', 'tool'\]),
+>
+> confidentiality: z.enum(\['standard', 'nda',
+> 'restricted-local-llm-only'\]),
+>
+> }),
+>
+> provenance: z.record(z.string(), Source), // dotted path -\> provided
+> \| derived \| assumed
+>
+> });
+>
+> export type Brand = z.infer\<typeof Brand\>;
+
+**Intake sections and the profile keys they feed.** Every key in the
+schema is fed by at least one intake question, and every required key is
+covered by a required or conditional question or by a studio default.
+This was checked programmatically against the example profile (see
+section 16.8).
+
+| **Section** | **Intake topic** | **Profile keys fed** | **Questions** | **What it drives** |
+|----|----|----|----|----|
+| S0 | Project and Contacts | displayName, legalName, project, contacts | 9 | Credits, on-screen name, file naming; Credits and fine print |
+| S1 | Business and Competition | business | 9 | Positioning, copy and competitor-aware creative |
+| S2 | Audience | audience | 11 | Hooks, language, pacing, channel choices |
+| S3 | Brand Strategy and Personality | strategy | 8 | Tone, taglines, personality scoring |
+| S4 | Logo | identity | 7 | Logo component rules; checks BC-01 and BC-02 |
+| S5 | Colour | colors | 12 | Theme palette; checks BC-03 and BC-05 |
+| S6 | Typography | typography | 10 | Font loading, text fitting; check BC-04 |
+| S7 | Layout, Shape and Icon Style | layout | 7 | Component radii, spacing, icon style |
+| S8 | Imagery, Illustration and Characters | imagery | 8 | Footage, illustration and mascot decisions |
+| S9 | Software or App Product (only if you have one) | productUI | 12 | UI clones, availability labels, blur rules |
+| S10 | Physical Products, Services and Locations (only if relevant) | offering | 4 | Product, service and location scenes |
+| S11 | Motion Preferences | motion | 11 | Bounded token overrides, transitions, camera |
+| S12 | Music, Sound and Voice | sound | 14 | Music, SFX, voice, forbidden sounds; check BC-10 |
+| S13 | Languages and Localisation | localization | 12 | Language set, glossary, number format, reviewers; check BC-11 |
+| S14 | Messaging, Claims and Calls to Action | messaging | 11 | Copy, claims, disclaimers, CTAs; checks BC-06 and BC-07 |
+| S15 | References and Inspiration | references | 3 | Reference analysis and critique |
+| S16 | Video Requirements | deliverables | 7 | Composition matrix and batch manifest |
+| S17 | Assets You Will Provide | assets | 5 | Asset manifest and provenance; check BC-12 |
+| S18 | Legal, Rights and Compliance | compliance | 9 | Rights, AI disclosure, forbidden topics; check BC-14 |
+| S19 | Approvals and Working Process | workflow | 6 | Approvals, revision rounds, confidentiality tier |
+
+<span id="sec_94" class="anchor"></span>16.5 Intake pipeline
+
+| **Stage** | **Action** | **Output** | **Gate** |
+|----|----|----|----|
+| 1 Collect | Client fills the Brand Intake Document and sends the files it lists (logos, fonts, screenshots, references). | brands/\<id\>/intake/ | All files readable |
+| 2 Completeness check | Deterministic script lists every unanswered required question by ID and computes two scores: **completeness** (required questions answered divided by required questions applicable) and **richness** (optional questions answered). | Missing-items list | Completeness must be 100 percent to lock |
+| 3 Extract | An LLM, routed by the confidentiality tier (section 16.11), maps answers to profile fields using the intake IDs. It returns an envelope with the profile, provenance, missing items and conflicts (Appendix H). It must not invent values. | Draft brand.json | Zod validation, up to 3 retries, then a person fixes it |
+| 4 Apply studio defaults | Code (not the LLM) fills unanswered optional fields with the defaults below and tags them assumed. | Complete profile | Schema passes |
+| 5 Human review | A person reads the profile against the intake, resolves conflicts, confirms or edits assumed values, and sets status: review. | Reviewed profile | No unresolved conflicts |
+| 6 Client confirmation | The client receives an approval pack (palette, type specimens in each script, logo rules, assumed values, claims list). | Signed confirmation | Written approval |
+| 7 Lock | Status becomes locked, version and lockedOn are set, BRAND.md and theme tokens are generated. | Locked brand | Lock refused if required fields are open |
+| 8 Style frames | 5 to 8 stills built from the locked profile, approved by the client (gate G1). | Approved style frames | Client approval |
+
+**Language names to codes.** The client writes language names; the
+extraction step converts them to codes (English en, Hindi hi, Marathi
+mr, and so on) and lists any it cannot map as a conflict.
+
+**Studio defaults for unanswered optional questions.** These values are
+applied by code and always tagged assumed, so the client sees them at
+confirmation.
+
+| **Profile field**             | **Default value**                          |
+|-------------------------------|--------------------------------------------|
+| typography.letterSpacingLatin | 0                                          |
+| layout.grid                   | {"columns":12,"margin":64,"gutter":24}     |
+| layout.radii                  | {"small":8,"medium":16,"large":28}         |
+| layout.shadows                | "Soft, low-contrast, large blur"           |
+| layout.borders                | "1 px hairline at low opacity"             |
+| layout.spacingUnit            | 8                                          |
+| layout.patterns               | \[\]                                       |
+| imagery.colorGrade            | "Neutral grade with restrained saturation" |
+| motion.allowedTransitions     | \["fade","slide"\]                         |
+| motion.forbiddenTransitions   | \[\]                                       |
+| motion.maxSimultaneousText    | 3                                          |
+| sound.music.bpmRange          | \[90,115\]                                 |
+| sound.music.instruments       | \[\]                                       |
+| sound.music.licensedTracks    | \[\]                                       |
+| sound.sfxStyle                | "Soft, tactile UI sounds in the music key" |
+| sound.voice.ageFeel           | "30s"                                      |
+| localization.glossary         | \[\]                                       |
+| messaging.handles             | \[\]                                       |
+| messaging.hashtags            | \[\]                                       |
+
+<span id="sec_95" class="anchor"></span>16.6 From brand profile to
+engine tokens
+
+The theme provider turns the profile into the tokens scenes already use.
+Brand values never reach scenes as raw numbers; they pass through the
+mapping below and are clamped to the allowed ranges.
+
+| **Profile field** | **Mapping (starting values, tunable during style-frame review)** |
+|----|----|
+| motion.personality = calm | Bias to SPRING_HEAVY and SPRING_HERO, longer stagger, fewer simultaneous elements |
+| motion.personality = confident | SPRING_MEDIUM and SPRING_HEAVY, standard stagger, clean settles |
+| motion.personality = playful | SPRING_LIGHT with slightly lower damping (more overshoot), shorter holds |
+| motion.personality = energetic | SPRING_LIGHT, shorter durations, faster cuts, stronger snap easing |
+| motion.personality = premium-minimal | SPRING_HEAVY and SPRING_HERO, generous negative space, very restrained effects |
+| motion.pace = slow / medium / fast | Duration multiplier 1.25 / 1.0 / 0.8 |
+| motion.easingFeel = soft / snappy / bouncy / mechanical | HOUSE_EASE / SNAP_EASE / lower damping with overshoot / near-linear easing without overshoot |
+| motion.cameraStyle = static / gentle-drift / dynamic | No drift / low-amplitude seeded drift / drift plus push-ins and orbit moves |
+| colors.\* | Theme palette; text color chosen to meet contrastMin; forbidden colors rejected by validation of scenes |
+| typography.families | Font loading per script; fitText boxes; Devanagari line-height at least devanagariLineHeightMin |
+| layout.\* | Card radii, spacing unit, grid, shadow and border style, icon set |
+
+Bounded overrides
+
+| **Token** | **Allowed range** | **House default** |
+|----|----|----|
+| Spring damping | 8 to 30 | 14 (SPRING_MEDIUM) |
+| Spring stiffness | 60 to 220 | 120 |
+| Spring mass | 0.4 to 1.8 | 0.8 |
+| Stagger | 2 to 8 frames | 3 to 5 frames |
+| Duration multiplier (pace) | 0.7 to 1.4 | 1.0 |
+| Grain opacity | 0 to 5 percent | 3 to 4 percent |
+| Text hold | Never below the house floor (36 frames plus 8 per word beyond four); brands may only lengthen it | House floor |
+| Safe zones | Brands may enlarge, never shrink | Per format (section 8.10) |
+| Text contrast | At least 4.5:1 for body text (contrastMin cannot be set lower) | 4.5:1 body, 3:1 large text |
+| Devanagari rules | Line-height at least 1.4; no letter-spacing; never animate by character | Fixed |
+
+<span id="sec_96" class="anchor"></span>16.7 Brand-compliance checks
+
+These checks run with the standard QA gate (section 8.12) whenever a
+video is built from a client brand. A hard fail blocks release.
+
+| **ID** | **Check** | **Method** | **Severity** |
+|----|----|----|----|
+| BC-01 | Logo clear space and minimum size respected | Geometry check from the logo component's rendered bounds against identity.logos | Hard fail |
+| BC-02 | Logo version used on an allowed background | Sample background luminance behind the logo on key frames | Hard fail |
+| BC-03 | Colors conform to the brand palette; no forbidden colors | Dominant-color sampling on key frames against colors | Hard fail for forbidden colors, warning for drift |
+| BC-04 | Only approved fonts are used | Computed-style scan of rendered text against typography.families | Hard fail |
+| BC-05 | Text contrast meets contrastMin | Contrast calculation per text element | Hard fail |
+| BC-06 | No prohibited claims or forbidden topics in any language | Deterministic phrase match plus an LLM semantic check on on-screen text and voiceover scripts | Hard fail |
+| BC-07 | Required disclaimers present when their condition applies | Rule engine over messaging.disclaimers and scene metadata | Hard fail |
+| BC-08 | Roadmap and beta features labeled | Scene metadata against productUI.screens\[\].availability | Hard fail |
+| BC-09 | Tone matches brand personality | LLM scoring against strategy.personality and strategy.notThis | Warning |
+| BC-10 | Sound rules: no forbidden sounds; music licensed or logged; loudness on target | Manifest audit plus loudness analysis | Hard fail |
+| BC-11 | Every delivered language has a recorded native reviewer approval | Check localization.reviewers against approval records | Hard fail |
+| BC-12 | Every asset has an owner and, if third-party, a license note | Brand assets-manifest.json audit | Hard fail |
+| BC-13 | Formats, durations and captions match deliverables | Render manifest against the profile | Hard fail |
+| BC-14 | Competitor mention rule respected | Text and logo scan against business.competitors and compliance.competitorMentionAllowed | Hard fail |
+| BC-15 | Render manifest records brand version, brand hash and engine version | Manifest check | Hard fail |
+
+<span id="sec_97" class="anchor"></span>16.8 The Brand Intake Document
+
+A separate Word document, **Brand_Intake_Template.docx**, is sent to
+each client. It is written in plain language for a non-technical reader
+and organized into **20 sections with 175 numbered questions** (107
+required, 14 conditional, 54 optional). Each question has an ID such as
+S5-03, a hint or example, a priority, and a blank answer cell.
+
+- **Required (R):** needed to lock the brand.
+
+- **Conditional (C):** required only if it applies, for example the
+  software-product section.
+
+- **Optional (O):** improves quality; if left blank, the studio applies
+  a documented default and tags it assumed.
+
+- **Machine mapping:** each question ID maps to one or more Brand
+  Profile paths (Appendix F), so the extraction step is traceable and
+  the completeness check is deterministic.
+
+- **Verified consistency:** a script compared the question list to a
+  fully populated example profile and confirmed that every profile field
+  is fed by at least one question, every question path exists in the
+  profile, and every required field is covered by a required or
+  conditional question or a studio default.
+
+| **Section** | **Topic** | **Who usually answers** |
+|----|----|----|
+| S0 | Project and Contacts | Project owner |
+| S1 | Business and Competition | Founder or marketing lead |
+| S2 | Audience | Marketing or sales lead |
+| S3 | Brand Strategy and Personality | Founder or brand lead |
+| S4 | Logo | Designer or brand lead |
+| S5 | Colour | Designer or brand lead |
+| S6 | Typography | Designer or brand lead |
+| S7 | Layout, Shape and Icon Style | Designer |
+| S8 | Imagery, Illustration and Characters | Brand lead |
+| S9 | Software or App Product (only if you have one) | Product owner |
+| S10 | Physical Products, Services and Locations (only if relevant) | Business owner |
+| S11 | Motion Preferences | Brand lead |
+| S12 | Music, Sound and Voice | Brand lead |
+| S13 | Languages and Localisation | Marketing lead and language reviewer |
+| S14 | Messaging, Claims and Calls to Action | Marketing lead |
+| S15 | References and Inspiration | Brand lead |
+| S16 | Video Requirements | Marketing lead |
+| S17 | Assets You Will Provide | Project owner |
+| S18 | Legal, Rights and Compliance | Founder or legal advisor |
+| S19 | Approvals and Working Process | Project owner |
+
+**Supporting files the client sends:** logo files, brand guideline PDF,
+font files with licenses, product screenshots or recordings, product and
+location photos, reference videos, any existing music, voice or
+animation, and the signed releases listed in Section S17 of the intake.
+
+<span id="sec_98" class="anchor"></span>16.9 Multi-brand requirements
+(BRD)
+
+| **ID** | **Requirement** | **Acceptance criteria** | **Tier** |
+|----|----|----|----|
+| BRD-01 | npm run brand:new \<id\> creates a brand folder from \_template. | A valid empty structure appears; the id is validated. | T1 |
+| BRD-02 | npm run brand:validate \<id\> validates brand.json against the schema. | Errors list the exact path and rule that failed. | T0 |
+| BRD-03 | Intake ingestion accepts the filled intake (Word or exported Markdown or JSON) plus an attachments folder. | Answers are parsed by question ID; unparseable items are reported. | T1 |
+| BRD-04 | Completeness check lists unanswered required questions by ID and reports completeness and richness scores. | Locking is refused below 100 percent completeness. | T1 |
+| BRD-05 | LLM-assisted extraction maps answers to profile fields using the envelope in Appendix H. | Output is valid JSON; invalid output is retried up to 3 times with the validation errors, then escalated to a person. | T1 |
+| BRD-06 | Provenance tagging for every populated field. | Each field is provided, derived or assumed; assumed fields appear in the approval pack. | T1 |
+| BRD-07 | Studio defaults are applied by code for unanswered optional questions. | The defaults table in 16.5 is the only source; no LLM-invented defaults. | T1 |
+| BRD-08 | Human review gate and brand lock. | locked cannot be set while required fields are open or while assumed values in messaging, localization or compliance are unconfirmed. | T1 |
+| BRD-09 | BRAND.md is generated deterministically from brand.json. | Same input yields the same file; narrative text is copied from client-provided fields, not invented. | T1 |
+| BRD-10 | Brand theme provider supplies colors, typography, layout and motion tokens to the engine. | A lint rule fails any hardcoded hex color, font name or brand string in engine code. | T0 |
+| BRD-11 | Font loader supports Google fonts via package and client-licensed fonts from the brand folder. | A client-licensed font without a recorded license is refused. | T1 |
+| BRD-12 | Asset sync script and per-brand asset manifest. | Only the active brand's assets are present in public/brand/ during a render. | T1 |
+| BRD-13 | Per-brand composition registry and output folders. | out/\<brand\>/\<language\>/\<format\>/ structure is produced by the batch renderer. | T1 |
+| BRD-14 | Bounded token overrides (section 16.6). | Out-of-range values fail validation. | T2 |
+| BRD-15 | Brand-compliance checks BC-01 to BC-15 integrated into the QA gate. | A hard fail blocks release and produces a report with frame references. | T1 |
+| BRD-16 | Brand-fidelity scoring in the critique loop using the brand's style frames. | Score follows the formula in section 10.4. | T2 |
+| BRD-17 | Approval pack generator. | Produces palette, type specimens per script, logo rules, assumed values and claims list for client sign-off. | T2 |
+| BRD-18 | Brand and engine version stamping in render manifests. | Every output records brand version, brand hash and engine version. | T1 |
+| BRD-19 | Change control after lock. | Edits create a new version and a CHANGELOG entry; videos built on older versions are flagged. | T2 |
+| BRD-20 | Confidentiality enforcement by the LLM router. | NDA and restricted brands never reach a free cloud tier; restricted brands use local models only. | T1 |
+| BRD-21 | LLM router with provider fallback chain, structured-output validation and logging. | Logs hold task, provider, token counts and an input hash, never raw client content or secrets. | T1 |
+| BRD-22 | Isolation between brands. | Separate repositories or submodules, separate .env, loader path check; a cross-brand path is rejected. | T1 |
+| BRD-23 | Client approval records. | Each approval stores date, approver, brand version and the hash of the approved file. | T1 |
+| BRD-24 | Brand-defined languages and feature categories. | Language list comes from localization.languages; completeness of locale copy is checked against it (CAT-04). | T1 |
+| BRD-25 | Engine contains no brand literals. | Automated scan finds no brand names, hex colors or copy in src/ outside tests and examples. | T1 |
+| BRD-26 | Delivery and handover package. | One command assembles videos, caption files, thumbnails, manifest, credits, asset and license list and approval records. | T3 |
+
+<span id="sec_99" class="anchor"></span>16.10 Client workflow
+
+| **Step** | **Activity** | **Studio output** | **Client action** |
+|----|----|----|----|
+| 0 Discovery | Call to understand goals and scope | Scope note | Confirm scope |
+| 1 Intake sent | Send the Brand Intake Document and file checklist | Intake package | Fill and return |
+| 2 Completeness | Run the completeness check; list gaps by ID | Missing-items list | Answer gaps |
+| 3 Profile build | Extract, apply defaults, human review | Draft brand profile | Answer conflicts |
+| 4 Brand lock | Approval pack, then lock | Locked profile v1.0.0 | Sign confirmation |
+| 5 Style frames (G1) | 5 to 8 stills | Style frames | Approve or revise |
+| 6 Copy and language lock | Draft, transcreate, native review | Locked copy per language | Approve copy |
+| 7 Animatic (G2) | Timing with scratch voice | Animatic | Approve |
+| 8 Picture lock (G3) | Full visuals | Picture lock cut | Approve |
+| 9 Sound lock (G4) | Final mix and captions | Sound lock cut | Approve |
+| 10 Release QA (G5) | All checks, manifest | Final deliverables and QA report | Sign off |
+| 11 Delivery | Delivery package and archive | Package (BRD-26) | Acknowledge receipt |
+
+- **Revision rounds** come from workflow.revisionRounds. Feedback is
+  collected per gate; feedback outside the current gate is a change
+  request.
+
+- **Change after lock** creates a new brand version and a CHANGELOG
+  entry; the client confirms the change and any cost or schedule impact.
+
+- **Approvals** are recorded per gate in approvals/ in the format set by
+  workflow.signoffFormat.
+
+- **Retention and deletion:** client materials are archived or deleted
+  as the contract states.
+
+<span id="sec_100" class="anchor"></span>16.11 LLM usage plan and
+confidentiality tiers
+
+LLMs help with the first, mechanical parts (reading intake documents,
+drafting structured output, copy and critique) but never decide what a
+brand is. Free cloud tiers are acceptable only for non-sensitive work.
+Google, for example, states that on the free Gemini API tier your
+prompts and responses may be used to improve its products (with human
+review), while the paid tier is not used that way; other free tiers have
+their own terms.
+
+| **Confidentiality tier (workflow.confidentiality)** | **Allowed AI routes** | **Notes** |
+|----|----|----|
+| standard | Local models; a paid no-training cloud tier; a free cloud tier only for tasks that contain no client-specific or business-sensitive content (for example generic hook brainstorming) | Intake documents default to local or paid routes |
+| nda | Local models or a paid no-training cloud tier only | Free cloud tiers are blocked by the router |
+| restricted-local-llm-only | Local models only, no cloud AI of any kind | Use local Whisper for transcription; cloud coding agents receive only the sanitized BRAND.md and tokens, or work in a local-only environment |
+
+| **Task** | **Input** | **Route** | **Validation and review** |
+|----|----|----|----|
+| Intake to profile extraction | Filled intake (confidential) | By tier, local or paid for most clients | Zod schema, up to 3 retries, human review, client confirmation |
+| Completeness and scoring | Intake answers | No LLM (deterministic script) | Unit tests |
+| BRAND.md generation | brand.json | No LLM (template) | Deterministic output |
+| English copy drafts | Messaging fields | By tier | Brand-compliance checks BC-06, BC-09; client approval |
+| Hindi and Marathi (and other) transcreation drafts | Approved English copy | Best available model for the tier | Always native review; glyph and length checks |
+| Cue-sheet drafts | Locked copy and catalog | By tier | CueSheet schema validation |
+| Visual critique | Stills of unreleased work | By tier (stills are confidential) | Structured JSON scores; human judgment prevails |
+| Semantic compliance check | On-screen text and scripts | By tier | BC-06 report reviewed by a person |
+| Code assembly by coding agents | Engine code, sanitized brand brief | Claude Code, Antigravity (cloud; review each provider's data terms) | Typecheck, tests, determinism check |
+
+| **Provider option** | **Fit** | **Cautions** |
+|----|----|----|
+| Local models via Ollama | Private by design; any tier | Quality varies; Hindi and Marathi are weaker; needs a capable machine |
+| Gemini API free tier | Non-sensitive drafts and extraction of public material | Free-tier content may be used to improve Google products and reviewed by humans; rate limits are model-specific and shown in the provider's console (verify) |
+| Gemini API paid tier | NDA material when a no-training tier is required (Part B, UB14) | Costs money; confirm the data-processing terms |
+| Groq, OpenRouter free models (verify) | Optional drafts of non-sensitive material | Check data terms, model licenses and limits for each model |
+| Existing Claude and Antigravity plans | Coding and critique inside your own workflow | Check each product's data and training terms for your plan |
+
+Router design
+
+- Provider chain per tier with automatic fallback; the router reads the
+  brand's confidentiality tier before every call.
+
+- Structured output: every task has a Zod schema; on failure the router
+  retries up to 3 times with the validation errors, then escalates to a
+  person.
+
+- Low temperature for extraction; no web search or tools unless the task
+  needs them.
+
+- Redact emails, phone numbers and contact names before any cloud call
+  for standard brands unless they are the point of the task.
+
+- Cache by input hash; log task, provider, token counts and input hash,
+  never raw client content or secrets.
+
+<span id="sec_101" class="anchor"></span>16.12 Contracts, licensing and
+IP for client work
+
+This checklist is guidance for drafting or reviewing a client agreement.
+It is not legal advice; a lawyer-reviewed template is listed in Part B
+(UD8).
+
+| **Topic** | **Why it matters** | **Notes** |
+|----|----|----|
+| Scope and deliverables | Prevents disputes about what was bought | Match deliverables and project.deliverables |
+| Revision rounds and change requests | Controls unpaid work | Number of rounds from workflow.revisionRounds |
+| Ownership of the delivered videos | Decides who may use and edit them | Also determines licensing responsibilities |
+| Ownership of the Remotion project code | Remotion's license responsibility follows ownership and combined headcount | Decide whether the studio keeps the code or hands it over; confirm with Remotion if unclear (section 15.4) |
+| Third-party asset licenses | Music, stock, fonts and voices often cannot be transferred | State exactly which licenses pass to the client and which stay with the studio |
+| Client warranty on supplied assets | Protects the studio if the client lacks the rights | Based on the intake section on assets |
+| Usage rights | Territory, duration, media and paid-advertising rights | Mirrors compliance.usageRights |
+| Voice and likeness releases | Required for any recognizable person or cloned voice | Signed releases stored with the brand |
+| AI-generated content disclosure | Platform and market rules may require labels | Mirrors compliance.aiDisclosure |
+| Confidentiality and data handling | Client materials may be sensitive | Tier in workflow.confidentiality; AI service restrictions |
+| Data protection | Customer or tenant data in videos may be personal data | Take advice on applicable Indian data-protection requirements |
+| Payments and milestones | Cash flow and acceptance | Tie to gates G1 to G5 |
+| Credit and portfolio rights | Showing the work publicly | Client may restrict |
+| Termination and deletion | What happens to materials afterwards | Retention period and secure deletion |
+| Liability and insurance | Limits exposure | See Part B, UD8 and UD11 |
+
+<span id="sec_102" class="anchor"></span>16.13 Changes this mode makes
+to the rest of the PRD
+
+| **Section** | **Change in version 1.1** |
+|----|----|
+| 1, 2, 3 | BharatQR described as brand \#1; goal G10, a client persona, and use cases UC-13 to UC-15 added |
+| 4.3 | Tokens are house defaults that brands may adjust within bounded ranges |
+| 5 | Schemas moved to src/schema/; languages and categories are brand-defined; cue-sheet and tenant schemas added and tested; availability table corrected |
+| 6.3, 6.6 | Repository structure and provenance updated for brands/ |
+| 7 | LLM provider options, zod pinning note, three new skills (19 custom skills in total) |
+| 8 | CAT-01 to CAT-04 and DS-06 updated; BRD requirements pointer |
+| 9, 10, 12, 13, 14 | Confidentiality and isolation requirements; brand-mode scoring; Brand analyst role; Phase 11; client-specific risks |
+| 15 | Remotion terms refreshed; client-work licensing |
+| 16, 17 | New Section 16 (this section); open decisions moved to Section 17 and extended |
+| Appendices | A updated; B uses a validated example; F to H added; glossary moved to Appendix I |
+| Part B | Paid items for client work added (UB14, UD8 to UD12); Remotion pricing refreshed |
+
+<span id="sec_103" class="anchor"></span>17. Open Decisions
 
 | **\#** | **Decision** | **Options** | **Needed by** |
 |----|----|----|----|
@@ -1922,9 +3020,15 @@ project
 | 7 | Render machine | Local workstation or later cloud (Part B) | Phase 0 |
 | 8 | Team size trigger for Remotion license | Stay at 3 or fewer, or budget the license | Ongoing |
 | 9 | Sonic logo and 'ding' design approach | In-house with free DAW, or commissioned (Part B) | Phase 4 |
+| 10 | Will the studio serve outside clients, or stay internal to BharatQR? | Internal only; occasional clients; a dedicated service | Before Phase 11 |
+| 11 | Ownership model for client work | Studio keeps the Remotion project and delivers videos, or hands over source code (affects the Remotion license) | Before the first client contract |
+| 12 | Repository model per client | Separate private repository per client, or a git submodule under brands/ | Phase 11 |
+| 13 | Which LLM providers to enable and for which confidentiality tiers | Local only, free cloud for non-sensitive tasks, paid no-training tier later (Part B) | Phase 11 |
+| 14 | Contract template and who reviews it | Self-drafted from the checklist in 16.12, or a lawyer-reviewed template (Part B) | Before the first client contract |
+| 15 | Intake delivery format | Filled Word document, shared form, or guided interview with the studio | Phase 11 |
 
-<span id="sec_87" class="anchor"></span>Appendix A:
-\`remotion-guidelines.md\` (Draft Contents)
+<span id="sec_104" class="anchor"></span>Appendix A:
+remotion-guidelines.md (Draft Contents)
 
 This file is read by every coding agent before every task.
 
@@ -2010,7 +3114,20 @@ This file is read by every coding agent before every task.
 >
 > \- Forbidden: items on the 'Do not use' list in PRD section 7.14.
 >
-> \## 8. Process
+> \## 8. Brands (Multi-Brand Mode)
+>
+> \- Never hardcode brand values (colors, fonts, names, copy). Read them
+> from the active brand profile.
+>
+> \- Never read assets, catalog or prompts from another brand folder.
+>
+> \- Never send NDA or restricted brand material to a cloud AI service.
+> Follow the LLM routing policy.
+>
+> \- A brand must be locked (status: locked) before production, unless
+> the owner approves a draft override.
+>
+> \## 9. Process
 >
 > \- Read docs first. Stay in scope. Verify packages with \`npm view\`
 > before installing.
@@ -2018,16 +3135,25 @@ This file is read by every coding agent before every task.
 > \- New capability: write a plan, wait for approval. Finish with real
 > test and render results.
 
-<span id="sec_88" class="anchor"></span>Appendix B: Cue-Sheet Example
+<span id="sec_105" class="anchor"></span>Appendix B: Cue-Sheet Example
 and Batch Commands
 
-<span id="sec_89" class="anchor"></span>B.1 Cue-sheet JSON (excerpt)
+<span id="sec_106" class="anchor"></span>B.1 Cue-sheet JSON (validated
+example)
+
+This example validates against the CueSheet schema in section 5.2.
 
 > {
 >
-> "composition": "FeatureReel", "lang": "en", "fps": 30,
+> "composition": "FeatureReel",
 >
-> "feature": "qr_table_ordering", "durationInFrames": 810,
+> "lang": "en",
+>
+> "fps": 30,
+>
+> "feature": "qr_table_ordering",
+>
+> "durationInFrames": 810,
 >
 > "scenes": \[
 >
@@ -2043,25 +3169,29 @@ and Batch Commands
 >
 > \],
 >
-> "voiceover": \[ { "line": "One scan. The order is in.", "startFrame":
-> 210 } \],
+> "voiceover": \[{ "line": "One scan. The order is in.", "startFrame":
+> 210 }\],
 >
-> "sfx": \[ { "frame": 160, "file": "sfx/click-soft.wav", "pan": 0.2,
-> "gain": 0.8 } \],
+> "sfx": \[{ "frame": 160, "file": "sfx/click-soft.wav", "pan": 0.2,
+> "gain": 0.8 }\],
 >
-> "music": { "file": "music/bed-01.mp3", "duckTo": 0.10, "restoreTo":
+> "music": { "file": "music/bed-01.mp3", "duckTo": 0.1, "restoreTo":
 > 0.35 },
 >
-> "cursor": \[ { "frame": 120, "x": 540, "y": 900 },
+> "cursor": \[
 >
-> { "frame": 160, "x": 540, "y": 1180, "click": true } \],
+> { "frame": 120, "x": 540, "y": 900 },
 >
-> "camera": \[ { "frame": 0, "pos": \[0, 0, 6\], "look": \[0, 0, 0\],
-> "fov": 35 } \]
+> { "frame": 160, "x": 540, "y": 1180, "click": true }
+>
+> \],
+>
+> "camera": \[{ "frame": 0, "pos": \[0, 0, 6\], "look": \[0, 0, 0\],
+> "fov": 35 }\]
 >
 > }
 
-<span id="sec_90" class="anchor"></span>B.2 Duration from audio
+<span id="sec_107" class="anchor"></span>B.2 Duration from audio
 
 > // Root.tsx (concept; verify the audio-duration API for the pinned
 > Remotion version)
@@ -2075,7 +3205,7 @@ and Batch Commands
 >
 > }
 
-<span id="sec_91" class="anchor"></span>B.3 Batch rendering (example)
+<span id="sec_108" class="anchor"></span>B.3 Batch rendering (example)
 
 > \# One language, one format, supersampled
 >
@@ -2094,7 +3224,7 @@ and Batch Commands
 >
 > npx tsx src/render-all.ts --manifest=./render-manifest.json
 
-<span id="sec_92" class="anchor"></span>Appendix C: Pre-Release QA
+<span id="sec_109" class="anchor"></span>Appendix C: Pre-Release QA
 Checklist
 
 | **Check** | **Pass criteria** | **Status** |
@@ -2115,7 +3245,7 @@ Checklist
 | File sizes | WhatsApp cut under 16 MB | \[ \] |
 | Manifest | Render manifest saved and tagged in Git | \[ \] |
 
-<span id="sec_93" class="anchor"></span>Appendix D: Devanagari Stress
+<span id="sec_110" class="anchor"></span>Appendix D: Devanagari Stress
 Strings
 
 Used by QA-09 and the devanagari-typography skill to confirm that fonts,
@@ -2130,7 +3260,7 @@ line breaking and animations never split or corrupt conjunct characters.
 | कार्यक्षमता ज्ञानेश्वर      | Long words that stress line breaking       |
 | ₹1,25,000 ₹84,200 ₹450 | Rupee symbol and Indian digit grouping     |
 
-<span id="sec_94" class="anchor"></span>Appendix E: Learning and
+<span id="sec_111" class="anchor"></span>Appendix E: Learning and
 Reference Resources
 
 - Remotion documentation and its community Discord for API questions and
@@ -2154,7 +3284,973 @@ Reference Resources
 - Typography: Google Fonts Devanagari specimen pages and the Indian Type
   Foundry's educational material.
 
-<span id="sec_95" class="anchor"></span>Appendix F: Glossary
+<span id="sec_112" class="anchor"></span>Appendix F: Intake Question Map
+
+Each intake question ID with its priority and the Brand Profile paths it
+feeds. \[\] marks a list. This table is generated from the same data as
+the intake document, so the two cannot drift apart. R = required, C =
+conditional, O = optional.
+
+| **ID** | **Priority** | **Brand Profile path(s)** |
+|----|----|----|
+| S0-01 | R | displayName |
+| S0-02 | O | legalName |
+| S0-03 | R | project.goal |
+| S0-04 | R | project.deliverables |
+| S0-05 | R | project.successMeasures |
+| S0-06 | O | project.deadline |
+| S0-07 | R | contacts\[\].name, contacts\[\].role |
+| S0-08 | R | contacts\[\].email, contacts\[\].phone |
+| S0-09 | R | contacts\[\].isApprover |
+| S1-01 | R | business.industry |
+| S1-02 | R | business.offering |
+| S1-03 | R | business.usp |
+| S1-04 | R | business.markets |
+| S1-05 | O | business.stage |
+| S1-06 | O | business.pricePosition |
+| S1-07 | R | business.competitors |
+| S1-08 | O | (kept in BRAND.md notes) |
+| S1-09 | O | (kept in BRAND.md notes) |
+| S2-01 | R | audience.primary.name |
+| S2-02 | R | audience.primary.description |
+| S2-03 | O | audience.primary.ageRange |
+| S2-04 | R | audience.primary.languages |
+| S2-05 | R | audience.primary.techComfort |
+| S2-06 | R | audience.primary.channels |
+| S2-07 | R | audience.primary.pains |
+| S2-08 | R | audience.primary.desires |
+| S2-09 | R | audience.primary.objections |
+| S2-10 | O | audience.secondary |
+| S2-11 | O | (kept in BRAND.md notes) |
+| S3-01 | O | strategy.mission |
+| S3-02 | R | strategy.values |
+| S3-03 | R | strategy.positioning |
+| S3-04 | R | strategy.personality |
+| S3-05 | R | strategy.notThis |
+| S3-06 | R | strategy.taglines |
+| S3-07 | O | strategy.story |
+| S3-08 | O | (kept in BRAND.md notes) |
+| S4-01 | R | identity.logos\[\].name, identity.logos\[\].file |
+| S4-02 | R | identity.logos\[\].background |
+| S4-03 | R | identity.logos\[\].minWidthPx |
+| S4-04 | R | identity.logos\[\].clearSpace |
+| S4-05 | R | identity.logoDonts |
+| S4-06 | O | identity.animatedLogoFile |
+| S4-07 | O | (kept in BRAND.md notes) |
+| S5-01 | R | colors.primary |
+| S5-02 | O | colors.secondary |
+| S5-03 | O | colors.accent |
+| S5-04 | R | colors.neutrals |
+| S5-05 | R | colors.background |
+| S5-06 | O | colors.semantic |
+| S5-07 | O | colors.usageRatio |
+| S5-08 | R | colors.gradientsAllowed |
+| S5-09 | C | colors.gradients |
+| S5-10 | R | colors.forbidden |
+| S5-11 | R | colors.contrastMin |
+| S5-12 | O | (kept in BRAND.md notes) |
+| S6-01 | R | typography.families |
+| S6-02 | R | typography.families |
+| S6-03 | R | typography.families |
+| S6-04 | O | typography.families |
+| S6-05 | R | typography.families |
+| S6-06 | O | typography.families |
+| S6-07 | O | typography.scale |
+| S6-08 | R | typography.caseRules |
+| S6-09 | O | typography.letterSpacingLatin |
+| S6-10 | R | typography.devanagariLineHeightMin |
+| S7-01 | O | layout.grid |
+| S7-02 | O | layout.radii |
+| S7-03 | O | layout.shadows |
+| S7-04 | O | layout.borders |
+| S7-05 | O | layout.spacingUnit |
+| S7-06 | R | layout.iconStyle |
+| S7-07 | O | layout.patterns |
+| S8-01 | R | imagery.photoStyle |
+| S8-02 | R | imagery.illustrationStyle |
+| S8-03 | O | imagery.colorGrade |
+| S8-04 | R | imagery.subjects |
+| S8-05 | R | imagery.avoid |
+| S8-06 | R | imagery.mascot.exists |
+| S8-07 | C | imagery.mascot.file |
+| S8-08 | C | imagery.mascot.rules |
+| S9-01 | R | productUI.hasSoftwareProduct |
+| S9-02 | C | productUI.platforms |
+| S9-03 | C | productUI.theme |
+| S9-04 | O | productUI.designSystemRef |
+| S9-05 | C | productUI.fontsInUI |
+| S9-06 | C | productUI.screens\[\].key, productUI.screens\[\].name |
+| S9-07 | C | productUI.screens\[\].availability |
+| S9-08 | C | productUI.screens\[\].screenshot |
+| S9-09 | C | productUI.screens\[\].blurRules |
+| S9-10 | C | productUI.sampleDataRules |
+| S9-11 | O | (kept in BRAND.md notes) |
+| S9-12 | O | (kept in BRAND.md notes) |
+| S10-01 | C | offering.items\[\].name, offering.items\[\].price |
+| S10-02 | C | offering.items\[\].photo |
+| S10-03 | C | offering.locations |
+| S10-04 | O | offering.packaging |
+| S11-01 | R | motion.personality |
+| S11-02 | R | motion.pace |
+| S11-03 | R | motion.easingFeel |
+| S11-04 | R | motion.cameraStyle |
+| S11-05 | O | motion.allowedTransitions |
+| S11-06 | O | motion.forbiddenTransitions |
+| S11-07 | R | motion.use3D |
+| S11-08 | R | motion.useCharacters |
+| S11-09 | R | motion.textAnimation |
+| S11-10 | O | motion.maxSimultaneousText |
+| S11-11 | O | (kept in BRAND.md notes) |
+| S12-01 | R | sound.music.moods |
+| S12-02 | O | sound.music.bpmRange |
+| S12-03 | O | sound.music.instruments |
+| S12-04 | R | sound.music.avoid |
+| S12-05 | O | sound.music.licensedTracks |
+| S12-06 | O | sound.sfxStyle |
+| S12-07 | O | sound.sonicLogoFile |
+| S12-08 | R | sound.voice.persona |
+| S12-09 | R | sound.voice.gender |
+| S12-10 | O | sound.voice.ageFeel |
+| S12-11 | R | sound.voice.accent |
+| S12-12 | R | sound.voice.pace |
+| S12-13 | R | sound.voice.cloningConsentOnFile |
+| S12-14 | R | sound.forbiddenSounds |
+| S13-01 | R | localization.languages |
+| S13-02 | R | localization.primaryLanguage |
+| S13-03 | R | localization.formality |
+| S13-04 | R | localization.transcreate |
+| S13-05 | R | localization.loanwordPolicy |
+| S13-06 | R | localization.numberLocale |
+| S13-07 | R | localization.currency |
+| S13-08 | R | localization.dateFormat |
+| S13-09 | O | localization.glossary |
+| S13-10 | R | localization.pronunciations |
+| S13-11 | R | localization.brandNameByLanguage |
+| S13-12 | R | localization.reviewers |
+| S14-01 | R | messaging.pillars |
+| S14-02 | R | messaging.proofPoints\[\].claim, messaging.proofPoints\[\].evidence, messaging.proofPoints\[\].sourceRef |
+| S14-03 | R | messaging.proofPoints\[\].approved |
+| S14-04 | R | messaging.allowedClaims |
+| S14-05 | R | messaging.prohibitedClaims |
+| S14-06 | R | messaging.disclaimers |
+| S14-07 | R | messaging.ctas\[\].text |
+| S14-08 | R | messaging.ctas\[\].destination |
+| S14-09 | O | messaging.handles |
+| S14-10 | O | messaging.hashtags |
+| S14-11 | O | (kept in BRAND.md notes) |
+| S15-01 | R | references.likes\[\].ref, references.likes\[\].why |
+| S15-02 | R | references.dislikes\[\].ref, references.dislikes\[\].why |
+| S15-03 | O | (kept in BRAND.md notes) |
+| S16-01 | R | deliverables.formats |
+| S16-02 | R | deliverables.durationsSeconds |
+| S16-03 | R | deliverables.quantity |
+| S16-04 | R | deliverables.platforms |
+| S16-05 | R | deliverables.burnedCaptions |
+| S16-06 | R | deliverables.languages |
+| S16-07 | O | (kept in BRAND.md notes) |
+| S17-01 | R | assets.provided\[\].type, assets.provided\[\].path |
+| S17-02 | R | assets.provided\[\].owner |
+| S17-03 | O | assets.provided\[\].licenseNote |
+| S17-04 | R | assets.missing |
+| S17-05 | R | (kept in BRAND.md notes) |
+| S18-01 | R | compliance.regulations |
+| S18-02 | R | compliance.testimonialConsentOnFile |
+| S18-03 | O | compliance.trademarkNotes |
+| S18-04 | R | compliance.aiDisclosure |
+| S18-05 | R | compliance.usageRights.territory |
+| S18-06 | R | compliance.usageRights.durationMonths |
+| S18-07 | R | compliance.usageRights.paidMedia |
+| S18-08 | R | compliance.forbiddenTopics |
+| S18-09 | R | compliance.competitorMentionAllowed |
+| S19-01 | R | workflow.approvers |
+| S19-02 | R | workflow.revisionRounds |
+| S19-03 | O | workflow.reviewTool |
+| S19-04 | R | workflow.signoffFormat |
+| S19-05 | R | workflow.confidentiality |
+| S19-06 | O | (kept in BRAND.md notes) |
+
+<span id="sec_113" class="anchor"></span>Appendix G: Example brand.json
+(Illustrative)
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><p><strong>Illustrative only</strong></p>
+<p>This example uses BharatQR values taken from the owner's summary and
+project notes. Fields tagged assumed in the provenance block (for
+example the legal name, competitors, deadline) are placeholders that the
+owner must confirm. The file validates against the schema in section
+16.4.</p></td>
+</tr>
+</tbody>
+</table>
+
+> {
+>
+> "schemaVersion": "1.0",
+>
+> "id": "bharatqr",
+>
+> "displayName": "BharatQR",
+>
+> "legalName": "To be confirmed by owner",
+>
+> "status": "draft",
+>
+> "version": "0.1.0",
+>
+> "lockedOn": "2026-12-01",
+>
+> "project": {
+>
+> "goal": "Launch a brand film and per-feature Reels for restaurant
+> owners",
+>
+> "deadline": "2026-12-15",
+>
+> "deliverables": \["60 s hero film", "15-30 s feature Reels", "6 s
+> bumpers"\],
+>
+> "successMeasures": \["Hook hold rate", "Demo requests per video"\]
+>
+> },
+>
+> "contacts": \[
+>
+> {
+>
+> "name": "Karan Datta Daphade",
+>
+> "role": "Owner",
+>
+> "email": "owner@example.com",
+>
+> "phone": "+91-00000-00000",
+>
+> "isApprover": true
+>
+> }
+>
+> \],
+>
+> "business": {
+>
+> "industry": "Restaurant and hotel software (SaaS)",
+>
+> "offering": "Multi-tenant POS and live-operations platform with
+> QR-based table and room ordering",
+>
+> "usp": \["QR ordering without a customer app", "Guided 7-step branch
+> onboarding"\],
+>
+> "markets": \["India"\],
+>
+> "stage": "Pre-launch, owner-side features live",
+>
+> "pricePosition": "Affordable for independent outlets",
+>
+> "competitors": \["To be confirmed by owner"\]
+>
+> },
+>
+> "audience": {
+>
+> "primary": {
+>
+> "name": "Independent restaurant owner",
+>
+> "description": "Runs one or a few outlets and manages operations
+> personally",
+>
+> "ageRange": "28-55",
+>
+> "languages": \["Marathi", "Hindi", "English"\],
+>
+> "techComfort": "medium",
+>
+> "channels": \["WhatsApp", "Instagram", "YouTube"\],
+>
+> "pains": \["Lost orders", "Slow table turnover", "Billing mistakes"\],
+>
+> "desires": \["Calm operations", "Clear daily numbers"\],
+>
+> "objections": \["Software is complicated", "Staff will not adopt it"\]
+>
+> },
+>
+> "secondary": {
+>
+> "name": "Branch or floor manager",
+>
+> "description": "Handles tables, staff and daily service",
+>
+> "ageRange": "22-45",
+>
+> "languages": \["Marathi", "Hindi"\],
+>
+> "techComfort": "medium",
+>
+> "channels": \["WhatsApp", "YouTube"\],
+>
+> "pains": \["Waiting-list confusion"\],
+>
+> "desires": \["One screen for every table"\],
+>
+> "objections": \["Training time"\]
+>
+> }
+>
+> },
+>
+> "strategy": {
+>
+> "mission": "Help restaurants run calmly",
+>
+> "values": \["Clarity", "Reliability", "Local-first"\],
+>
+> "positioning": "The calm, local-language way to run a restaurant",
+>
+> "personality": \["Confident", "Warm", "Precise"\],
+>
+> "notThis": \["Corporate", "Gimmicky", "Cluttered"\],
+>
+> "taglines": { "en": "Run it calmly" },
+>
+> "story": "Built for Indian restaurants, in the languages their teams
+> speak"
+>
+> },
+>
+> "identity": {
+>
+> "logos": \[
+>
+> {
+>
+> "name": "primary-horizontal",
+>
+> "file": "assets/logos/primary-horizontal.svg",
+>
+> "background": "dark",
+>
+> "minWidthPx": 120,
+>
+> "clearSpace": "Height of the icon on every side"
+>
+> }
+>
+> \],
+>
+> "logoDonts": \["Do not stretch", "Do not recolor", "Do not add
+> shadows"\],
+>
+> "animatedLogoFile": "assets/logos/logo-sting.json"
+>
+> },
+>
+> "colors": {
+>
+> "primary": "#3B82F6",
+>
+> "secondary": "#161F30",
+>
+> "accent": "#10B981",
+>
+> "neutrals": \["#0B0F19", "#161F30", "#E5E7EB"\],
+>
+> "background": { "light": "#F8FAFC", "dark": "#0B0F19" },
+>
+> "semantic": { "success": "#10B981", "warning": "#F59E0B", "error":
+> "#EF4444", "info": "#3B82F6" },
+>
+> "usageRatio": "70 percent neutral, 20 percent primary, 10 percent
+> accent",
+>
+> "gradientsAllowed": false,
+>
+> "gradients": \[\],
+>
+> "forbidden": \["Neon purple", "Pure black text on pure white"\],
+>
+> "contrastMin": 4.5
+>
+> },
+>
+> "typography": {
+>
+> "families": \[
+>
+> {
+>
+> "role": "heading",
+>
+> "script": "latin",
+>
+> "family": "Outfit",
+>
+> "weights": \[600, 700\],
+>
+> "source": "google",
+>
+> "licenseStatus": "open",
+>
+> "fallbacks": \["Inter", "sans-serif"\]
+>
+> },
+>
+> {
+>
+> "role": "body",
+>
+> "script": "latin",
+>
+> "family": "Inter",
+>
+> "weights": \[400, 500, 600\],
+>
+> "source": "google",
+>
+> "licenseStatus": "open",
+>
+> "fallbacks": \["sans-serif"\]
+>
+> },
+>
+> {
+>
+> "role": "body",
+>
+> "script": "devanagari",
+>
+> "family": "Noto Sans Devanagari",
+>
+> "weights": \[400, 600, 700\],
+>
+> "source": "google",
+>
+> "licenseStatus": "open",
+>
+> "fallbacks": \["Mukta", "sans-serif"\]
+>
+> }
+>
+> \],
+>
+> "scale": { "display": 72, "h1": 56, "h2": 40, "body": 28, "caption":
+> 22 },
+>
+> "caseRules": "Sentence case for headlines; no all-caps in Devanagari",
+>
+> "letterSpacingLatin": 0,
+>
+> "devanagariLineHeightMin": 1.4
+>
+> },
+>
+> "layout": {
+>
+> "grid": { "columns": 12, "margin": 64, "gutter": 24 },
+>
+> "radii": { "small": 8, "medium": 16, "large": 28 },
+>
+> "shadows": "Soft, low-contrast, large blur",
+>
+> "borders": "1 px hairline at low opacity",
+>
+> "spacingUnit": 8,
+>
+> "iconStyle": "outline",
+>
+> "patterns": \[\]
+>
+> },
+>
+> "imagery": {
+>
+> "photoStyle": "Warm, natural light, real restaurant counters and
+> kitchens",
+>
+> "illustrationStyle": "None for now",
+>
+> "colorGrade": "Warm highlights, cool shadows, restrained saturation",
+>
+> "subjects": \["Chai counter", "Thali", "Steel utensils", "Handwritten
+> menu board"\],
+>
+> "avoid": \["Generic office stock photos", "Western-only dining
+> scenes"\],
+>
+> "mascot": { "exists": false, "file": "", "rules": "" }
+>
+> },
+>
+> "productUI": {
+>
+> "hasSoftwareProduct": true,
+>
+> "platforms": \["web"\],
+>
+> "theme": "both",
+>
+> "designSystemRef": "docs/design-system.md",
+>
+> "fontsInUI": \["Inter", "Noto Sans Devanagari"\],
+>
+> "screens": \[
+>
+> {
+>
+> "key": "onboarding_wizard",
+>
+> "name": "Branch onboarding wizard",
+>
+> "availability": "live",
+>
+> "screenshot": "ui/onboarding.png",
+>
+> "blurRules": "Blur real phone numbers and emails"
+>
+> },
+>
+> {
+>
+> "key": "table_management",
+>
+> "name": "Tables operations",
+>
+> "availability": "live",
+>
+> "screenshot": "ui/tables.png",
+>
+> "blurRules": "Use demo customers only"
+>
+> },
+>
+> {
+>
+> "key": "kitchen_display",
+>
+> "name": "Kitchen display",
+>
+> "availability": "roadmap",
+>
+> "screenshot": "",
+>
+> "blurRules": "Mock only; label coming soon"
+>
+> }
+>
+> \],
+>
+> "sampleDataRules": "Indian names, rupee amounts, realistic menu items;
+> never real customer data"
+>
+> },
+>
+> "offering": {
+>
+> "items": \[{ "name": "Starter plan", "price": "To be confirmed",
+> "photo": "" }\],
+>
+> "locations": \["Maharashtra, India"\],
+>
+> "packaging": ""
+>
+> },
+>
+> "motion": {
+>
+> "personality": "confident",
+>
+> "pace": "medium",
+>
+> "easingFeel": "soft",
+>
+> "cameraStyle": "gentle-drift",
+>
+> "allowedTransitions": \["match-cut", "slide", "light-leak"\],
+>
+> "forbiddenTransitions": \["spin", "cube-flip"\],
+>
+> "use3D": true,
+>
+> "useCharacters": false,
+>
+> "textAnimation": "word",
+>
+> "maxSimultaneousText": 3
+>
+> },
+>
+> "sound": {
+>
+> "music": {
+>
+> "moods": \["Warm", "Confident", "Uplifting"\],
+>
+> "bpmRange": \[92, 112\],
+>
+> "instruments": \["Soft pads", "Plucked strings", "Light percussion"\],
+>
+> "avoid": \["Aggressive EDM", "Copyrighted film themes"\],
+>
+> "licensedTracks": \[\]
+>
+> },
+>
+> "sfxStyle": "Soft, tactile UI sounds in the music key; one original
+> payment-style ding motif",
+>
+> "sonicLogoFile": "assets/sfx/sonic-logo.wav",
+>
+> "voice": {
+>
+> "persona": "Friendly, confident restaurant-industry guide",
+>
+> "gender": "any",
+>
+> "ageFeel": "30s",
+>
+> "accent": "Neutral Maharashtrian Marathi; standard Hindi; Indian
+> English",
+>
+> "pace": "medium",
+>
+> "cloningConsentOnFile": false
+>
+> },
+>
+> "forbiddenSounds": \["Third-party payment-brand jingles"\]
+>
+> },
+>
+> "localization": {
+>
+> "languages": \["en", "hi", "mr"\],
+>
+> "formality": "neutral",
+>
+> "transcreate": true,
+>
+> "loanwordPolicy": "Keep QR, bill and order in English letters or
+> natural Devanagari spelling",
+>
+> "numberLocale": "en-IN",
+>
+> "currency": "INR",
+>
+> "dateFormat": "DD MMM YYYY",
+>
+> "glossary": \[
+>
+> {
+>
+> "term": "Table",
+>
+> "translations": { "hi": "टेबल", "mr": "टेबल" },
+>
+> "doNotTranslate": false
+>
+> }
+>
+> \],
+>
+> "pronunciations": \[{ "term": "BharatQR", "lang": "mr", "say": "Bharat
+> Q R" }\],
+>
+> "brandNameByLanguage": { "en": "BharatQR" },
+>
+> "reviewers": \["Native Marathi reviewer to be named", "Native Hindi
+> reviewer to be named"\],
+>
+> "primaryLanguage": "mr"
+>
+> },
+>
+> "messaging": {
+>
+> "pillars": \["Calm operations", "Local language", "One screen for the
+> floor"\],
+>
+> "proofPoints": \[
+>
+> {
+>
+> "claim": "Branch onboarding in seven guided steps",
+>
+> "evidence": "Product onboarding flow",
+>
+> "sourceRef": "docs/features/onboarding.md",
+>
+> "approved": true
+>
+> }
+>
+> \],
+>
+> "allowedClaims": \["Guided onboarding", "QR codes generated per
+> table"\],
+>
+> "prohibitedClaims": \["Guaranteed revenue increase", "Features not yet
+> shipped presented as live"\],
+>
+> "disclaimers": \[{ "text": "Coming soon", "whenRequired": "Any roadmap
+> feature shown on screen" }\],
+>
+> "ctas": \[
+>
+> {
+>
+> "text": { "en": "Start free", "hi": "मुफ़्त शुरू करें", "mr": "मोफत सुरू करा"
+> },
+>
+> "destination": "Product website"
+>
+> }
+>
+> \],
+>
+> "handles": \["@to_be_confirmed"\],
+>
+> "hashtags": \["#BharatQR"\]
+>
+> },
+>
+> "references": {
+>
+> "likes": \[
+>
+> {
+>
+> "ref": "Reference video to be supplied by owner",
+>
+> "why": "Clean product storytelling"
+>
+> }
+>
+> \],
+>
+> "dislikes": \[{ "ref": "Template-style SaaS ads", "why": "Generic and
+> forgettable" }\]
+>
+> },
+>
+> "deliverables": {
+>
+> "formats": \["9:16", "1:1", "16:9"\],
+>
+> "durationsSeconds": \[6, 15, 30, 60\],
+>
+> "quantity": 12,
+>
+> "platforms": \["Instagram Reels", "YouTube Shorts", "WhatsApp",
+> "Website"\],
+>
+> "burnedCaptions": true,
+>
+> "languages": \["en", "hi", "mr"\]
+>
+> },
+>
+> "assets": {
+>
+> "provided": \[
+>
+> {
+>
+> "type": "logo",
+>
+> "path": "assets/logos/primary-horizontal.svg",
+>
+> "owner": "client",
+>
+> "licenseNote": "Owner-created"
+>
+> }
+>
+> \],
+>
+> "missing": \["Final logo files", "Licensed music"\]
+>
+> },
+>
+> "compliance": {
+>
+> "regulations": \["Indian advertising standards applicable to software
+> ads"\],
+>
+> "testimonialConsentOnFile": false,
+>
+> "trademarkNotes": "Do not use third-party brand logos or sounds",
+>
+> "aiDisclosure": "label-synthetic-voice",
+>
+> "usageRights": { "territory": "India", "durationMonths": 24,
+> "paidMedia": true },
+>
+> "forbiddenTopics": \["Competitor disparagement"\],
+>
+> "competitorMentionAllowed": false
+>
+> },
+>
+> "workflow": {
+>
+> "approvers": \["Karan Datta Daphade"\],
+>
+> "revisionRounds": 2,
+>
+> "reviewTool": "Shared folder",
+>
+> "signoffFormat": "email",
+>
+> "confidentiality": "standard"
+>
+> },
+>
+> "provenance": {
+>
+> "legalName": "assumed",
+>
+> "business.competitors": "assumed",
+>
+> "strategy.taglines.en": "derived",
+>
+> "colors.primary": "provided",
+>
+> "typography.families": "provided",
+>
+> "audience.primary": "derived",
+>
+> "project.deadline": "assumed"
+>
+> }
+>
+> }
+
+<span id="sec_114" class="anchor"></span>Appendix H: Extraction and
+Check Prompts
+
+<span id="sec_115" class="anchor"></span>H.1 Intake extraction prompt
+
+> ROLE: You convert a filled Brand Intake Document into a Brand Profile
+> for the motion studio.
+>
+> INPUT: the intake answers keyed by question ID (S0-01 ... S19-06), the
+> schema in
+>
+> src/schema/brand.ts, and the question map (Appendix F).
+>
+> RULES
+>
+> 1\. Return ONLY one JSON object, no prose and no markdown fences.
+>
+> 2\. Use only facts present in the intake. Never invent colors, fonts,
+> claims, numbers,
+>
+> names, dates, URLs or licenses. If a value is not stated, leave the
+> field out.
+>
+> 3\. Map answers to profile paths using the question map. One answer
+> may fill several fields.
+>
+> 4\. Normalize: colors to \#RRGGBB (only if exact; otherwise report a
+> conflict), language
+>
+> names to codes (English en, Hindi hi, Marathi mr, ...), numbers to
+> numbers, yes/no to
+>
+> booleans, choice answers to the exact allowed enum value.
+>
+> 5\. If an answer is ambiguous, contradicts another answer, or cannot
+> be mapped to an
+>
+> allowed value, do not guess: add it to \`conflicts\`.
+>
+> 6\. Tag every field you fill: \`provided\` if copied directly,
+> \`derived\` if you combined or
+>
+> reformatted client statements. Never use \`assumed\` (code applies
+> studio defaults).
+>
+> OUTPUT ENVELOPE
+>
+> {
+>
+> "profile": { ...Brand-shaped object; unanswered fields omitted... },
+>
+> "provenance": { "colors.primary": "provided", "strategy.positioning":
+> "derived" },
+>
+> "missing": \[ { "id": "S5-04", "path": "colors.neutrals", "reason":
+> "blank" } \],
+>
+> "conflicts": \[ { "ids": \["S5-01"\], "issue": "RGB given, HEX
+> expected" } \],
+>
+> "notes": \[ "free-text items that belong in BRAND.md" \]
+>
+> }
+
+After extraction, code applies the studio defaults (section 16.5), tags
+those fields assumed, validates with Zod, and sends missing items and
+conflicts back to a person.
+
+<span id="sec_116" class="anchor"></span>H.2 Semantic claims and tone
+check (BC-06, BC-09)
+
+> ROLE: Brand compliance reviewer.
+>
+> INPUT: the brand's prohibitedClaims, forbiddenTopics, personality,
+> notThis, and the text of
+>
+> every on-screen string and voiceover line for one video, per language.
+>
+> TASK: Find (a) any statement that matches or implies a prohibited
+> claim or topic,
+>
+> \(b\) any line whose tone conflicts with the personality or notThis
+> lists.
+>
+> Return ONLY JSON:
+>
+> { "violations": \[ { "lang": "hi", "text": "...", "rule":
+> "prohibitedClaims\[1\]",
+>
+> "severity": "hard" } \],
+>
+> "toneWarnings": \[ { "lang": "en", "text": "...", "why": "..." } \] }
+>
+> If unsure, report it as a warning, not a pass. A person reviews every
+> hard violation.
+
+<span id="sec_117" class="anchor"></span>H.3 BRAND.md outline (generated
+by template)
+
+- Overview and positioning; audience; personality and values; what the
+  brand is not
+
+- Voice and tone, taglines, approved and prohibited claims, mandatory
+  disclaimers
+
+- Logo rules; color palette and usage; typography per script; layout and
+  icon style
+
+- Imagery, illustration and character rules; motion personality and
+  limits; sound and voice rules
+
+- Languages, glossary, pronunciations, number and date formats,
+  reviewers
+
+- Product UI screens with availability status and blur rules (if any)
+
+- Deliverables, approvals, confidentiality tier, assumptions awaiting
+  confirmation
+
+<span id="sec_118" class="anchor"></span>Appendix I: Glossary
 
 | **Term** | **Meaning** |
 |----|----|
@@ -2173,8 +4269,18 @@ Reference Resources
 | DoF | Depth of field: selective focus. |
 | Safe zone | Region of the frame that stays clear of platform interface overlays. |
 | Gate | A review checkpoint with an owner decision. |
+| Brand Kit | The isolated folder for one brand: intake, brand.json, catalog, assets, approvals. |
+| Brand Profile (brand.json) | The validated, machine-readable description of a brand. |
+| Brand Intake Document | The detailed questionnaire a client fills so the studio can build the Brand Profile. |
+| Brand lock | The approved, versioned state of a Brand Profile that production uses. |
+| Provenance | A tag on each profile value: provided, derived or assumed. |
+| Studio default | A documented value the studio applies when an optional question is left blank. |
+| Brand compliance | Automated checks that a video follows the brand's own rules (BC-01 to BC-15). |
+| Confidentiality tier | The brand's setting (standard, nda, restricted) that decides which AI services may see its material. |
+| Router (LLM router) | Code that picks an allowed AI provider for each task, validates the output and logs usage. |
+| Transcreation (client use) | Writing the message again in each language, reviewed by a native speaker. |
 
-<span id="sec_96" class="anchor"></span>Part B: Future Paid Upgrades
+<span id="sec_119" class="anchor"></span>Part B: Future Paid Upgrades
 (Budget Roadmap)
 
 This page is the **shopping list for when budget becomes available**.
@@ -2198,7 +4304,7 @@ at the current rate.</p></td>
 </tbody>
 </table>
 
-<span id="sec_97" class="anchor"></span>B1. How to use this section
+<span id="sec_120" class="anchor"></span>B1. How to use this section
 
 - When a budget appears, start at **Tier A** and work downward. Tier A
   is human craft: it moves the film from 'excellent engineering' toward
@@ -2213,7 +4319,7 @@ at the current rate.</p></td>
 - Re-check the Part A **license register** after buying: paid assets
   have their own license terms.
 
-<span id="sec_98" class="anchor"></span>B2. Where the free stack falls
+<span id="sec_121" class="anchor"></span>B2. Where the free stack falls
 short
 
 | **Free-stack limitation** | **Visible effect** | **Upgrade that fixes it** |
@@ -2227,9 +4333,11 @@ short
 | Remotion free license (up to 3 people) | Cannot add a fourth collaborator without a license | UC4 Remotion Company License |
 | Self-reviewed copy | Risk of unnatural Marathi or Hindi | UA2 native copywriter and proofreader |
 | No external creative review | Blind spots in taste and polish | UA6 senior motion-design review |
+| Free cloud LLM tiers may use your data | Cannot process confidential client intake documents in the cloud | UB14 paid no-training tier (or keep using local models) |
+| No lawyer-reviewed client paperwork | Ownership and licensing risk on client projects | UD8 contract template, UD10 e-signature |
 
-<span id="sec_99" class="anchor"></span>B3. Tier A: Human craft (highest
-impact per rupee)
+<span id="sec_122" class="anchor"></span>B3. Tier A: Human craft
+(highest impact per rupee)
 
 | **ID** | **Upgrade** | **What it improves** | **Replaces (free option)** | **Cost note** | **Buy when** |
 |----|----|----|----|----|----|
@@ -2243,7 +4351,7 @@ impact per rupee)
 | UA8 | Professional 3D artist for hero props and brand scenes | Showroom-quality phone, standee, printer, restaurant environments | Free GLB models and self-built Blender scenes | Per asset or per project quote | If 3D beats look generic |
 | UA9 | Professional colorist for the final grade | Cohesive cinematic look across footage and renders | Self-grade in Resolve Free | Per-project quote | Hero film |
 
-<span id="sec_100" class="anchor"></span>B4. Tier B: Tools and services
+<span id="sec_123" class="anchor"></span>B4. Tier B: Tools and services
 that raise craft
 
 | **ID** | **Upgrade** | **What it improves** | **Replaces (free option)** | **Cost note** | **Buy when** |
@@ -2261,8 +4369,9 @@ that raise craft
 | UB11 | Figma paid seat (Dev Mode and MCP) | Design-to-code access for agents; design tokens | Free Figma and manual token export | Check vendor page | When the product design system grows |
 | UB12 | Premium 3D asset libraries (Fab, TurboSquid, CGTrader) | Quality props, devices and environments | Poly Haven, Quaternius, Sketchfab CC0 | Per asset | To speed up 3D beats |
 | UB13 | Higher Claude plan or API credits for the vision-critique loop | Automated multi-pass critique at scale | Manual critique through existing subscriptions | Usage-based; check vendor page | When batch volume grows |
+| UB14 | Paid, no-training tier of a cloud LLM API (for example the paid Gemini API tier, whose content Google says is not used to improve its products, or another provider with equivalent terms) | Safe cloud processing of NDA client material, higher rate limits, better Hindi and Marathi drafts | Free LLM tiers (data may be used for improvement) and local models | Usage-based; check vendor page and data terms | Before handling confidential client intake documents in the cloud |
 
-<span id="sec_101" class="anchor"></span>B5. Tier C: Scale and
+<span id="sec_124" class="anchor"></span>B5. Tier C: Scale and
 infrastructure
 
 | **ID** | **Upgrade** | **What it improves** | **Replaces (free option)** | **Cost note** | **Buy when** |
@@ -2270,13 +4379,13 @@ infrastructure
 | UC1 | Dedicated GPU workstation or GPU and RAM upgrade | Fast 3D renders and local AI models; shorter iteration loops | Existing machine | Hardware cost | When renders exceed a comfortable wait |
 | UC2 | Cloud GPU rental (RunPod, Lambda and similar) | On-demand power without hardware purchase | Local GPU | Hourly rate; check vendor | For heavy batches or local AI models |
 | UC3 | Remotion Lambda (AWS) or Cloud Run rendering | Parallel cloud renders for large batches and personalized videos | Local rendering | Cloud compute cost plus Remotion license; check vendor | When rendering 100+ outputs or serving customers |
-| UC4 | Remotion Company License | Legal use at 4+ people; prioritized support | Free license (up to 3 people) | Verified: about \$25 per developer seat per month, \$100 per month minimum; Enterprise from about \$500 per month; some sources also list per-render pricing. Re-check. | The day a fourth person joins the project |
+| UC4 | Remotion Company License | Legal use at 4+ people (including combined headcount with clients); prioritized support | Free license (up to 3 people) | Checked Oct 2026: Creators about \$25 per developer seat per month; Automators \$0.01 per render with \$100 per month minimum; Enterprise from \$500 per month. Confirm which minimum applies. | The day a fourth person joins, or when client ownership terms require it |
 | UC5 | Video hosting and delivery (Mux, Cloudflare Stream, Bunny) | Fast, adaptive playback for in-product videos | Direct file hosting | Usage-based; check vendor (the Remotion company license lists Mux credits) | When embedding videos in the product at scale |
 | UC6 | Cloud storage and backup for masters (S3, R2, Drive) | Safe archive of ProRes masters and assets | Local disks | Storage cost | When masters accumulate |
 | UC7 | CI render runners or self-hosted runner | Automated nightly renders and QA | Local runs | Usage-based | When release videos should render automatically |
 | UC8 | Job queue and hosting for per-tenant video jobs (Redis, workers) | Reliable personalized and recap videos inside the product | Manual command line | Hosting cost | When tenant video features go live |
 
-<span id="sec_102" class="anchor"></span>B6. Tier D: Growth, legal and
+<span id="sec_125" class="anchor"></span>B6. Tier D: Growth, legal and
 distribution
 
 | **ID** | **Upgrade** | **What it improves** | **Replaces (free option)** | **Cost note** | **Buy when** |
@@ -2288,8 +4397,13 @@ distribution
 | UD5 | Customer testimonial program (travel, incentives, release management) | Authentic social proof | Informal testimonials | Per testimonial | When customers are live |
 | UD6 | Trademark and copyright filing for brand name, logo and sonic logo | Protects brand assets | None | Filing fees | After brand is final |
 | UD7 | Subtitling and translation services for long-form content | Accuracy and speed at volume | Whisper plus self-review | Per minute quote | If long-form content grows |
+| UD8 | Lawyer-reviewed client contract template (scope, IP assignment, usage rights, warranties, revisions, confidentiality, data protection) | Clear ownership and liability when producing videos for other brands | Self-drafted from the section 16.12 checklist | Per-template or hourly quote | Before the first paid client project |
+| UD9 | Client review and approval platform (frame-accurate comments and version history) | Faster feedback, auditable approvals | Shared folder and email sign-off | Subscription; check vendor | When several clients review at once |
+| UD10 | E-signature and document tools | Signed intake sign-offs, releases and contracts | Email approvals and scanned forms | Subscription; check vendor | When approvals must be legally traceable |
+| UD11 | Professional liability or business insurance for client work | Protection against claims over delivered work | None | Insurer quote | Before taking on larger clients |
+| UD12 | Client font licenses (paid by the client) for brand typefaces | Exact brand typography | Open-license Google fonts | Paid by the client; confirm the license allows video use | When a client's brand uses licensed fonts |
 
-<span id="sec_103" class="anchor"></span>B7. Suggested purchase sequence
+<span id="sec_126" class="anchor"></span>B7. Suggested purchase sequence
 
 A sensible order when money arrives in stages. Adjust to results from
 the rubric.
@@ -2302,9 +4416,9 @@ the rubric.
 | 4 | UA6 senior review, UA9 colorist, UB6 Resolve Studio | Polish and finish |
 | 5 | UC1 or UC2 compute, UB7 AI plates, UB8 image tools | Iteration speed and extra visual material |
 | 6 | UC4 Remotion license (when team reaches 4), UC3 cloud rendering, UC5 hosting, UC8 job queue | Scale and product integration |
-| 7 | UD1 legal review, UD2 ads, UD3 analytics, UD4 more languages | Growth and compliance |
+| 7 | UD1 legal review, UD2 ads, UD3 analytics, UD4 more languages; for client work UD8, UD10, UB14 and UD9 as volume grows | Growth, compliance and client readiness |
 
-<span id="sec_104" class="anchor"></span>B8. Trigger checklist: when to
+<span id="sec_127" class="anchor"></span>B8. Trigger checklist: when to
 start spending
 
 - Hero film scores 85 or more on every category **except** sound or
@@ -2325,10 +4439,13 @@ start spending
 - Paid advertising begins: complete UD1 legal review and move to cleared
   music (UB3 or UA3).
 
+- The first outside client appears: buy UD8 (contract template) and
+  decide on UB14 before touching their confidential files in the cloud.
+
 - Customers outside Maharashtra and Hindi-speaking states ask for
   videos: start UD4.
 
-<span id="sec_105" class="anchor"></span>B9. Budget log (fill in as you
+<span id="sec_128" class="anchor"></span>B9. Budget log (fill in as you
 buy)
 
 | **Date** | **Item (ID)** | **Cost** | **License terms noted** | **Result / what improved** |

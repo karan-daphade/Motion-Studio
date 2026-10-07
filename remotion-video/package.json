@@ -34,7 +34,10 @@
     "test": "vitest run",
     "check:versions": "node scripts/check-versions.mjs",
     "check:licenses": "node scripts/check-licenses.mjs",
-    "determinism": "node scripts/check-determinism.mjs"
+    "determinism": "node scripts/check-determinism.mjs",
+    "brand:new": "node scripts/brand-new.mjs",
+    "brand:validate": "node scripts/brand-validate.mjs",
+    "catalog:check": "node scripts/catalog-check.mjs"
   },
   "sideEffects": [
     "*.css"

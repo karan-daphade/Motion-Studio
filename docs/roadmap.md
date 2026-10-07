@@ -6,7 +6,7 @@ phases can proceed in parallel once their prerequisites are met.
 | Status | **Phase** | **Scope** | **Deliverables** | **Exit criteria** |
 |---|---|---|---|---|
 | [x] | 0 Foundations | Repo, Remotion setup, pinned versions, tokens skeleton, guidelines, AGENTS.md, license register, package verification | Running Studio, lint rules, LICENSES.md, assets-manifest.json, first 8 skills | Hello-world composition renders deterministically |
-| [ ] | 1 The Brain | Schemas, product.json, features.json (15 seed features), locale workflow | Validated catalog, native-reviewed EN, HI, MR copy for first features | Catalog gate blocks incomplete features |
+| [x] | 1 The Brain | Schemas, product.json, features.json (15 seed features), locale workflow | Validated catalog, native-reviewed EN, HI, MR copy for first features | Catalog gate blocks incomplete features |
 | [ ] | 2 Components | UI clones, device frames, cursor, charts, Storybook | Story for every clone; mock-data fixtures | Brand-color swap test passes |
 | [ ] | 3 Scene engine | Scene templates, transitions, composition registry, first feature reel (EN) | One complete 20 s reel | Rubric 70+ on first pass |
 | [ ] | 4 Audio | VO pipeline, Whisper sync, captions, SFX palette, ducking, mastering | Fully mixed reel in 3 languages | Loudness and sync checks pass |

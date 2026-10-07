@@ -1,0 +1,423 @@
+[
+  {
+    "key": "qr_table_ordering",
+    "category": "Customer Experience",
+    "availability": "roadmap",
+    "uiComponent": "QRTableOrdering",
+    "mockData": {
+      "table": "T-04",
+      "section": "Main Dining",
+      "items": [
+        { "name": "Paneer Butter Masala", "price": 280, "qty": 1 },
+        { "name": "Butter Naan", "price": 50, "qty": 3 }
+      ],
+      "subtotal": 430,
+      "gst": 21.5,
+      "total": 451.5
+    },
+    "locales": {
+      "en": {
+        "title": "QR Table Ordering",
+        "sub": "Guests scan and order directly from their phone"
+      },
+      "hi": {
+        "title": "क्यूआर टेबल ऑर्डरिंग",
+        "sub": "ग्राहक बिना किसी ऐप के सीधे फोन से ऑर्डर करें"
+      },
+      "mr": {
+        "title": "क्यूआर टेबल ऑर्डरिंग",
+        "sub": "ग्राहक कोणत्याही ॲपशिवाय थेट फोनवरून ऑर्डर करू शकतात"
+      }
+    }
+  },
+  {
+    "key": "qr_generation_download",
+    "category": "Setup",
+    "availability": "live",
+    "uiComponent": "QRCardSheet",
+    "mockData": {
+      "tablesCount": 24,
+      "format": "Printable PDF",
+      "branch": "Deccan Gymkhana",
+      "zipName": "BharatQR_Tables_1_to_24.zip"
+    },
+    "locales": {
+      "en": {
+        "title": "Instant QR Card Generation",
+        "sub": "Generate branded high-res QR cards for every table"
+      },
+      "hi": {
+        "title": "तुरंत क्यूआर कार्ड जनरेशन",
+        "sub": "हर टेबल के लिए प्रिंट-रेडी क्यूआर कार्ड एक क्लिक में डाउनलोड करें"
+      },
+      "mr": {
+        "title": "झटपट क्यूआर कार्ड निर्मिती",
+        "sub": "प्रत्येक टेबलसाठी ब्रँडेड क्यूआर कार्ड एका क्लिकवर डाऊनलोड करा"
+      }
+    },
+    "voiceover": {
+      "en": "Generate ready-to-print QR cards for all your tables in under sixty seconds.",
+      "hi": "अपनी सभी टेबलों के लिए प्रिंट-रेडी क्यूआर कार्ड साठ सेकंड में डाउनलोड करें।",
+      "mr": "आपल्या सर्व टेबलसाठी प्रिंट-रेडी क्यूआर कार्ड साठ सेकंदात डाऊनलोड करा."
+    },
+    "hooks": [
+      "Still printing paper menus every time prices change?",
+      "Set up QR ordering for 25 tables in under a minute."
+    ]
+  },
+  {
+    "key": "onboarding_wizard",
+    "category": "Setup",
+    "availability": "live",
+    "uiComponent": "OnboardingStepper",
+    "mockData": {
+      "stepsCompleted": 5,
+      "totalSteps": 7,
+      "currentStep": "Menu Import",
+      "outletName": "Swad Sagar Pure Veg"
+    },
+    "locales": {
+      "en": {
+        "title": "Guided 7-Step Setup Wizard",
+        "sub": "Configure branch, menu, taxes and staff in minutes"
+      },
+      "hi": {
+        "title": "सरल 7-स्टेप सेटअप विज़ार्ड",
+        "sub": "ब्रांच, मेनू, जीएसटी और स्टाफ मिनटों में सेट करें"
+      },
+      "mr": {
+        "title": "सुलभ 7-टप्पे सेटअप विझार्ड",
+        "sub": "शाखा, मेनू, जीएसटी आणि कर्मचारी काही मिनिटांत सेट करा"
+      }
+    },
+    "voiceover": {
+      "en": "Set up your restaurant in seven guided steps with zero technical hurdles.",
+      "hi": "अपने रेस्तरां का सेटअप सात सरल चरणों में पूरा करें, बिना किसी झंझट के।",
+      "mr": "आपल्या रेस्टॉरंटचा सेटअप सात सोप्या टप्प्यांत पूर्ण करा, कोणत्याही अडचणीशिवाय."
+    },
+    "hooks": [
+      "Setting up POS software shouldn't take three days.",
+      "Go live with your entire restaurant setup today."
+    ]
+  },
+  {
+    "key": "table_management",
+    "category": "Operations",
+    "availability": "live",
+    "uiComponent": "TableGrid",
+    "mockData": {
+      "totalTables": 18,
+      "occupied": 11,
+      "available": 5,
+      "reserved": 2,
+      "activeTable": "T-12"
+    },
+    "locales": {
+      "en": {
+        "title": "Live Interactive Table Grid",
+        "sub": "Monitor table occupancy, bill status and merges live"
+      },
+      "hi": {
+        "title": "लाइव टेबल मैनेजमेंट ग्रिड",
+        "sub": "टेबल ऑक्यूपेंसी, रनिंग ऑर्डर और बिल रियल टाइम में देखें"
+      },
+      "mr": {
+        "title": "लाइव्ह टेबल मॅनेजमेंट ग्रिड",
+        "sub": "टेबल ऑक्युपन्सी, चालू ऑर्डर आणि बिल रिअल टाइममध्ये पहा"
+      }
+    },
+    "voiceover": {
+      "en": "Track every table, live order, and bill status across your floor in real time.",
+      "hi": "अपने पूरे रेस्टोरेंट के हर टेबल और लाइव बिल की स्थिति एक स्क्रीन पर देखें।",
+      "mr": "आपल्या रेस्टॉरंटमधील प्रत्येक टेबल आणि चालू बिलाची स्थिती एकाच स्क्रीनवर पहा."
+    },
+    "hooks": [
+      "No more running around checking which tables are free.",
+      "Real-time floor control right in the palm of your hand."
+    ]
+  },
+  {
+    "key": "waiting_list_tokens",
+    "category": "Operations",
+    "availability": "live",
+    "uiComponent": "WaitingListToken",
+    "mockData": {
+      "waitingCount": 4,
+      "currentToken": "A-12",
+      "nextTable": "T-08",
+      "partySize": 5,
+      "guestName": "Amit Joshi"
+    },
+    "locales": {
+      "en": {
+        "title": "Smart Waiting List & Tokens",
+        "sub": "Assign automated queue tokens to clear peak rush"
+      },
+      "hi": {
+        "title": "स्मार्ट वेटिंग लिस्ट और टोकन",
+        "sub": "भीड़ के समय ग्राहकों को डिजिटल टोकन जारी करें"
+      },
+      "mr": {
+        "title": "स्मार्ट वेटिंग लिस्ट आणि टोकन",
+        "sub": "गर्दीच्या वेळी ग्राहकांसाठी डिजिटल टोकन व्यवस्था"
+      }
+    }
+  },
+  {
+    "key": "menu_management",
+    "category": "Setup",
+    "availability": "live",
+    "uiComponent": "MenuSpreadsheetTable",
+    "mockData": {
+      "totalCategories": 6,
+      "totalDishes": 48,
+      "currency": "INR",
+      "featuredDish": "Special Veg Dum Biryani",
+      "price": 320
+    },
+    "locales": {
+      "en": {
+        "title": "Instant Menu & Add-on Editor",
+        "sub": "Update prices, variations and out-of-stock items live"
+      },
+      "hi": {
+        "title": "आसान मेनू और वेरियंट एडिटर",
+        "sub": "कीमतें और आउट-ऑफ-स्टॉक आइटम तुरंत अपडेट करें"
+      },
+      "mr": {
+        "title": "सुलभ मेनू आणि व्हॅरिएंट एडिटर",
+        "sub": "किमती आणि आउट-ऑफ-स्टॉक पदार्थ तात्काळ अपडेट करा"
+      }
+    }
+  },
+  {
+    "key": "tax_promo_rules",
+    "category": "Billing",
+    "availability": "live",
+    "uiComponent": "TaxPromoTable",
+    "mockData": {
+      "gstScheme": "Composition 5%",
+      "cgstRate": 2.5,
+      "sgstRate": 2.5,
+      "activeCoupon": "FESTIVE10"
+    },
+    "locales": {
+      "en": {
+        "title": "Automated GST & Promo Rules",
+        "sub": "Apply 5% restaurant GST and promotional discounts"
+      },
+      "hi": {
+        "title": "स्वचालित जीएसटी और प्रोमो कोड",
+        "sub": "5% रेस्टोरेंट जीएसटी और डिस्काउंट कोड आसानी से लगाएं"
+      },
+      "mr": {
+        "title": "स्वयंचलित जीएसटी आणि प्रोमो नियम",
+        "sub": "5% रेस्टॉरंट जीएसटी आणि सवलत कूपन सहज लागू करा"
+      }
+    }
+  },
+  {
+    "key": "multi_outlet_dashboard",
+    "category": "Insights",
+    "availability": "live",
+    "uiComponent": "AnalyticsWidgets",
+    "mockData": {
+      "outletsCount": 3,
+      "totalSalesToday": 78450,
+      "topOutlet": "Shivaji Nagar Branch",
+      "currency": "INR"
+    },
+    "locales": {
+      "en": {
+        "title": "Multi-Outlet Executive Insights",
+        "sub": "Track sales, orders and peak hours across branches"
+      },
+      "hi": {
+        "title": "मल्टी-आउटलेट डैशबोर्ड",
+        "sub": "सभी शाखाओं की बिक्री और ऑर्डर एक नज़र में देखें"
+      },
+      "mr": {
+        "title": "मल्टी-आउटलेट डॅशबोर्ड",
+        "sub": "सर्व शाखांची विक्री आणि दैनंदिन ऑर्डर्स एका दृष्टिक्षेपात"
+      }
+    }
+  },
+  {
+    "key": "orders_live",
+    "category": "Operations",
+    "availability": "roadmap",
+    "uiComponent": "OrderCard",
+    "mockData": {
+      "orderId": "ORD-8921",
+      "table": "T-04",
+      "status": "Accepted",
+      "itemsCount": 4,
+      "amount": 703.5
+    },
+    "locales": {
+      "en": {
+        "title": "Live Kitchen Order Feeds",
+        "sub": "Track orders through waiting, accepted and done"
+      },
+      "hi": {
+        "title": "लाइव ऑर्डर ट्रैकिंग",
+        "sub": "वेटिंग से लेकर कम्पलीशन तक हर ऑर्डर पर नजर रखें"
+      },
+      "mr": {
+        "title": "चालू ऑर्डर ट्रॅकिंग",
+        "sub": "वेटिंगपासून पूर्ण होईपर्यंत प्रत्येक ऑर्डरवर लक्ष ठेवा"
+      }
+    }
+  },
+  {
+    "key": "kitchen_display",
+    "category": "Operations",
+    "availability": "roadmap",
+    "uiComponent": "KDSBoard",
+    "mockData": {
+      "activeTickets": 6,
+      "avgPrepTimeMinutes": 14,
+      "station": "Tandoor & Curry"
+    },
+    "locales": {
+      "en": {
+        "title": "Digital Kitchen Display (KDS)",
+        "sub": "Replace paper slips with clear digital kitchen boards"
+      },
+      "hi": {
+        "title": "डिजिटल किचन डिस्प्ले सिस्टम",
+        "sub": "कागजी पर्चियों की जगह डिजिटल स्क्रीन पर ऑर्डर देखें"
+      },
+      "mr": {
+        "title": "डिजिटल किचन डिस्प्ले सिस्टम",
+        "sub": "कागदी पावत्यांऐवजी डिजिटल स्क्रीनवर ऑर्डर्स पहा"
+      }
+    }
+  },
+  {
+    "key": "billing_split",
+    "category": "Billing",
+    "availability": "roadmap",
+    "uiComponent": "BillReceipt",
+    "mockData": {
+      "billNumber": "BILL-4019",
+      "totalAmount": 1250,
+      "splitWays": 2,
+      "amountPerPerson": 625,
+      "settledVia": "UPI"
+    },
+    "locales": {
+      "en": {
+        "title": "Instant Bill Split & UPI Settle",
+        "sub": "Split bills by person and confirm UPI payments with a ding"
+      },
+      "hi": {
+        "title": "स्प्लिट बिल और यूपीआई पेमेंट",
+        "sub": "आसानी से बिल बांटें और यूपीआई पेमेंट तुरंत सेटल करें"
+      },
+      "mr": {
+        "title": "स्प्लिट बिल आणि यूपीआय पेमेंट",
+        "sub": "सोप्या पद्धतीने बिल वाटा आणि यूपीआय पेमेंट त्वरित स्वीकारा"
+      }
+    }
+  },
+  {
+    "key": "roles_permissions",
+    "category": "Setup",
+    "availability": "roadmap",
+    "uiComponent": "EmployeeList",
+    "mockData": {
+      "rolesCount": 4,
+      "staffCount": 12,
+      "roles": ["Owner", "Manager", "Captain", "Biller"]
+    },
+    "locales": {
+      "en": {
+        "title": "Granular Staff Roles & Access",
+        "sub": "Control cashier, manager and waiter permissions"
+      },
+      "hi": {
+        "title": "स्टाफ रोल और सुरक्षा अनुमतियां",
+        "sub": "मालिक, मैनेजर और वेटर के लिए सुरक्षित एक्सेस नियम"
+      },
+      "mr": {
+        "title": "कर्मचारी भूमिका आणि प्रवेश नियंत्रण",
+        "sub": "मालक, मॅनेजर आणि वेटरसाठी सुरक्षित नियम"
+      }
+    }
+  },
+  {
+    "key": "kot_printing",
+    "category": "Operations",
+    "availability": "roadmap",
+    "uiComponent": "ThermalReceiptPrinter",
+    "mockData": {
+      "printerStatus": "Online",
+      "kotNumber": "KOT-112",
+      "table": "T-12",
+      "time": "13:45"
+    },
+    "locales": {
+      "en": {
+        "title": "High-Speed Thermal KOT Print",
+        "sub": "Route order tickets to kitchen printers without delay"
+      },
+      "hi": {
+        "title": "थर्मल केओटी प्रिंटिंग",
+        "sub": "किचन प्रिंटर पर ऑर्डर टिकट बिना देरी तुरंत प्रिंट करें"
+      },
+      "mr": {
+        "title": "थर्मल केओटी प्रिंटिंग",
+        "sub": "किचन प्रिंटरवर ऑर्डर स्लिप्स विनाविलंब प्रिंट करा"
+      }
+    }
+  },
+  {
+    "key": "offline_mode",
+    "category": "Operations",
+    "availability": "roadmap",
+    "uiComponent": "SessionPanel",
+    "mockData": {
+      "offlineOrdersQueued": 3,
+      "networkState": "Offline (Local Sync Active)"
+    },
+    "locales": {
+      "en": {
+        "title": "Uninterrupted Offline Operations",
+        "sub": "Keep taking orders and generating bills even when internet drops"
+      },
+      "hi": {
+        "title": "निर्बाध ऑफलाइन मोड",
+        "sub": "इंटरनेट बंद होने पर भी बिलिंग और ऑर्डर जारी रखें"
+      },
+      "mr": {
+        "title": "अखंड ऑफलाइन मोड",
+        "sub": "इंटरनेट नसतानाही बिलिंग आणि ऑर्डर्स अखंड सुरू ठेवा"
+      }
+    }
+  },
+  {
+    "key": "delivery_platform_sync",
+    "category": "Operations",
+    "availability": "roadmap",
+    "uiComponent": "NotificationBell",
+    "mockData": {
+      "platforms": ["Zomato", "Direct Takeaway"],
+      "pendingOrders": 2
+    },
+    "locales": {
+      "en": {
+        "title": "Unified Delivery Sync",
+        "sub": "Manage food aggregator and dine-in orders on one screen"
+      },
+      "hi": {
+        "title": "एकीकृत डिलीवरी सिंक",
+        "sub": "ऑनलाइन डिलीवरी और डाइन-इन ऑर्डर्स एक स्क्रीन पर संभालें"
+      },
+      "mr": {
+        "title": "एकत्रित डिलिव्हरी सिंक",
+        "sub": "ऑनलाइन डिलिव्हरी आणि डाइन-इन ऑर्डर्स एकाच स्क्रीनवर व्यवस्थापित करा"
+      }
+    }
+  }
+]

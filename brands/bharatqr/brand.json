@@ -1,0 +1,542 @@
+{
+  "schemaVersion": "1.0",
+  "id": "bharatqr",
+  "displayName": "BharatQR",
+  "legalName": "To be confirmed by owner",
+  "status": "draft",
+  "version": "0.1.0",
+  "lockedOn": "2026-12-01",
+  "project": {
+    "goal": "Launch a brand film and per-feature Reels for restaurant owners",
+    "deadline": "2026-12-15",
+    "deliverables": [
+      "60 s hero film",
+      "15-30 s feature Reels",
+      "6 s bumpers"
+    ],
+    "successMeasures": [
+      "Hook hold rate",
+      "Demo requests per video"
+    ]
+  },
+  "contacts": [
+    {
+      "name": "Karan Datta Daphade",
+      "role": "Owner",
+      "email": "owner@example.com",
+      "phone": "+91-00000-00000",
+      "isApprover": true
+    }
+  ],
+  "business": {
+    "industry": "Restaurant and hotel software (SaaS)",
+    "offering": "Multi-tenant POS and live-operations platform with QR-based table and room ordering",
+    "usp": [
+      "QR ordering without a customer app",
+      "Guided 7-step branch onboarding"
+    ],
+    "markets": [
+      "India"
+    ],
+    "stage": "Pre-launch, owner-side features live",
+    "pricePosition": "Affordable for independent outlets",
+    "competitors": [
+      "To be confirmed by owner"
+    ]
+  },
+  "audience": {
+    "primary": {
+      "name": "Independent restaurant owner",
+      "description": "Runs one or a few outlets and manages operations personally",
+      "ageRange": "28-55",
+      "languages": [
+        "Marathi",
+        "Hindi",
+        "English"
+      ],
+      "techComfort": "medium",
+      "channels": [
+        "WhatsApp",
+        "Instagram",
+        "YouTube"
+      ],
+      "pains": [
+        "Lost orders",
+        "Slow table turnover",
+        "Billing mistakes"
+      ],
+      "desires": [
+        "Calm operations",
+        "Clear daily numbers"
+      ],
+      "objections": [
+        "Software is complicated",
+        "Staff will not adopt it"
+      ]
+    },
+    "secondary": {
+      "name": "Branch or floor manager",
+      "description": "Handles tables, staff and daily service",
+      "ageRange": "22-45",
+      "languages": [
+        "Marathi",
+        "Hindi"
+      ],
+      "techComfort": "medium",
+      "channels": [
+        "WhatsApp",
+        "YouTube"
+      ],
+      "pains": [
+        "Waiting-list confusion"
+      ],
+      "desires": [
+        "One screen for every table"
+      ],
+      "objections": [
+        "Training time"
+      ]
+    }
+  },
+  "strategy": {
+    "mission": "Help restaurants run calmly",
+    "values": [
+      "Clarity",
+      "Reliability",
+      "Local-first"
+    ],
+    "positioning": "The calm, local-language way to run a restaurant",
+    "personality": [
+      "Confident",
+      "Warm",
+      "Precise"
+    ],
+    "notThis": [
+      "Corporate",
+      "Gimmicky",
+      "Cluttered"
+    ],
+    "taglines": {
+      "en": "Run it calmly"
+    },
+    "story": "Built for Indian restaurants, in the languages their teams speak"
+  },
+  "identity": {
+    "logos": [
+      {
+        "name": "primary-horizontal",
+        "file": "assets/logos/primary-horizontal.svg",
+        "background": "dark",
+        "minWidthPx": 120,
+        "clearSpace": "Height of the icon on every side"
+      }
+    ],
+    "logoDonts": [
+      "Do not stretch",
+      "Do not recolor",
+      "Do not add shadows"
+    ],
+    "animatedLogoFile": "assets/logos/logo-sting.json"
+  },
+  "colors": {
+    "primary": "#3B82F6",
+    "secondary": "#161F30",
+    "accent": "#10B981",
+    "neutrals": [
+      "#0B0F19",
+      "#161F30",
+      "#E5E7EB"
+    ],
+    "background": {
+      "light": "#F8FAFC",
+      "dark": "#0B0F19"
+    },
+    "semantic": {
+      "success": "#10B981",
+      "warning": "#F59E0B",
+      "error": "#EF4444",
+      "info": "#3B82F6"
+    },
+    "usageRatio": "70 percent neutral, 20 percent primary, 10 percent accent",
+    "gradientsAllowed": false,
+    "gradients": [],
+    "forbidden": [
+      "Neon purple",
+      "Pure black text on pure white"
+    ],
+    "contrastMin": 4.5
+  },
+  "typography": {
+    "families": [
+      {
+        "role": "heading",
+        "script": "latin",
+        "family": "Outfit",
+        "weights": [
+          600,
+          700
+        ],
+        "source": "google",
+        "licenseStatus": "open",
+        "fallbacks": [
+          "Inter",
+          "sans-serif"
+        ]
+      },
+      {
+        "role": "body",
+        "script": "latin",
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "source": "google",
+        "licenseStatus": "open",
+        "fallbacks": [
+          "sans-serif"
+        ]
+      },
+      {
+        "role": "body",
+        "script": "devanagari",
+        "family": "Noto Sans Devanagari",
+        "weights": [
+          400,
+          600,
+          700
+        ],
+        "source": "google",
+        "licenseStatus": "open",
+        "fallbacks": [
+          "Mukta",
+          "sans-serif"
+        ]
+      }
+    ],
+    "scale": {
+      "display": 72,
+      "h1": 56,
+      "h2": 40,
+      "body": 28,
+      "caption": 22
+    },
+    "caseRules": "Sentence case for headlines; no all-caps in Devanagari",
+    "letterSpacingLatin": 0,
+    "devanagariLineHeightMin": 1.4
+  },
+  "layout": {
+    "grid": {
+      "columns": 12,
+      "margin": 64,
+      "gutter": 24
+    },
+    "radii": {
+      "small": 8,
+      "medium": 16,
+      "large": 28
+    },
+    "shadows": "Soft, low-contrast, large blur",
+    "borders": "1 px hairline at low opacity",
+    "spacingUnit": 8,
+    "iconStyle": "outline",
+    "patterns": []
+  },
+  "imagery": {
+    "photoStyle": "Warm, natural light, real restaurant counters and kitchens",
+    "illustrationStyle": "None for now",
+    "colorGrade": "Warm highlights, cool shadows, restrained saturation",
+    "subjects": [
+      "Chai counter",
+      "Thali",
+      "Steel utensils",
+      "Handwritten menu board"
+    ],
+    "avoid": [
+      "Generic office stock photos",
+      "Western-only dining scenes"
+    ],
+    "mascot": {
+      "exists": false,
+      "file": "",
+      "rules": ""
+    }
+  },
+  "productUI": {
+    "hasSoftwareProduct": true,
+    "platforms": [
+      "web"
+    ],
+    "theme": "both",
+    "designSystemRef": "docs/design-system.md",
+    "fontsInUI": [
+      "Inter",
+      "Noto Sans Devanagari"
+    ],
+    "screens": [
+      {
+        "key": "onboarding_wizard",
+        "name": "Branch onboarding wizard",
+        "availability": "live",
+        "screenshot": "ui/onboarding.png",
+        "blurRules": "Blur real phone numbers and emails"
+      },
+      {
+        "key": "table_management",
+        "name": "Tables operations",
+        "availability": "live",
+        "screenshot": "ui/tables.png",
+        "blurRules": "Use demo customers only"
+      },
+      {
+        "key": "kitchen_display",
+        "name": "Kitchen display",
+        "availability": "roadmap",
+        "screenshot": "",
+        "blurRules": "Mock only; label coming soon"
+      }
+    ],
+    "sampleDataRules": "Indian names, rupee amounts, realistic menu items; never real customer data"
+  },
+  "offering": {
+    "items": [
+      {
+        "name": "Starter plan",
+        "price": "To be confirmed",
+        "photo": ""
+      }
+    ],
+    "locations": [
+      "Maharashtra, India"
+    ],
+    "packaging": ""
+  },
+  "motion": {
+    "personality": "confident",
+    "pace": "medium",
+    "easingFeel": "soft",
+    "cameraStyle": "gentle-drift",
+    "allowedTransitions": [
+      "match-cut",
+      "slide",
+      "light-leak"
+    ],
+    "forbiddenTransitions": [
+      "spin",
+      "cube-flip"
+    ],
+    "use3D": true,
+    "useCharacters": false,
+    "textAnimation": "word",
+    "maxSimultaneousText": 3
+  },
+  "sound": {
+    "music": {
+      "moods": [
+        "Warm",
+        "Confident",
+        "Uplifting"
+      ],
+      "bpmRange": [
+        92,
+        112
+      ],
+      "instruments": [
+        "Soft pads",
+        "Plucked strings",
+        "Light percussion"
+      ],
+      "avoid": [
+        "Aggressive EDM",
+        "Copyrighted film themes"
+      ],
+      "licensedTracks": []
+    },
+    "sfxStyle": "Soft, tactile UI sounds in the music key; one original payment-style ding motif",
+    "sonicLogoFile": "assets/sfx/sonic-logo.wav",
+    "voice": {
+      "persona": "Friendly, confident restaurant-industry guide",
+      "gender": "any",
+      "ageFeel": "30s",
+      "accent": "Neutral Maharashtrian Marathi; standard Hindi; Indian English",
+      "pace": "medium",
+      "cloningConsentOnFile": false
+    },
+    "forbiddenSounds": [
+      "Third-party payment-brand jingles"
+    ]
+  },
+  "localization": {
+    "languages": [
+      "en",
+      "hi",
+      "mr"
+    ],
+    "formality": "neutral",
+    "transcreate": true,
+    "loanwordPolicy": "Keep QR, bill and order in English letters or natural Devanagari spelling",
+    "numberLocale": "en-IN",
+    "currency": "INR",
+    "dateFormat": "DD MMM YYYY",
+    "glossary": [
+      {
+        "term": "Table",
+        "translations": {
+          "hi": "टेबल",
+          "mr": "टेबल"
+        },
+        "doNotTranslate": false
+      }
+    ],
+    "pronunciations": [
+      {
+        "term": "BharatQR",
+        "lang": "mr",
+        "say": "Bharat Q R"
+      }
+    ],
+    "brandNameByLanguage": {
+      "en": "BharatQR"
+    },
+    "reviewers": [
+      "Native Marathi reviewer to be named",
+      "Native Hindi reviewer to be named"
+    ],
+    "primaryLanguage": "mr"
+  },
+  "messaging": {
+    "pillars": [
+      "Calm operations",
+      "Local language",
+      "One screen for the floor"
+    ],
+    "proofPoints": [
+      {
+        "claim": "Branch onboarding in seven guided steps",
+        "evidence": "Product onboarding flow",
+        "sourceRef": "docs/features/onboarding.md",
+        "approved": true
+      }
+    ],
+    "allowedClaims": [
+      "Guided onboarding",
+      "QR codes generated per table"
+    ],
+    "prohibitedClaims": [
+      "Guaranteed revenue increase",
+      "Features not yet shipped presented as live"
+    ],
+    "disclaimers": [
+      {
+        "text": "Coming soon",
+        "whenRequired": "Any roadmap feature shown on screen"
+      }
+    ],
+    "ctas": [
+      {
+        "text": {
+          "en": "Start free",
+          "hi": "मुफ़्त शुरू करें",
+          "mr": "मोफत सुरू करा"
+        },
+        "destination": "Product website"
+      }
+    ],
+    "handles": [
+      "@to_be_confirmed"
+    ],
+    "hashtags": [
+      "#BharatQR"
+    ]
+  },
+  "references": {
+    "likes": [
+      {
+        "ref": "Reference video to be supplied by owner",
+        "why": "Clean product storytelling"
+      }
+    ],
+    "dislikes": [
+      {
+        "ref": "Template-style SaaS ads",
+        "why": "Generic and forgettable"
+      }
+    ]
+  },
+  "deliverables": {
+    "formats": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "durationsSeconds": [
+      6,
+      15,
+      30,
+      60
+    ],
+    "quantity": 12,
+    "platforms": [
+      "Instagram Reels",
+      "YouTube Shorts",
+      "WhatsApp",
+      "Website"
+    ],
+    "burnedCaptions": true,
+    "languages": [
+      "en",
+      "hi",
+      "mr"
+    ]
+  },
+  "assets": {
+    "provided": [
+      {
+        "type": "logo",
+        "path": "assets/logos/primary-horizontal.svg",
+        "owner": "client",
+        "licenseNote": "Owner-created"
+      }
+    ],
+    "missing": [
+      "Final logo files",
+      "Licensed music"
+    ]
+  },
+  "compliance": {
+    "regulations": [
+      "Indian advertising standards applicable to software ads"
+    ],
+    "testimonialConsentOnFile": false,
+    "trademarkNotes": "Do not use third-party brand logos or sounds",
+    "aiDisclosure": "label-synthetic-voice",
+    "usageRights": {
+      "territory": "India",
+      "durationMonths": 24,
+      "paidMedia": true
+    },
+    "forbiddenTopics": [
+      "Competitor disparagement"
+    ],
+    "competitorMentionAllowed": false
+  },
+  "workflow": {
+    "approvers": [
+      "Karan Datta Daphade"
+    ],
+    "revisionRounds": 2,
+    "reviewTool": "Shared folder",
+    "signoffFormat": "email",
+    "confidentiality": "standard"
+  },
+  "provenance": {
+    "legalName": "assumed",
+    "business.competitors": "assumed",
+    "strategy.taglines.en": "derived",
+    "colors.primary": "provided",
+    "typography.families": "provided",
+    "audience.primary": "derived",
+    "project.deadline": "assumed"
+  }
+}

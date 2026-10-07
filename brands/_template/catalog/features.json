@@ -1,0 +1,15 @@
+[
+  {
+    "key": "feature_template",
+    "category": "Customer Experience",
+    "availability": "live",
+    "uiComponent": "TemplateComponent",
+    "mockData": {},
+    "locales": {
+      "en": {
+        "title": "Template Feature",
+        "sub": "Template description"
+      }
+    }
+  }
+]

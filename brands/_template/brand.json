@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "1.0",
+  "id": "template-id",
+  "displayName": "Template Brand",
+  "status": "draft",
+  "version": "0.1.0",
+  "project": {
+    "goal": "Template motion project",
+    "deliverables": ["30 s Reel"],
+    "successMeasures": ["Brand consistency"]
+  },
+  "contacts": [
+    {
+      "name": "Project Lead",
+      "role": "Owner",
+      "isApprover": true
+    }
+  ],
+  "business": {
+    "industry": "Software",
+    "offering": "SaaS Platform",
+    "usp": ["Fast setup"],
+    "markets": ["India"],
+    "competitors": []
+  },
+  "audience": {
+    "primary": {
+      "name": "General User",
+      "description": "Primary user persona",
+      "languages": ["en"],
+      "techComfort": "medium",
+      "channels": ["Mobile", "Web"],
+      "pains": ["Inefficiency"],
+      "desires": ["Speed"],
+      "objections": ["Cost"]
+    }
+  },
+  "strategy": {
+    "positioning": "Modern software solution",
+    "values": ["Reliability", "Speed"],
+    "personality": ["confident", "modern", "reliable"],
+    "notThis": ["Cluttered", "Slow"],
+    "taglines": {
+      "en": "Empowering your business"
+    }
+  },
+  "identity": {
+    "logos": [
+      {
+        "name": "primary",
+        "file": "assets/logo.svg",
+        "background": "dark",
+        "minWidthPx": 120,
+        "clearSpace": "20px"
+      }
+    ],
+    "logoDonts": ["Do not distort"]
+  },
+  "colors": {
+    "primary": "#3B82F6",
+    "neutrals": ["#0B0F19", "#FFFFFF"],
+    "background": {
+      "light": "#FFFFFF",
+      "dark": "#0B0F19"
+    },
+    "semantic": {},
+    "gradientsAllowed": false,
+    "gradients": [],
+    "forbidden": [],
+    "contrastMin": 4.5
+  },
+  "typography": {
+    "families": [
+      {
+        "role": "heading",
+        "script": "latin",
+        "family": "Inter",
+        "weights": [600, 700],
+        "source": "google",
+        "licenseStatus": "open",
+        "fallbacks": ["sans-serif"]
+      }
+    ],
+    "scale": {
+      "h1": 48,
+      "body": 16
+    },
+    "caseRules": "sentence",
+    "letterSpacingLatin": 0,
+    "devanagariLineHeightMin": 1.4
+  },
+  "layout": {
+    "grid": {
+      "columns": 12,
+      "margin": 24,
+      "gutter": 16
+    },
+    "radii": {
+      "small": 4,
+      "medium": 8,
+      "large": 16
+    },
+    "shadows": "soft",
+    "borders": "subtle",
+    "spacingUnit": 8,
+    "iconStyle": "outline",
+    "patterns": []
+  },
+  "imagery": {
+    "photoStyle": "clean",
+    "illustrationStyle": "minimal",
+    "colorGrade": "neutral",
+    "subjects": [],
+    "avoid": [],
+    "mascot": {
+      "exists": false
+    }
+  },
+  "productUI": {
+    "hasSoftwareProduct": true,
+    "platforms": ["web"],
+    "theme": "dark",
+    "fontsInUI": ["Inter"],
+    "screens": [],
+    "sampleDataRules": "realistic"
+  },
+  "offering": {
+    "items": [],
+    "locations": []
+  },
+  "motion": {
+    "personality": "confident",
+    "pace": "medium",
+    "easingFeel": "snappy",
+    "cameraStyle": "gentle-drift",
+    "allowedTransitions": ["fade", "slide"],
+    "forbiddenTransitions": [],
+    "use3D": false,
+    "useCharacters": false,
+    "textAnimation": "word",
+    "maxSimultaneousText": 3
+  },
+  "sound": {
+    "music": {
+      "moods": ["modern"],
+      "bpmRange": [100, 120],
+      "instruments": ["synth"],
+      "avoid": [],
+      "licensedTracks": []
+    },
+    "sfxStyle": "clean",
+    "voice": {
+      "persona": "professional",
+      "gender": "neutral",
+      "ageFeel": "30s",
+      "accent": "Indian neutral",
+      "pace": "medium",
+      "cloningConsentOnFile": false
+    },
+    "forbiddenSounds": []
+  },
+  "localization": {
+    "languages": ["en"],
+    "primaryLanguage": "en",
+    "formality": "neutral",
+    "transcreate": true,
+    "loanwordPolicy": "standard",
+    "numberLocale": "en-IN",
+    "currency": "INR",
+    "dateFormat": "YYYY-MM-DD",
+    "glossary": [],
+    "pronunciations": [],
+    "brandNameByLanguage": {
+      "en": "Template Brand"
+    },
+    "reviewers": []
+  },
+  "messaging": {
+    "pillars": ["Performance"],
+    "proofPoints": [],
+    "allowedClaims": [],
+    "prohibitedClaims": [],
+    "disclaimers": [],
+    "ctas": [
+      {
+        "text": {
+          "en": "Get Started"
+        },
+        "destination": "https://example.com"
+      }
+    ],
+    "handles": [],
+    "hashtags": []
+  },
+  "references": {
+    "likes": [],
+    "dislikes": []
+  },
+  "deliverables": {
+    "formats": ["9:16"],
+    "durationsSeconds": [30],
+    "quantity": 1,
+    "platforms": ["Instagram"],
+    "burnedCaptions": true,
+    "languages": ["en"]
+  },
+  "assets": {
+    "provided": [],
+    "missing": []
+  },
+  "compliance": {
+    "regulations": [],
+    "testimonialConsentOnFile": false,
+    "aiDisclosure": "none",
+    "usageRights": {
+      "territory": "Worldwide",
+      "paidMedia": false
+    },
+    "forbiddenTopics": [],
+    "competitorMentionAllowed": false
+  },
+  "workflow": {
+    "approvers": ["Owner"],
+    "revisionRounds": 2,
+    "signoffFormat": "email",
+    "confidentiality": "standard"
+  },
+  "provenance": {
+    "id": "provided",
+    "displayName": "provided"
+  }
+}
