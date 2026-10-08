@@ -9,6 +9,9 @@
 |---------|----------------|---------|----------------|-----------------------|
 | `remotion` | 4.0.533 | Remotion License | Remotion License | Free for commercial use up to 3 developers |
 | `@remotion/cli` | 4.0.533 | Remotion License | Remotion License | CLI & studio tools |
+| `@remotion/google-fonts` | 4.0.533 | Remotion License | Remotion License | Google Fonts loader |
+| `@remotion/layout-utils` | 4.0.533 | MIT | Permissive | Text measurement and layout utilities |
+| `@remotion/player` | 4.0.533 | Remotion License | Remotion License | Video preview player & Storybook integration |
 | `@remotion/tailwind-v4` | 4.0.533 | Remotion License | Remotion License | Tailwind v4 bridge |
 | `react` | 19.2.3 | MIT | Permissive | Free commercial use |
 | `react-dom` | 19.2.3 | MIT | Permissive | Free commercial use |
@@ -20,11 +23,15 @@
 | Package | Pinned Version | License | License Family | Notes / Permitted Use |
 |---------|----------------|---------|----------------|-----------------------|
 | `@remotion/eslint-config-flat` | 4.0.533 | ISC | Permissive | Lint configuration |
+| `@storybook/react` | 10.6.1 | MIT | Permissive | Storybook UI component workshop |
+| `@storybook/react-vite` | 10.6.1 | MIT | Permissive | Vite builder for Storybook |
 | `@types/node` | 26.6.4 | MIT | Permissive | TypeScript definitions |
 | `@types/react` | 19.2.7 | MIT | Permissive | TypeScript definitions |
+| `@types/react-dom` | 19.2.3 | MIT | Permissive | TypeScript definitions |
 | `@types/web` | 0.0.166 | MIT | Permissive | TypeScript definitions |
 | `eslint` | 9.39.5 | Apache-2.0 | Permissive | Linting tool |
 | `prettier` | 3.8.1 | MIT | Permissive | Code formatter |
+| `storybook` | 10.6.1 | MIT | Permissive | Storybook CLI and dev tools |
 | `typescript` | 5.9.3 | Apache-2.0 | Permissive | Compiler |
 | `vite` | 6.2.0 | MIT | Permissive | Test bundler |
 | `vitest` | 3.2.7 | MIT | Permissive | Unit test framework |

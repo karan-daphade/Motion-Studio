@@ -3,4 +3,5 @@ out/
 .env
 public/brand/
 *.log
+storybook-static/
 .DS_Store

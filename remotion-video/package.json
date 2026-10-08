@@ -7,6 +7,9 @@
   "private": true,
   "dependencies": {
     "@remotion/cli": "4.0.533",
+    "@remotion/google-fonts": "4.0.533",
+    "@remotion/layout-utils": "4.0.533",
+    "@remotion/player": "4.0.533",
     "@remotion/tailwind-v4": "4.0.533",
     "react": "19.2.3",
     "react-dom": "19.2.3",
@@ -16,11 +19,15 @@
   },
   "devDependencies": {
     "@remotion/eslint-config-flat": "4.0.533",
+    "@storybook/react": "10.6.1",
+    "@storybook/react-vite": "10.6.1",
     "@types/node": "26.6.4",
     "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3",
     "@types/web": "0.0.166",
     "eslint": "9.39.5",
     "prettier": "3.8.1",
+    "storybook": "10.6.1",
     "typescript": "5.9.3",
     "vite": "6.2.0",
     "vitest": "3.2.7"
@@ -34,10 +41,13 @@
     "test": "vitest run",
     "check:versions": "node scripts/check-versions.mjs",
     "check:licenses": "node scripts/check-licenses.mjs",
+    "check:brand-literals": "node scripts/check-brand-literals.mjs",
     "determinism": "node scripts/check-determinism.mjs",
     "brand:new": "node scripts/brand-new.mjs",
     "brand:validate": "node scripts/brand-validate.mjs",
-    "catalog:check": "node scripts/catalog-check.mjs"
+    "catalog:check": "node scripts/catalog-check.mjs",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "sideEffects": [
     "*.css"
