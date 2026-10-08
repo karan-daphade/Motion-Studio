@@ -2,7 +2,7 @@
 // 2D CSS 80mm Thermal Receipt Paper Frame (UI-03)
 
 import React from 'react';
-import { useTheme } from '../../theme/useTheme';
+import { useTheme } from '../../theme';
 import { getFrameAnchor, AnchorName, Point } from './anchors';
 
 export interface ThermalReceiptFrameProps {

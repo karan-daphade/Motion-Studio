@@ -3,7 +3,7 @@
 
 import React, { useMemo } from 'react';
 import { fitText as remotionFitText } from '@remotion/layout-utils';
-import { useTheme } from '../../theme/useTheme';
+import { useTheme } from '../../theme';
 
 export interface FitTextProps {
   text: string;

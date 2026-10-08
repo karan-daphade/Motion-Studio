@@ -3,7 +3,7 @@
 
 import React from 'react';
 import { useCurrentFrame, interpolate } from 'remotion';
-import { useTheme } from '../../theme/useTheme';
+import { useTheme } from '../../theme';
 
 export interface BarDataPoint {
   label: string;

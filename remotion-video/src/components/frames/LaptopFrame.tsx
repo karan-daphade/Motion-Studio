@@ -2,7 +2,7 @@
 // 2D CSS Laptop Device Frame (UI-03)
 
 import React from 'react';
-import { useTheme } from '../../theme/useTheme';
+import { useTheme } from '../../theme';
 import { getFrameAnchor, AnchorName, Point } from './anchors';
 
 export interface LaptopFrameProps {

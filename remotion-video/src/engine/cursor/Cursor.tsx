@@ -3,7 +3,7 @@
 
 import React from 'react';
 import { useCurrentFrame } from 'remotion';
-import { useTheme } from '../../theme/useTheme';
+import { useTheme } from '../../theme';
 import { getCursorState, CursorWaypoint, CursorState } from './getCursorState';
 
 export interface CursorProps {
