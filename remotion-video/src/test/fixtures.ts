@@ -8,8 +8,16 @@ export const alternateBrand: Brand = {
   ...baseBrand,
   colors: {
     ...baseBrand.colors,
-    primary: '#854D0E',
-    secondary: '#166534',
-    accent: '#B45309',
+    primary: '#0284C7', // Sky Blue
+    secondary: '#0F172A', // Slate 900
+    accent: '#10B981', // Emerald 500
+  },
+  layout: {
+    ...baseBrand.layout,
+    radii: {
+      small: 2,
+      medium: 4,
+      large: 8,
+    },
   },
 };

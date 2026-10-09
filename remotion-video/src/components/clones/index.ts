@@ -32,3 +32,19 @@ export * from './WaitlistManagementPanel/WaitlistManagementPanel.schema';
 
 export * from './AlertsDrawer/AlertsDrawer';
 export * from './AlertsDrawer/AlertsDrawer.schema';
+
+// Group 3: Onboarding & Brand
+export * from './OnboardingStepper/OnboardingStepper';
+export * from './OnboardingStepper/OnboardingStepper.schema';
+
+export * from './StepBranch/StepBranch';
+export * from './StepBranch/StepBranch.schema';
+
+export * from './BrandHeader/BrandHeader';
+export * from './BrandHeader/BrandHeader.schema';
+
+export * from './LandingHeroVisual/LandingHeroVisual';
+export * from './LandingHeroVisual/LandingHeroVisual.schema';
+
+export * from './LandingFeaturesGrid/LandingFeaturesGrid';
+export * from './LandingFeaturesGrid/LandingFeaturesGrid.schema';
